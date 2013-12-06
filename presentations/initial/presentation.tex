@@ -1,0 +1,79 @@
+% !TeX spellcheck = de_DE
+\documentclass[fleqn,11pt,nexus]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{t1enc}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{listings}
+
+\usetheme[%
+  %cmyk,%<rgbprint>,          Auswahl des Farbmodells
+  orange,%<orange/green/violet> Auswahl des Sekundärfarbklangs
+  light,%<light,medium>        Auswahl der Helligkeit
+  colorhead,%    Farbig hinterlegte Kopfleiste
+  %colorfoot,%    Farbig hinterlegt Fußleiste auf Titelseite
+  colorblocks,%   Blöcke Farbig hinterlegen
+  %nopagenum,%    Keine Seitennumer in Fußzeile
+  %nodate,%       Kein Datum in Fußleiste
+  tocinheader,%   Inhaltsverzeichnis in Kopfleiste
+  %tinytocinheader,% kleines Kopfleisten-Inhaltsverzeichnis
+  %widetoc,%      breites Kopfleisten-Inhaltsverzeichnis
+  %narrowtoc,%    schmales Kopfleisten-Inhaltsverzeichnis
+  %nosubsectionsinheader,%  Keine subsections im Kopfleisten-Inhaltsverzeichnis
+  %nologoinfoot,% Kein Logo im Fußbereich darstellen
+  %totalpages
+  ]{tubs}
+  
+% Titelseite
+\title{CVclipse}
+\author{Saskia Bellekom, Michael Nieke, Sven Schuster und David Wille}
+
+\titlegraphic[scaled]{\includegraphics{titlepicture.jpg}}
+
+\logo{\includegraphics{ISF_Logo.pdf}}
+
+\lstset{
+	basicstyle=\tiny,	% font size
+	captionpos=b,	% caption below code
+	extendedchars=true,		% umlaute
+	breaklines,		% break lines
+	breakindent=9cm, % indent after break
+	breakatwhitespace,	% force to break at white spaces
+	tabsize=4,	% size of tabs
+	numbers=none,	% line numbers left
+	numberstyle=\tiny,	% size of line numbers
+	stepnumber=1,	% every line with number
+	showstringspaces=false,	% do not show space character
+	escapeinside={(*@}{@*)}	% escape special delimiter for latex code (refs, etc.)
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+\begin{frame}{Worum geht's?}
+	\centering
+	\includegraphics[scale=0.3]{images/cv}
+\end{frame}
+
+\begin{frame}{Kanonen auf Spatzen}
+	\centering
+	\includegraphics[scale=0.3]{images/canon_bird}
+\end{frame}
+
+\begin{frame}{Was ist mit Sprachen?}
+	\centering
+	\includegraphics[scale=0.075]{images/flags}
+\end{frame}
+
+\begin{frame}{Was ist CVclipse?}
+	\centering
+	\includegraphics[scale=0.7]{images/workflow}
+\end{frame}
+
+\end{document}
