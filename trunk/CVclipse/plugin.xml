@@ -7,10 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CVclipse -->
       <package
             uri="http://www.tu-braunschweig.de/isf/cvclipse/1.0"
-            class="de.tu_bs.cs.isf.cvclipse"/>
+            class="de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage"
+            genModel="model/CVclipse.genmodel"/>
    </extension>
-
 
 </plugin>
