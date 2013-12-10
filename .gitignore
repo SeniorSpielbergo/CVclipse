@@ -4,5 +4,3 @@
 *.out
 *.snm
 *.toc
-trunk/CVclipse/src-gen/*
-trunk/CVclipse/bin/*
