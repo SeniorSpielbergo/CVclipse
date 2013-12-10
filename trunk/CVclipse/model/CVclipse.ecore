@@ -3,13 +3,10 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cvclipse" nsURI="http://cvclipse/1.0" nsPrefix="cvclipse">
   <eClassifiers xsi:type="ecore:EClass" name="CV">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="picture" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Block"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" lowerBound="1"
         upperBound="-1" eType="#//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Letter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opening" lowerBound="1"
-        eType="#//TranslationObject"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="opening" lowerBound="1"
         eType="#//TextMap" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="closing" lowerBound="1"
@@ -37,6 +34,12 @@
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
     <eLiterals name="GERMAN"/>
     <eLiterals name="ENGLISH" value="1"/>
+    <eLiterals name="FRENCH" value="2" literal="FRENCH"/>
+    <eLiterals name="ITALIAN" value="3" literal="ITALIAN"/>
+    <eLiterals name="SPANISH" value="4" literal="SPANISH"/>
+    <eLiterals name="PORTUGUESE" value="5" literal="PORTUGUESE"/>
+    <eLiterals name="POLISH" value="6" literal="POLISH"/>
+    <eLiterals name="CZECH" value="7" literal="CZECH"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PersonalInformation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="twitter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -70,9 +73,9 @@
         eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Styles">
-    <eLiterals name="OLDSTYLE" value="2"/>
     <eLiterals name="CASUAL"/>
     <eLiterals name="CLASSIC" value="1"/>
+    <eLiterals name="OLDSTYLE" value="2"/>
     <eLiterals name="BANKING" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Colors">
@@ -84,11 +87,9 @@
     <eLiterals name="GREY" value="5"/>
     <eLiterals name="BLACK" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TranslationObject"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true" eSuperTypes="#//CV">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" eType="#//Item.1"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//CV"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"
+        eType="#//Item" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" lowerBound="1" eType="#//TextMap"
         containment="true"/>
   </eClassifiers>
@@ -99,41 +100,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="BoldText" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItalicText" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="BoldItalicText" eSuperTypes="#//Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EducationBlock" eSuperTypes="#//Block #//ItemBlock.1">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Block"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HobbyBlock" eSuperTypes="#//Block #//ListBlock"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProfessionalExperienceBlock" eSuperTypes="#//Block #//ItemBlock.1"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CustomBlock" abstract="true" eSuperTypes="#//Block"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemBlock"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EClass0"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguageBlock" eSuperTypes="#//Block #//DoubleItemBlock #//ItemBlock.1"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemBlock" eSuperTypes="#//Block">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="" lowerBound="1" upperBound="-1"
-        eType="#//Item.1" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EducationBlock" eSuperTypes="#//ItemBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HobbyBlock" eSuperTypes="#//ListBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfessionalExperienceBlock" eSuperTypes="#//ItemBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageBlock" eSuperTypes="#//ItemBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ItemBlock" eSuperTypes="#//Block"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListBlock" eSuperTypes="#//Block"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DoubleItemBlock" eSuperTypes="#//Block"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Item"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="EEnum0"/>
   <eClassifiers xsi:type="ecore:EClass" name="LineBreak" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//ItemBlock.1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightContent" lowerBound="1"
         eType="#//TextMap" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="EEnum1"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EClass1"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProfessionalTrainingBlock"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DateItem" eSuperTypes="#//Item.1">
+  <eClassifiers xsi:type="ecore:EClass" name="ProfessionalTrainingBlock" eSuperTypes="#//ItemBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DateItem" eSuperTypes="#//Item">
     <eStructuralFeatures xsi:type="ecore:EReference" name="begin" lowerBound="1" eType="#//Date"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//Date" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextItem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextItem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="WurstItem"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TextItem" eSuperTypes="#//Item.1">
+  <eClassifiers xsi:type="ecore:EClass" name="TextItem" eSuperTypes="#//Item">
     <eStructuralFeatures xsi:type="ecore:EReference" name="leftContent" eType="#//TextMap"
         containment="true"/>
   </eClassifiers>
@@ -142,7 +126,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ItemizeText" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="TextMapField">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="#//Languages"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" upperBound="-1"

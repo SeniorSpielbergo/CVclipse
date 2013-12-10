@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/CVclipse/src" modelPluginID="CVclipse" modelName="CVclipse"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>CVclipse.ecore</foreignModel>
+  <genPackages prefix="Cvclipse" disposableProviderFactory="true" ecorePackage="CVclipse.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CVclipse.ecore#//Languages">
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/GERMAN"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/ENGLISH"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/FRENCH"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/ITALIAN"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/SPANISH"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/PORTUGUESE"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/POLISH"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Languages/CZECH"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CVclipse.ecore#//Styles">
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Styles/CASUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Styles/CLASSIC"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Styles/OLDSTYLE"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Styles/BANKING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CVclipse.ecore#//Colors">
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/BLUE"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/ORANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/GREEN"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/RED"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/PURPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/GREY"/>
+      <genEnumLiterals ecoreEnumLiteral="CVclipse.ecore#//Colors/BLACK"/>
+    </genEnums>
+    <genClasses ecoreClass="CVclipse.ecore#//CV">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//CV/picture"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//CV/blocks"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//Letter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Letter/opening"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Letter/closing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Letter/enclosure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Letter/text"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//Application">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Application/cv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Application/letter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Application/languages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Application/personalInformation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Application/style"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Application/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Application/place"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Application/date"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//PersonalInformation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/twitter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/firstname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/surname"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/birthName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/birthplace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/houseNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/zipCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/email"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/phone"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/mobile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/fax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/website"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/github"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//PersonalInformation/linkedIn"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//PersonalInformation/maritalStatus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//PersonalInformation/nationality"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//PersonalInformation/birthdate"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="CVclipse.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Block/items"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Block/title"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Text/content"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//BoldText"/>
+    <genClasses ecoreClass="CVclipse.ecore#//ItalicText"/>
+    <genClasses ecoreClass="CVclipse.ecore#//BoldItalicText"/>
+    <genClasses ecoreClass="CVclipse.ecore#//EducationBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//HobbyBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//ProfessionalExperienceBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//LanguageBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//ItemBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//ListBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//LineBreak"/>
+    <genClasses image="false" ecoreClass="CVclipse.ecore#//Item">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//Item/rightContent"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//ProfessionalTrainingBlock"/>
+    <genClasses ecoreClass="CVclipse.ecore#//DateItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//DateItem/begin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//DateItem/end"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//TextItem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//TextItem/leftContent"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//Date">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Date/day"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Date/month"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//Date/year"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//TextMapField">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CVclipse.ecore#//TextMapField/key"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//TextMapField/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CVclipse.ecore#//TextMap">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CVclipse.ecore#//TextMap/fields"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
