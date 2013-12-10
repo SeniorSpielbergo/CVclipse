@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="VARSIM" nsPrefix="de.tu_bs.isf">
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterizedElement" abstract="true"
+      eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" ordered="false"
+        upperBound="-1" eType="#//StringToStringMapEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkElementBase" eSuperTypes="#//ParameterizedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//SimulinkElementBase"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkBlock" eSuperTypes="#//SimulinkElementBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subBlocks" upperBound="-1"
+        eType="#//SimulinkBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inVariants" lowerBound="1"
+        upperBound="-1" eType="#//ModelVariant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPorts" upperBound="-1"
+        eType="#//SimulinkInPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outPorts" upperBound="-1"
+        eType="#//SimulinkOutPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+        eType="#//SimulinkAnnotation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="masks" upperBound="-1"
+        eType="#//SimulinkSubsystemMask"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelVariant" eSuperTypes="#//ParameterizedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parts" upperBound="-1"
+        eType="#//SimulinkBlock" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkPortBase" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="#//SimulinkBlock"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkInPort" eSuperTypes="#//SimulinkPortBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedPort" eType="#//SimulinkOutPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkOutPort" eSuperTypes="#//SimulinkPortBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectedPorts" upperBound="-1"
+        eType="#//SimulinkInPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkLine" eSuperTypes="#//ParameterizedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destinations" lowerBound="1"
+        upperBound="-1" eType="#//SimulinkInPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//SimulinkOutPort"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkAnnotation" eSuperTypes="#//SimulinkElementBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringToStringMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkSubsystemMask" eSuperTypes="#//ParameterizedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maskParameters" upperBound="-1"
+        eType="#//SimulinkSubsystemMaskParameter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SimulinkSubsystemMaskParameter" eSuperTypes="#//ParameterizedElement"/>
+</ecore:EPackage>
