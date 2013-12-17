@@ -16,6 +16,16 @@
         eType="#//TextMap" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" eType="#//TextMap"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCompany" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientStreet" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCountry" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientAttention" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cv" lowerBound="1" eType="#//CV"
@@ -33,14 +43,14 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
-    <eLiterals name="GERMAN"/>
-    <eLiterals name="ENGLISH" value="1"/>
-    <eLiterals name="FRENCH" value="2" literal="FRENCH"/>
-    <eLiterals name="ITALIAN" value="3" literal="ITALIAN"/>
-    <eLiterals name="SPANISH" value="4" literal="SPANISH"/>
-    <eLiterals name="PORTUGUESE" value="5" literal="PORTUGUESE"/>
-    <eLiterals name="POLISH" value="6" literal="POLISH"/>
-    <eLiterals name="CZECH" value="7" literal="CZECH"/>
+    <eLiterals name="GERMAN" literal="ngerman"/>
+    <eLiterals name="ENGLISH" value="1" literal="english"/>
+    <eLiterals name="FRENCH" value="2" literal="french"/>
+    <eLiterals name="ITALIAN" value="3" literal="italian"/>
+    <eLiterals name="SPANISH" value="4" literal="spanish"/>
+    <eLiterals name="PORTUGUESE" value="5" literal="portuguese"/>
+    <eLiterals name="POLISH" value="6" literal="polish"/>
+    <eLiterals name="CZECH" value="7" literal="czech"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PersonalInformation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="twitter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -53,11 +63,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="street" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="houseNumber" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zipCode" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="city" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -72,21 +78,22 @@
         eType="#//TextMap" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="birthdate" lowerBound="1"
         eType="#//Date" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="photo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Styles">
-    <eLiterals name="CASUAL"/>
-    <eLiterals name="CLASSIC" value="1"/>
-    <eLiterals name="OLDSTYLE" value="2"/>
-    <eLiterals name="BANKING" value="3"/>
+    <eLiterals name="CASUAL" literal="casual"/>
+    <eLiterals name="CLASSIC" value="1" literal="casual"/>
+    <eLiterals name="OLDSTYLE" value="2" literal="oldstyle"/>
+    <eLiterals name="BANKING" value="3" literal="banking"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Colors">
-    <eLiterals name="BLUE"/>
-    <eLiterals name="ORANGE" value="1"/>
-    <eLiterals name="GREEN" value="2"/>
-    <eLiterals name="RED" value="3"/>
-    <eLiterals name="PURPLE" value="4"/>
-    <eLiterals name="GREY" value="5"/>
-    <eLiterals name="BLACK" value="6"/>
+    <eLiterals name="BLUE" literal="blue"/>
+    <eLiterals name="ORANGE" value="1" literal="orange"/>
+    <eLiterals name="GREEN" value="2" literal="green"/>
+    <eLiterals name="RED" value="3" literal="red"/>
+    <eLiterals name="PURPLE" value="4" literal="purple"/>
+    <eLiterals name="GREY" value="5" literal="grey"/>
+    <eLiterals name="BLACK" value="6" literal="black"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"

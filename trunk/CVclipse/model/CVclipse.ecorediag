@@ -138,17 +138,9 @@
         <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/street"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_7gqSOWGyEeO0iYCmTJdU6w"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_7gq5QGGyEeO0iYCmTJdU6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/houseNumber"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_7gq5QWGyEeO0iYCmTJdU6w"/>
-      </children>
       <children xmi:type="notation:Node" xmi:id="_7gq5QmGyEeO0iYCmTJdU6w" type="2001">
         <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/country"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_7gq5Q2GyEeO0iYCmTJdU6w"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_7gq5RGGyEeO0iYCmTJdU6w" type="2001">
-        <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/zipCode"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_7gq5RWGyEeO0iYCmTJdU6w"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_7gq5RmGyEeO0iYCmTJdU6w" type="2001">
         <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/city"/>
