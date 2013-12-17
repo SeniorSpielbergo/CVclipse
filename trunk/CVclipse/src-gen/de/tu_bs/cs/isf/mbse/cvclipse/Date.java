@@ -101,4 +101,12 @@ public interface Date extends EObject {
 	 */
 	void setYear(int value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(day!=0) {\r\n\treturn \"\"+year+\"/\"+month+\"/\"+day;\r\n} else {\r\n\treturn \"\"+year+\"/\"+month;\r\n}'"
+	 * @generated
+	 */
+	String toString();
+
 } // Date

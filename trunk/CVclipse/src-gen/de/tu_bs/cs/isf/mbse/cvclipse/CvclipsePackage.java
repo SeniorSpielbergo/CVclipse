@@ -5,6 +5,7 @@ package de.tu_bs.cs.isf.mbse.cvclipse;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -1249,13 +1250,22 @@ public interface CvclipsePackage extends EPackage {
 	int DATE_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE___TO_STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Date</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_OPERATION_COUNT = 0;
+	int DATE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
@@ -2073,6 +2083,16 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getDate_Year();
 
 	/**
+	 * Returns the meta object for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Date#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Date#toString()
+	 * @generated
+	 */
+	EOperation getDate__ToString();
+
+	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Language To Text Map Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2752,6 +2772,14 @@ public interface CvclipsePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATE__YEAR = eINSTANCE.getDate_Year();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATE___TO_STRING = eINSTANCE.getDate__ToString();
 
 		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
