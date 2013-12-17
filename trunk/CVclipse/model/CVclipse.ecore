@@ -9,12 +9,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Letter">
     <eStructuralFeatures xsi:type="ecore:EReference" name="opening" lowerBound="1"
-        eType="#//TextMap" containment="true"/>
+        eType="#//LanguageToTextMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="closing" lowerBound="1"
-        eType="#//TextMap" containment="true"/>
+        eType="#//LanguageToTextMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="enclosure" lowerBound="1"
-        eType="#//TextMap" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" eType="#//TextMap"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" eType="#//LanguageToTextMapEntry"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCompany" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -73,16 +73,16 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="github" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkedIn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="maritalStatus" upperBound="-1"
-        eType="#//TextMap" containment="true"/>
+        eType="#//LanguageToTextMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nationality" upperBound="-1"
-        eType="#//TextMap" containment="true"/>
+        eType="#//LanguageToTextMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="birthdate" lowerBound="1"
         eType="#//Date" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="photo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Styles">
     <eLiterals name="CASUAL" literal="casual"/>
-    <eLiterals name="CLASSIC" value="1" literal="casual"/>
+    <eLiterals name="CLASSIC" value="1" literal="classic"/>
     <eLiterals name="OLDSTYLE" value="2" literal="oldstyle"/>
     <eLiterals name="BANKING" value="3" literal="banking"/>
   </eClassifiers>
@@ -98,7 +98,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"
         eType="#//Item" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="title" lowerBound="1" eType="#//TextMap"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" lowerBound="1" eType="#//LanguageToTextMapEntry"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text">
@@ -117,7 +117,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LineBreak" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightContent" lowerBound="1"
-        eType="#//TextMap" containment="true"/>
+        eType="#//LanguageToTextMapEntry" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProfessionalTrainingBlock" eSuperTypes="#//ItemBlock"/>
   <eClassifiers xsi:type="ecore:EClass" name="DateItem" eSuperTypes="#//Item">
@@ -126,7 +126,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextItem" eSuperTypes="#//Item">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="leftContent" eType="#//TextMap"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftContent" eType="#//LanguageToTextMapEntry"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Date">
@@ -134,13 +134,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextMapField">
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageToTextMapEntry" instanceClassName="java.util.Map$Entry">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="#//Languages"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" upperBound="-1"
-        eType="#//Text" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TextMap">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
-        eType="#//TextMapField" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Text"
+        containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

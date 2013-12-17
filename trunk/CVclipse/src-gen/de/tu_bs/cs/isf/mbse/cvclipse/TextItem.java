@@ -2,6 +2,7 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
+import java.util.Map;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,29 +22,29 @@ package de.tu_bs.cs.isf.mbse.cvclipse;
  */
 public interface TextItem extends Item {
 	/**
-	 * Returns the value of the '<em><b>Left Content</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Left Content</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Left Content</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Left Content</em>' map isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Left Content</em>' containment reference.
-	 * @see #setLeftContent(TextMap)
+	 * @return the value of the '<em>Left Content</em>' map.
+	 * @see #setLeftContent(Map.Entry)
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getTextItem_LeftContent()
-	 * @model containment="true"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	TextMap getLeftContent();
+	Map.Entry<Languages, Text> getLeftContent();
 
 	/**
-	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextItem#getLeftContent <em>Left Content</em>}' containment reference.
+	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextItem#getLeftContent <em>Left Content</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Left Content</em>' containment reference.
+	 * @param value the new value of the '<em>Left Content</em>' map.
 	 * @see #getLeftContent()
 	 * @generated
 	 */
-	void setLeftContent(TextMap value);
+	void setLeftContent(Map.Entry<Languages, Text> value);
 
 } // TextItem

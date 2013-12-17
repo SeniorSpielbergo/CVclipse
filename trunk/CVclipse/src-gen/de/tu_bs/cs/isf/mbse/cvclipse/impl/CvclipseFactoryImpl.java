@@ -4,6 +4,8 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.*;
 
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -76,8 +78,7 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 			case CvclipsePackage.DATE_ITEM: return createDateItem();
 			case CvclipsePackage.TEXT_ITEM: return createTextItem();
 			case CvclipsePackage.DATE: return createDate();
-			case CvclipsePackage.TEXT_MAP_FIELD: return createTextMapField();
-			case CvclipsePackage.TEXT_MAP: return createTextMap();
+			case CvclipsePackage.LANGUAGE_TO_TEXT_MAP_ENTRY: return (EObject)createLanguageToTextMapEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -316,19 +317,9 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMapField createTextMapField() {
-		TextMapFieldImpl textMapField = new TextMapFieldImpl();
-		return textMapField;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TextMap createTextMap() {
-		TextMapImpl textMap = new TextMapImpl();
-		return textMap;
+	public Map.Entry<Languages, Text> createLanguageToTextMapEntry() {
+		LanguageToTextMapEntryImpl languageToTextMapEntry = new LanguageToTextMapEntryImpl();
+		return languageToTextMapEntry;
 	}
 
 	/**

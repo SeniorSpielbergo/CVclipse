@@ -3,8 +3,11 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
+import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextMap;
+
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,14 +32,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class TextItemImpl extends ItemImpl implements TextItem {
 	/**
-	 * The cached value of the '{@link #getLeftContent() <em>Left Content</em>}' containment reference.
+	 * The cached value of the '{@link #getLeftContent() <em>Left Content</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLeftContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap leftContent;
+	protected Map.Entry<Languages, Text> leftContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -62,7 +65,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getLeftContent() {
+	public Map.Entry<Languages, Text> getLeftContent() {
 		return leftContent;
 	}
 
@@ -71,8 +74,8 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLeftContent(TextMap newLeftContent, NotificationChain msgs) {
-		TextMap oldLeftContent = leftContent;
+	public NotificationChain basicSetLeftContent(Map.Entry<Languages, Text> newLeftContent, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldLeftContent = leftContent;
 		leftContent = newLeftContent;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.TEXT_ITEM__LEFT_CONTENT, oldLeftContent, newLeftContent);
@@ -86,7 +89,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeftContent(TextMap newLeftContent) {
+	public void setLeftContent(Map.Entry<Languages, Text> newLeftContent) {
 		if (newLeftContent != leftContent) {
 			NotificationChain msgs = null;
 			if (leftContent != null)
@@ -133,11 +136,12 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				setLeftContent((TextMap)newValue);
+				setLeftContent((Map.Entry<Languages, Text>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -152,7 +156,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				setLeftContent((TextMap)null);
+				setLeftContent((Map.Entry<Languages, Text>)null);
 				return;
 		}
 		super.eUnset(featureID);

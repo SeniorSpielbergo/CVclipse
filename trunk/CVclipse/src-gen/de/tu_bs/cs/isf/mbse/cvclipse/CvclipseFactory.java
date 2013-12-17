@@ -193,24 +193,6 @@ public interface CvclipseFactory extends EFactory {
 	Date createDate();
 
 	/**
-	 * Returns a new object of class '<em>Text Map Field</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Map Field</em>'.
-	 * @generated
-	 */
-	TextMapField createTextMapField();
-
-	/**
-	 * Returns a new object of class '<em>Text Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Text Map</em>'.
-	 * @generated
-	 */
-	TextMap createTextMap();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

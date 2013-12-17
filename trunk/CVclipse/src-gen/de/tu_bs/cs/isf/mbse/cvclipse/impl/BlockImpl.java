@@ -5,9 +5,11 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextMap;
+import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -49,14 +51,14 @@ public abstract class BlockImpl extends MinimalEObjectImpl.Container implements 
 	protected EList<Item> items;
 
 	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' containment reference.
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTitle()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap title;
+	protected Map.Entry<Languages, Text> title;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +96,7 @@ public abstract class BlockImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getTitle() {
+	public Map.Entry<Languages, Text> getTitle() {
 		return title;
 	}
 
@@ -103,8 +105,8 @@ public abstract class BlockImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTitle(TextMap newTitle, NotificationChain msgs) {
-		TextMap oldTitle = title;
+	public NotificationChain basicSetTitle(Map.Entry<Languages, Text> newTitle, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldTitle = title;
 		title = newTitle;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.BLOCK__TITLE, oldTitle, newTitle);
@@ -118,7 +120,7 @@ public abstract class BlockImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(TextMap newTitle) {
+	public void setTitle(Map.Entry<Languages, Text> newTitle) {
 		if (newTitle != title) {
 			NotificationChain msgs = null;
 			if (title != null)
@@ -178,7 +180,7 @@ public abstract class BlockImpl extends MinimalEObjectImpl.Container implements 
 				getItems().addAll((Collection<? extends Item>)newValue);
 				return;
 			case CvclipsePackage.BLOCK__TITLE:
-				setTitle((TextMap)newValue);
+				setTitle((Map.Entry<Languages, Text>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +198,7 @@ public abstract class BlockImpl extends MinimalEObjectImpl.Container implements 
 				getItems().clear();
 				return;
 			case CvclipsePackage.BLOCK__TITLE:
-				setTitle((TextMap)null);
+				setTitle((Map.Entry<Languages, Text>)null);
 				return;
 		}
 		super.eUnset(featureID);

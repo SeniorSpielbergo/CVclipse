@@ -3,8 +3,11 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
+import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextMap;
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
+
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,6 +29,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getClosing <em>Closing</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getEnclosure <em>Enclosure</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getText <em>Text</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getRecipientCompany <em>Recipient Company</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getRecipientStreet <em>Recipient Street</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getRecipientCity <em>Recipient City</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getRecipientCountry <em>Recipient Country</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl#getRecipientAttention <em>Recipient Attention</em>}</li>
  * </ul>
  * </p>
  *
@@ -33,44 +41,144 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	/**
-	 * The cached value of the '{@link #getOpening() <em>Opening</em>}' containment reference.
+	 * The cached value of the '{@link #getOpening() <em>Opening</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOpening()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap opening;
+	protected Map.Entry<Languages, Text> opening;
 
 	/**
-	 * The cached value of the '{@link #getClosing() <em>Closing</em>}' containment reference.
+	 * The cached value of the '{@link #getClosing() <em>Closing</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getClosing()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap closing;
+	protected Map.Entry<Languages, Text> closing;
 
 	/**
-	 * The cached value of the '{@link #getEnclosure() <em>Enclosure</em>}' containment reference.
+	 * The cached value of the '{@link #getEnclosure() <em>Enclosure</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEnclosure()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap enclosure;
+	protected Map.Entry<Languages, Text> enclosure;
 
 	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference.
+	 * The cached value of the '{@link #getText() <em>Text</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getText()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap text;
+	protected Map.Entry<Languages, Text> text;
+
+	/**
+	 * The default value of the '{@link #getRecipientCompany() <em>Recipient Company</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientCompany()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RECIPIENT_COMPANY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecipientCompany() <em>Recipient Company</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientCompany()
+	 * @generated
+	 * @ordered
+	 */
+	protected String recipientCompany = RECIPIENT_COMPANY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRecipientStreet() <em>Recipient Street</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientStreet()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RECIPIENT_STREET_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecipientStreet() <em>Recipient Street</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientStreet()
+	 * @generated
+	 * @ordered
+	 */
+	protected String recipientStreet = RECIPIENT_STREET_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRecipientCity() <em>Recipient City</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientCity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RECIPIENT_CITY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecipientCity() <em>Recipient City</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientCity()
+	 * @generated
+	 * @ordered
+	 */
+	protected String recipientCity = RECIPIENT_CITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRecipientCountry() <em>Recipient Country</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientCountry()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RECIPIENT_COUNTRY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecipientCountry() <em>Recipient Country</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientCountry()
+	 * @generated
+	 * @ordered
+	 */
+	protected String recipientCountry = RECIPIENT_COUNTRY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRecipientAttention() <em>Recipient Attention</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientAttention()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RECIPIENT_ATTENTION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getRecipientAttention() <em>Recipient Attention</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRecipientAttention()
+	 * @generated
+	 * @ordered
+	 */
+	protected String recipientAttention = RECIPIENT_ATTENTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +204,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getOpening() {
+	public Map.Entry<Languages, Text> getOpening() {
 		return opening;
 	}
 
@@ -105,8 +213,8 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOpening(TextMap newOpening, NotificationChain msgs) {
-		TextMap oldOpening = opening;
+	public NotificationChain basicSetOpening(Map.Entry<Languages, Text> newOpening, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldOpening = opening;
 		opening = newOpening;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__OPENING, oldOpening, newOpening);
@@ -120,7 +228,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOpening(TextMap newOpening) {
+	public void setOpening(Map.Entry<Languages, Text> newOpening) {
 		if (newOpening != opening) {
 			NotificationChain msgs = null;
 			if (opening != null)
@@ -139,7 +247,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getClosing() {
+	public Map.Entry<Languages, Text> getClosing() {
 		return closing;
 	}
 
@@ -148,8 +256,8 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetClosing(TextMap newClosing, NotificationChain msgs) {
-		TextMap oldClosing = closing;
+	public NotificationChain basicSetClosing(Map.Entry<Languages, Text> newClosing, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldClosing = closing;
 		closing = newClosing;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__CLOSING, oldClosing, newClosing);
@@ -163,7 +271,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClosing(TextMap newClosing) {
+	public void setClosing(Map.Entry<Languages, Text> newClosing) {
 		if (newClosing != closing) {
 			NotificationChain msgs = null;
 			if (closing != null)
@@ -182,7 +290,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getEnclosure() {
+	public Map.Entry<Languages, Text> getEnclosure() {
 		return enclosure;
 	}
 
@@ -191,8 +299,8 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnclosure(TextMap newEnclosure, NotificationChain msgs) {
-		TextMap oldEnclosure = enclosure;
+	public NotificationChain basicSetEnclosure(Map.Entry<Languages, Text> newEnclosure, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldEnclosure = enclosure;
 		enclosure = newEnclosure;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__ENCLOSURE, oldEnclosure, newEnclosure);
@@ -206,7 +314,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEnclosure(TextMap newEnclosure) {
+	public void setEnclosure(Map.Entry<Languages, Text> newEnclosure) {
 		if (newEnclosure != enclosure) {
 			NotificationChain msgs = null;
 			if (enclosure != null)
@@ -225,7 +333,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getText() {
+	public Map.Entry<Languages, Text> getText() {
 		return text;
 	}
 
@@ -234,8 +342,8 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetText(TextMap newText, NotificationChain msgs) {
-		TextMap oldText = text;
+	public NotificationChain basicSetText(Map.Entry<Languages, Text> newText, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldText = text;
 		text = newText;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__TEXT, oldText, newText);
@@ -249,7 +357,7 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setText(TextMap newText) {
+	public void setText(Map.Entry<Languages, Text> newText) {
 		if (newText != text) {
 			NotificationChain msgs = null;
 			if (text != null)
@@ -261,6 +369,111 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__TEXT, newText, newText));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRecipientCompany() {
+		return recipientCompany;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecipientCompany(String newRecipientCompany) {
+		String oldRecipientCompany = recipientCompany;
+		recipientCompany = newRecipientCompany;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__RECIPIENT_COMPANY, oldRecipientCompany, recipientCompany));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRecipientStreet() {
+		return recipientStreet;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecipientStreet(String newRecipientStreet) {
+		String oldRecipientStreet = recipientStreet;
+		recipientStreet = newRecipientStreet;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__RECIPIENT_STREET, oldRecipientStreet, recipientStreet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRecipientCity() {
+		return recipientCity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecipientCity(String newRecipientCity) {
+		String oldRecipientCity = recipientCity;
+		recipientCity = newRecipientCity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__RECIPIENT_CITY, oldRecipientCity, recipientCity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRecipientCountry() {
+		return recipientCountry;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecipientCountry(String newRecipientCountry) {
+		String oldRecipientCountry = recipientCountry;
+		recipientCountry = newRecipientCountry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__RECIPIENT_COUNTRY, oldRecipientCountry, recipientCountry));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getRecipientAttention() {
+		return recipientAttention;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRecipientAttention(String newRecipientAttention) {
+		String oldRecipientAttention = recipientAttention;
+		recipientAttention = newRecipientAttention;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__RECIPIENT_ATTENTION, oldRecipientAttention, recipientAttention));
 	}
 
 	/**
@@ -299,6 +512,16 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 				return getEnclosure();
 			case CvclipsePackage.LETTER__TEXT:
 				return getText();
+			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
+				return getRecipientCompany();
+			case CvclipsePackage.LETTER__RECIPIENT_STREET:
+				return getRecipientStreet();
+			case CvclipsePackage.LETTER__RECIPIENT_CITY:
+				return getRecipientCity();
+			case CvclipsePackage.LETTER__RECIPIENT_COUNTRY:
+				return getRecipientCountry();
+			case CvclipsePackage.LETTER__RECIPIENT_ATTENTION:
+				return getRecipientAttention();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -308,20 +531,36 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				setOpening((TextMap)newValue);
+				setOpening((Map.Entry<Languages, Text>)newValue);
 				return;
 			case CvclipsePackage.LETTER__CLOSING:
-				setClosing((TextMap)newValue);
+				setClosing((Map.Entry<Languages, Text>)newValue);
 				return;
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				setEnclosure((TextMap)newValue);
+				setEnclosure((Map.Entry<Languages, Text>)newValue);
 				return;
 			case CvclipsePackage.LETTER__TEXT:
-				setText((TextMap)newValue);
+				setText((Map.Entry<Languages, Text>)newValue);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
+				setRecipientCompany((String)newValue);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_STREET:
+				setRecipientStreet((String)newValue);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_CITY:
+				setRecipientCity((String)newValue);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_COUNTRY:
+				setRecipientCountry((String)newValue);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_ATTENTION:
+				setRecipientAttention((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,16 +575,31 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				setOpening((TextMap)null);
+				setOpening((Map.Entry<Languages, Text>)null);
 				return;
 			case CvclipsePackage.LETTER__CLOSING:
-				setClosing((TextMap)null);
+				setClosing((Map.Entry<Languages, Text>)null);
 				return;
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				setEnclosure((TextMap)null);
+				setEnclosure((Map.Entry<Languages, Text>)null);
 				return;
 			case CvclipsePackage.LETTER__TEXT:
-				setText((TextMap)null);
+				setText((Map.Entry<Languages, Text>)null);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
+				setRecipientCompany(RECIPIENT_COMPANY_EDEFAULT);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_STREET:
+				setRecipientStreet(RECIPIENT_STREET_EDEFAULT);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_CITY:
+				setRecipientCity(RECIPIENT_CITY_EDEFAULT);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_COUNTRY:
+				setRecipientCountry(RECIPIENT_COUNTRY_EDEFAULT);
+				return;
+			case CvclipsePackage.LETTER__RECIPIENT_ATTENTION:
+				setRecipientAttention(RECIPIENT_ATTENTION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -367,8 +621,42 @@ public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 				return enclosure != null;
 			case CvclipsePackage.LETTER__TEXT:
 				return text != null;
+			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
+				return RECIPIENT_COMPANY_EDEFAULT == null ? recipientCompany != null : !RECIPIENT_COMPANY_EDEFAULT.equals(recipientCompany);
+			case CvclipsePackage.LETTER__RECIPIENT_STREET:
+				return RECIPIENT_STREET_EDEFAULT == null ? recipientStreet != null : !RECIPIENT_STREET_EDEFAULT.equals(recipientStreet);
+			case CvclipsePackage.LETTER__RECIPIENT_CITY:
+				return RECIPIENT_CITY_EDEFAULT == null ? recipientCity != null : !RECIPIENT_CITY_EDEFAULT.equals(recipientCity);
+			case CvclipsePackage.LETTER__RECIPIENT_COUNTRY:
+				return RECIPIENT_COUNTRY_EDEFAULT == null ? recipientCountry != null : !RECIPIENT_COUNTRY_EDEFAULT.equals(recipientCountry);
+			case CvclipsePackage.LETTER__RECIPIENT_ATTENTION:
+				return RECIPIENT_ATTENTION_EDEFAULT == null ? recipientAttention != null : !RECIPIENT_ATTENTION_EDEFAULT.equals(recipientAttention);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (recipientCompany: ");
+		result.append(recipientCompany);
+		result.append(", recipientStreet: ");
+		result.append(recipientStreet);
+		result.append(", recipientCity: ");
+		result.append(recipientCity);
+		result.append(", recipientCountry: ");
+		result.append(recipientCountry);
+		result.append(", recipientAttention: ");
+		result.append(recipientAttention);
+		result.append(')');
+		return result.toString();
 	}
 
 } //LetterImpl

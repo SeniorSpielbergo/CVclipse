@@ -2,7 +2,7 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -20,9 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthName <em>Birth Name</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthplace <em>Birthplace</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getStreet <em>Street</em>}</li>
- *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getHouseNumber <em>House Number</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}</li>
- *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getZipCode <em>Zip Code</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCity <em>City</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getEmail <em>Email</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhone <em>Phone</em>}</li>
@@ -34,6 +32,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getNationality <em>Nationality</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthdate <em>Birthdate</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto <em>Photo</em>}</li>
  * </ul>
  * </p>
  *
@@ -199,32 +198,6 @@ public interface PersonalInformation extends EObject {
 	void setStreet(String value);
 
 	/**
-	 * Returns the value of the '<em><b>House Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>House Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>House Number</em>' attribute.
-	 * @see #setHouseNumber(String)
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_HouseNumber()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getHouseNumber();
-
-	/**
-	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getHouseNumber <em>House Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>House Number</em>' attribute.
-	 * @see #getHouseNumber()
-	 * @generated
-	 */
-	void setHouseNumber(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Country</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -249,32 +222,6 @@ public interface PersonalInformation extends EObject {
 	 * @generated
 	 */
 	void setCountry(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Zip Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Zip Code</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Zip Code</em>' attribute.
-	 * @see #setZipCode(String)
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_ZipCode()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getZipCode();
-
-	/**
-	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getZipCode <em>Zip Code</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Zip Code</em>' attribute.
-	 * @see #getZipCode()
-	 * @generated
-	 */
-	void setZipCode(String value);
 
 	/**
 	 * Returns the value of the '<em><b>City</b></em>' attribute.
@@ -485,36 +432,38 @@ public interface PersonalInformation extends EObject {
 	void setLinkedIn(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Marital Status</b></em>' containment reference list.
-	 * The list contents are of type {@link de.tu_bs.cs.isf.mbse.cvclipse.TextMap}.
+	 * Returns the value of the '<em><b>Marital Status</b></em>' map.
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Marital Status</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Marital Status</em>' map isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Marital Status</em>' containment reference list.
+	 * @return the value of the '<em>Marital Status</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_MaritalStatus()
-	 * @model containment="true"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EList<TextMap> getMaritalStatus();
+	EMap<Languages, Text> getMaritalStatus();
 
 	/**
-	 * Returns the value of the '<em><b>Nationality</b></em>' containment reference list.
-	 * The list contents are of type {@link de.tu_bs.cs.isf.mbse.cvclipse.TextMap}.
+	 * Returns the value of the '<em><b>Nationality</b></em>' map.
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Nationality</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Nationality</em>' map isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Nationality</em>' containment reference list.
+	 * @return the value of the '<em>Nationality</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_Nationality()
-	 * @model containment="true"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EList<TextMap> getNationality();
+	EMap<Languages, Text> getNationality();
 
 	/**
 	 * Returns the value of the '<em><b>Birthdate</b></em>' containment reference.
@@ -541,5 +490,31 @@ public interface PersonalInformation extends EObject {
 	 * @generated
 	 */
 	void setBirthdate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Photo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Photo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Photo</em>' attribute.
+	 * @see #setPhoto(String)
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_Photo()
+	 * @model
+	 * @generated
+	 */
+	String getPhoto();
+
+	/**
+	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto <em>Photo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Photo</em>' attribute.
+	 * @see #getPhoto()
+	 * @generated
+	 */
+	void setPhoto(String value);
 
 } // PersonalInformation

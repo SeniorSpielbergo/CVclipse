@@ -2,6 +2,8 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,29 +24,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Item extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Right Content</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Right Content</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Right Content</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Right Content</em>' map isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Right Content</em>' containment reference.
-	 * @see #setRightContent(TextMap)
+	 * @return the value of the '<em>Right Content</em>' map.
+	 * @see #setRightContent(Map.Entry)
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getItem_RightContent()
-	 * @model containment="true" required="true"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	TextMap getRightContent();
+	Map.Entry<Languages, Text> getRightContent();
 
 	/**
-	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Item#getRightContent <em>Right Content</em>}' containment reference.
+	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Item#getRightContent <em>Right Content</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Right Content</em>' containment reference.
+	 * @param value the new value of the '<em>Right Content</em>' map.
 	 * @see #getRightContent()
 	 * @generated
 	 */
-	void setRightContent(TextMap value);
+	void setRightContent(Map.Entry<Languages, Text> value);
 
 } // Item

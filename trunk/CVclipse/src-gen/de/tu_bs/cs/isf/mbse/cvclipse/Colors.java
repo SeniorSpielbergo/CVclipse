@@ -26,7 +26,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BLUE(0, "BLUE", "BLUE"),
+	BLUE(0, "BLUE", "blue"),
 
 	/**
 	 * The '<em><b>ORANGE</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ORANGE(1, "ORANGE", "ORANGE"),
+	ORANGE(1, "ORANGE", "orange"),
 
 	/**
 	 * The '<em><b>GREEN</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GREEN(2, "GREEN", "GREEN"),
+	GREEN(2, "GREEN", "green"),
 
 	/**
 	 * The '<em><b>RED</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RED(3, "RED", "RED"),
+	RED(3, "RED", "red"),
 
 	/**
 	 * The '<em><b>PURPLE</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PURPLE(4, "PURPLE", "PURPLE"),
+	PURPLE(4, "PURPLE", "purple"),
 
 	/**
 	 * The '<em><b>GREY</b></em>' literal object.
@@ -76,7 +76,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GREY(5, "GREY", "GREY"),
+	GREY(5, "GREY", "grey"),
 
 	/**
 	 * The '<em><b>BLACK</b></em>' literal object.
@@ -86,7 +86,7 @@ public enum Colors implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BLACK(6, "BLACK", "BLACK");
+	BLACK(6, "BLACK", "black");
 
 	/**
 	 * The '<em><b>BLUE</b></em>' literal value.
@@ -97,7 +97,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BLUE
-	 * @model
+	 * @model literal="blue"
 	 * @generated
 	 * @ordered
 	 */
@@ -112,7 +112,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ORANGE
-	 * @model
+	 * @model literal="orange"
 	 * @generated
 	 * @ordered
 	 */
@@ -127,7 +127,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GREEN
-	 * @model
+	 * @model literal="green"
 	 * @generated
 	 * @ordered
 	 */
@@ -142,7 +142,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RED
-	 * @model
+	 * @model literal="red"
 	 * @generated
 	 * @ordered
 	 */
@@ -157,7 +157,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PURPLE
-	 * @model
+	 * @model literal="purple"
 	 * @generated
 	 * @ordered
 	 */
@@ -172,7 +172,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GREY
-	 * @model
+	 * @model literal="grey"
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public enum Colors implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BLACK
-	 * @model
+	 * @model literal="black"
 	 * @generated
 	 * @ordered
 	 */

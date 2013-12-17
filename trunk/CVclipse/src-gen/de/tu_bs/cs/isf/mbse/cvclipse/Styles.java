@@ -26,7 +26,7 @@ public enum Styles implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CASUAL(0, "CASUAL", "CASUAL"),
+	CASUAL(0, "CASUAL", "casual"),
 
 	/**
 	 * The '<em><b>CLASSIC</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum Styles implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CLASSIC(1, "CLASSIC", "CLASSIC"),
+	CLASSIC(1, "CLASSIC", "classic"),
 
 	/**
 	 * The '<em><b>OLDSTYLE</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum Styles implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OLDSTYLE(2, "OLDSTYLE", "OLDSTYLE"),
+	OLDSTYLE(2, "OLDSTYLE", "oldstyle"),
 
 	/**
 	 * The '<em><b>BANKING</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum Styles implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BANKING(3, "BANKING", "BANKING");
+	BANKING(3, "BANKING", "banking");
 
 	/**
 	 * The '<em><b>CASUAL</b></em>' literal value.
@@ -67,7 +67,7 @@ public enum Styles implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CASUAL
-	 * @model
+	 * @model literal="casual"
 	 * @generated
 	 * @ordered
 	 */
@@ -82,7 +82,7 @@ public enum Styles implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CLASSIC
-	 * @model
+	 * @model literal="classic"
 	 * @generated
 	 * @ordered
 	 */
@@ -97,7 +97,7 @@ public enum Styles implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #OLDSTYLE
-	 * @model
+	 * @model literal="oldstyle"
 	 * @generated
 	 * @ordered
 	 */
@@ -112,7 +112,7 @@ public enum Styles implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #BANKING
-	 * @model
+	 * @model literal="banking"
 	 * @generated
 	 * @ordered
 	 */

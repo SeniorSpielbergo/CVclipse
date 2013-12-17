@@ -27,8 +27,8 @@ import de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextMap;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextMapField;
+
+import java.util.Map;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -197,14 +197,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass textMapFieldEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass textMapEClass = null;
+	private EClass languageToTextMapEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -365,6 +358,51 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLetter_RecipientCompany() {
+		return (EAttribute)letterEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLetter_RecipientStreet() {
+		return (EAttribute)letterEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLetter_RecipientCity() {
+		return (EAttribute)letterEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLetter_RecipientCountry() {
+		return (EAttribute)letterEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLetter_RecipientAttention() {
+		return (EAttribute)letterEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getApplication() {
 		return applicationEClass;
 	}
@@ -509,7 +547,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_HouseNumber() {
+	public EAttribute getPersonalInformation_Country() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -518,7 +556,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Country() {
+	public EAttribute getPersonalInformation_City() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -527,7 +565,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_ZipCode() {
+	public EAttribute getPersonalInformation_Email() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -536,7 +574,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_City() {
+	public EAttribute getPersonalInformation_Phone() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -545,7 +583,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Email() {
+	public EAttribute getPersonalInformation_Mobile() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -554,7 +592,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Phone() {
+	public EAttribute getPersonalInformation_Fax() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -563,7 +601,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Mobile() {
+	public EAttribute getPersonalInformation_Website() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -572,7 +610,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Fax() {
+	public EAttribute getPersonalInformation_Github() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -581,7 +619,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Website() {
+	public EAttribute getPersonalInformation_LinkedIn() {
 		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -590,26 +628,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Github() {
-		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPersonalInformation_LinkedIn() {
-		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(16);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPersonalInformation_MaritalStatus() {
-		return (EReference)personalInformationEClass.getEStructuralFeatures().get(17);
+		return (EReference)personalInformationEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
@@ -618,7 +638,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * @generated
 	 */
 	public EReference getPersonalInformation_Nationality() {
-		return (EReference)personalInformationEClass.getEStructuralFeatures().get(18);
+		return (EReference)personalInformationEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
@@ -627,7 +647,16 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * @generated
 	 */
 	public EReference getPersonalInformation_Birthdate() {
-		return (EReference)personalInformationEClass.getEStructuralFeatures().get(19);
+		return (EReference)personalInformationEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPersonalInformation_Photo() {
+		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
@@ -878,8 +907,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTextMapField() {
-		return textMapFieldEClass;
+	public EClass getLanguageToTextMapEntry() {
+		return languageToTextMapEntryEClass;
 	}
 
 	/**
@@ -887,8 +916,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTextMapField_Key() {
-		return (EAttribute)textMapFieldEClass.getEStructuralFeatures().get(0);
+	public EAttribute getLanguageToTextMapEntry_Key() {
+		return (EAttribute)languageToTextMapEntryEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -896,26 +925,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTextMapField_Value() {
-		return (EReference)textMapFieldEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTextMap() {
-		return textMapEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTextMap_Fields() {
-		return (EReference)textMapEClass.getEStructuralFeatures().get(0);
+	public EReference getLanguageToTextMapEntry_Value() {
+		return (EReference)languageToTextMapEntryEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -982,6 +993,11 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEReference(letterEClass, LETTER__CLOSING);
 		createEReference(letterEClass, LETTER__ENCLOSURE);
 		createEReference(letterEClass, LETTER__TEXT);
+		createEAttribute(letterEClass, LETTER__RECIPIENT_COMPANY);
+		createEAttribute(letterEClass, LETTER__RECIPIENT_STREET);
+		createEAttribute(letterEClass, LETTER__RECIPIENT_CITY);
+		createEAttribute(letterEClass, LETTER__RECIPIENT_COUNTRY);
+		createEAttribute(letterEClass, LETTER__RECIPIENT_ATTENTION);
 
 		applicationEClass = createEClass(APPLICATION);
 		createEReference(applicationEClass, APPLICATION__CV);
@@ -1000,9 +1016,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__BIRTH_NAME);
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__BIRTHPLACE);
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__STREET);
-		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__HOUSE_NUMBER);
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__COUNTRY);
-		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__ZIP_CODE);
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__CITY);
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__EMAIL);
 		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__PHONE);
@@ -1014,6 +1028,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEReference(personalInformationEClass, PERSONAL_INFORMATION__MARITAL_STATUS);
 		createEReference(personalInformationEClass, PERSONAL_INFORMATION__NATIONALITY);
 		createEReference(personalInformationEClass, PERSONAL_INFORMATION__BIRTHDATE);
+		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__PHOTO);
 
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__ITEMS);
@@ -1059,12 +1074,9 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEAttribute(dateEClass, DATE__MONTH);
 		createEAttribute(dateEClass, DATE__YEAR);
 
-		textMapFieldEClass = createEClass(TEXT_MAP_FIELD);
-		createEAttribute(textMapFieldEClass, TEXT_MAP_FIELD__KEY);
-		createEReference(textMapFieldEClass, TEXT_MAP_FIELD__VALUE);
-
-		textMapEClass = createEClass(TEXT_MAP);
-		createEReference(textMapEClass, TEXT_MAP__FIELDS);
+		languageToTextMapEntryEClass = createEClass(LANGUAGE_TO_TEXT_MAP_ENTRY);
+		createEAttribute(languageToTextMapEntryEClass, LANGUAGE_TO_TEXT_MAP_ENTRY__KEY);
+		createEReference(languageToTextMapEntryEClass, LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE);
 
 		// Create enums
 		languagesEEnum = createEEnum(LANGUAGES);
@@ -1120,10 +1132,15 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEReference(getCV_Blocks(), this.getBlock(), null, "blocks", null, 1, -1, de.tu_bs.cs.isf.mbse.cvclipse.CV.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(letterEClass, Letter.class, "Letter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLetter_Opening(), this.getTextMap(), null, "opening", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLetter_Closing(), this.getTextMap(), null, "closing", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLetter_Enclosure(), this.getTextMap(), null, "enclosure", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLetter_Text(), this.getTextMap(), null, "text", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLetter_Opening(), this.getLanguageToTextMapEntry(), null, "opening", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLetter_Closing(), this.getLanguageToTextMapEntry(), null, "closing", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLetter_Enclosure(), this.getLanguageToTextMapEntry(), null, "enclosure", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLetter_Text(), this.getLanguageToTextMapEntry(), null, "text", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLetter_RecipientCompany(), ecorePackage.getEString(), "recipientCompany", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLetter_RecipientStreet(), ecorePackage.getEString(), "recipientStreet", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLetter_RecipientCity(), ecorePackage.getEString(), "recipientCity", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLetter_RecipientCountry(), ecorePackage.getEString(), "recipientCountry", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLetter_RecipientAttention(), ecorePackage.getEString(), "recipientAttention", null, 1, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplication_Cv(), this.getCV(), null, "cv", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1142,9 +1159,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEAttribute(getPersonalInformation_BirthName(), ecorePackage.getEString(), "birthName", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_Birthplace(), ecorePackage.getEString(), "birthplace", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_Street(), ecorePackage.getEString(), "street", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersonalInformation_HouseNumber(), ecorePackage.getEString(), "houseNumber", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_Country(), ecorePackage.getEString(), "country", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersonalInformation_ZipCode(), ecorePackage.getEString(), "zipCode", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_City(), ecorePackage.getEString(), "city", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_Email(), ecorePackage.getEString(), "email", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_Phone(), ecorePackage.getEString(), "phone", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1153,13 +1168,14 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEAttribute(getPersonalInformation_Website(), ecorePackage.getEString(), "website", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_Github(), ecorePackage.getEString(), "github", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPersonalInformation_LinkedIn(), ecorePackage.getEString(), "linkedIn", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPersonalInformation_MaritalStatus(), this.getTextMap(), null, "maritalStatus", null, 0, -1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPersonalInformation_Nationality(), this.getTextMap(), null, "nationality", null, 0, -1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPersonalInformation_MaritalStatus(), this.getLanguageToTextMapEntry(), null, "maritalStatus", null, 0, -1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPersonalInformation_Nationality(), this.getLanguageToTextMapEntry(), null, "nationality", null, 0, -1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPersonalInformation_Birthdate(), this.getDate(), null, "birthdate", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPersonalInformation_Photo(), ecorePackage.getEString(), "photo", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Items(), this.getItem(), null, "items", null, 1, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBlock_Title(), this.getTextMap(), null, "title", null, 1, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBlock_Title(), this.getLanguageToTextMapEntry(), null, "title", null, 1, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1185,7 +1201,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEClass(lineBreakEClass, LineBreak.class, "LineBreak", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(itemEClass, Item.class, "Item", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getItem_RightContent(), this.getTextMap(), null, "rightContent", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItem_RightContent(), this.getLanguageToTextMapEntry(), null, "rightContent", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(professionalTrainingBlockEClass, ProfessionalTrainingBlock.class, "ProfessionalTrainingBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1194,19 +1210,16 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEReference(getDateItem_End(), this.getDate(), null, "end", null, 0, 1, DateItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textItemEClass, TextItem.class, "TextItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTextItem_LeftContent(), this.getTextMap(), null, "leftContent", null, 0, 1, TextItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextItem_LeftContent(), this.getLanguageToTextMapEntry(), null, "leftContent", null, 0, 1, TextItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dateEClass, Date.class, "Date", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDate_Day(), ecorePackage.getEInt(), "day", null, 0, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDate_Month(), ecorePackage.getEInt(), "month", null, 1, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDate_Year(), ecorePackage.getEInt(), "year", null, 1, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(textMapFieldEClass, TextMapField.class, "TextMapField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTextMapField_Key(), this.getLanguages(), "key", null, 1, 1, TextMapField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTextMapField_Value(), this.getText(), null, "value", null, 1, -1, TextMapField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(textMapEClass, TextMap.class, "TextMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTextMap_Fields(), this.getTextMapField(), null, "fields", null, 0, -1, TextMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(languageToTextMapEntryEClass, Map.Entry.class, "LanguageToTextMapEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLanguageToTextMapEntry_Key(), this.getLanguages(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLanguageToTextMapEntry_Value(), this.getText(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(languagesEEnum, Languages.class, "Languages");

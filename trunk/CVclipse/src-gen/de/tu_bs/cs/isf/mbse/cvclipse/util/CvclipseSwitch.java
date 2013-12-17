@@ -4,6 +4,8 @@ package de.tu_bs.cs.isf.mbse.cvclipse.util;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.*;
 
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -210,15 +212,9 @@ public class CvclipseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CvclipsePackage.TEXT_MAP_FIELD: {
-				TextMapField textMapField = (TextMapField)theEObject;
-				T result = caseTextMapField(textMapField);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.TEXT_MAP: {
-				TextMap textMap = (TextMap)theEObject;
-				T result = caseTextMap(textMap);
+			case CvclipsePackage.LANGUAGE_TO_TEXT_MAP_ENTRY: {
+				@SuppressWarnings("unchecked") Map.Entry<Languages, Text> languageToTextMapEntry = (Map.Entry<Languages, Text>)theEObject;
+				T result = caseLanguageToTextMapEntry(languageToTextMapEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -542,32 +538,17 @@ public class CvclipseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text Map Field</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language To Text Map Entry</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text Map Field</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language To Text Map Entry</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTextMapField(TextMapField object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Text Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Text Map</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTextMap(TextMap object) {
+	public T caseLanguageToTextMapEntry(Map.Entry<Languages, Text> object) {
 		return null;
 	}
 

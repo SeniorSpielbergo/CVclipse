@@ -114,7 +114,7 @@ public interface CvclipsePackage extends EPackage {
 	int LETTER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Opening</b></em>' containment reference.
+	 * The feature id for the '<em><b>Opening</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -123,7 +123,7 @@ public interface CvclipsePackage extends EPackage {
 	int LETTER__OPENING = 0;
 
 	/**
-	 * The feature id for the '<em><b>Closing</b></em>' containment reference.
+	 * The feature id for the '<em><b>Closing</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,7 +132,7 @@ public interface CvclipsePackage extends EPackage {
 	int LETTER__CLOSING = 1;
 
 	/**
-	 * The feature id for the '<em><b>Enclosure</b></em>' containment reference.
+	 * The feature id for the '<em><b>Enclosure</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,7 +141,7 @@ public interface CvclipsePackage extends EPackage {
 	int LETTER__ENCLOSURE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference.
+	 * The feature id for the '<em><b>Text</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -150,13 +150,58 @@ public interface CvclipsePackage extends EPackage {
 	int LETTER__TEXT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Recipient Company</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LETTER__RECIPIENT_COMPANY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Recipient Street</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LETTER__RECIPIENT_STREET = 5;
+
+	/**
+	 * The feature id for the '<em><b>Recipient City</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LETTER__RECIPIENT_CITY = 6;
+
+	/**
+	 * The feature id for the '<em><b>Recipient Country</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LETTER__RECIPIENT_COUNTRY = 7;
+
+	/**
+	 * The feature id for the '<em><b>Recipient Attention</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LETTER__RECIPIENT_ATTENTION = 8;
+
+	/**
 	 * The number of structural features of the '<em>Letter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LETTER_FEATURE_COUNT = 4;
+	int LETTER_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Letter</em>' class.
@@ -332,31 +377,13 @@ public interface CvclipsePackage extends EPackage {
 	int PERSONAL_INFORMATION__STREET = 5;
 
 	/**
-	 * The feature id for the '<em><b>House Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSONAL_INFORMATION__HOUSE_NUMBER = 6;
-
-	/**
 	 * The feature id for the '<em><b>Country</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__COUNTRY = 7;
-
-	/**
-	 * The feature id for the '<em><b>Zip Code</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSONAL_INFORMATION__ZIP_CODE = 8;
+	int PERSONAL_INFORMATION__COUNTRY = 6;
 
 	/**
 	 * The feature id for the '<em><b>City</b></em>' attribute.
@@ -365,7 +392,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__CITY = 9;
+	int PERSONAL_INFORMATION__CITY = 7;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
@@ -374,7 +401,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__EMAIL = 10;
+	int PERSONAL_INFORMATION__EMAIL = 8;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -383,7 +410,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__PHONE = 11;
+	int PERSONAL_INFORMATION__PHONE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Mobile</b></em>' attribute.
@@ -392,7 +419,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__MOBILE = 12;
+	int PERSONAL_INFORMATION__MOBILE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Fax</b></em>' attribute.
@@ -401,7 +428,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__FAX = 13;
+	int PERSONAL_INFORMATION__FAX = 11;
 
 	/**
 	 * The feature id for the '<em><b>Website</b></em>' attribute.
@@ -410,7 +437,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__WEBSITE = 14;
+	int PERSONAL_INFORMATION__WEBSITE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Github</b></em>' attribute.
@@ -419,7 +446,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__GITHUB = 15;
+	int PERSONAL_INFORMATION__GITHUB = 13;
 
 	/**
 	 * The feature id for the '<em><b>Linked In</b></em>' attribute.
@@ -428,25 +455,25 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__LINKED_IN = 16;
+	int PERSONAL_INFORMATION__LINKED_IN = 14;
 
 	/**
-	 * The feature id for the '<em><b>Marital Status</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Marital Status</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__MARITAL_STATUS = 17;
+	int PERSONAL_INFORMATION__MARITAL_STATUS = 15;
 
 	/**
-	 * The feature id for the '<em><b>Nationality</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Nationality</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__NATIONALITY = 18;
+	int PERSONAL_INFORMATION__NATIONALITY = 16;
 
 	/**
 	 * The feature id for the '<em><b>Birthdate</b></em>' containment reference.
@@ -455,7 +482,16 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__BIRTHDATE = 19;
+	int PERSONAL_INFORMATION__BIRTHDATE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Photo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSONAL_INFORMATION__PHOTO = 18;
 
 	/**
 	 * The number of structural features of the '<em>Personal Information</em>' class.
@@ -464,7 +500,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION_FEATURE_COUNT = 20;
+	int PERSONAL_INFORMATION_FEATURE_COUNT = 19;
 
 	/**
 	 * The number of operations of the '<em>Personal Information</em>' class.
@@ -495,7 +531,7 @@ public interface CvclipsePackage extends EPackage {
 	int BLOCK__ITEMS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -689,7 +725,7 @@ public interface CvclipsePackage extends EPackage {
 	int ITEM_BLOCK__ITEMS = BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -735,7 +771,7 @@ public interface CvclipsePackage extends EPackage {
 	int EDUCATION_BLOCK__ITEMS = ITEM_BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -781,7 +817,7 @@ public interface CvclipsePackage extends EPackage {
 	int LIST_BLOCK__ITEMS = BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -827,7 +863,7 @@ public interface CvclipsePackage extends EPackage {
 	int HOBBY_BLOCK__ITEMS = LIST_BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -873,7 +909,7 @@ public interface CvclipsePackage extends EPackage {
 	int PROFESSIONAL_EXPERIENCE_BLOCK__ITEMS = ITEM_BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -919,7 +955,7 @@ public interface CvclipsePackage extends EPackage {
 	int LANGUAGE_BLOCK__ITEMS = ITEM_BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -993,7 +1029,7 @@ public interface CvclipsePackage extends EPackage {
 	int ITEM = 16;
 
 	/**
-	 * The feature id for the '<em><b>Right Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Right Content</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1039,7 +1075,7 @@ public interface CvclipsePackage extends EPackage {
 	int PROFESSIONAL_TRAINING_BLOCK__ITEMS = ITEM_BLOCK__ITEMS;
 
 	/**
-	 * The feature id for the '<em><b>Title</b></em>' containment reference.
+	 * The feature id for the '<em><b>Title</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1076,7 +1112,7 @@ public interface CvclipsePackage extends EPackage {
 	int DATE_ITEM = 18;
 
 	/**
-	 * The feature id for the '<em><b>Right Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Right Content</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1131,7 +1167,7 @@ public interface CvclipsePackage extends EPackage {
 	int TEXT_ITEM = 19;
 
 	/**
-	 * The feature id for the '<em><b>Right Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Right Content</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1140,7 +1176,7 @@ public interface CvclipsePackage extends EPackage {
 	int TEXT_ITEM__RIGHT_CONTENT = ITEM__RIGHT_CONTENT;
 
 	/**
-	 * The feature id for the '<em><b>Left Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Left Content</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1222,14 +1258,14 @@ public interface CvclipsePackage extends EPackage {
 	int DATE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapFieldImpl <em>Text Map Field</em>}' class.
+	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapFieldImpl
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getTextMapField()
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguageToTextMapEntry()
 	 * @generated
 	 */
-	int TEXT_MAP_FIELD = 21;
+	int LANGUAGE_TO_TEXT_MAP_ENTRY = 21;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -1238,71 +1274,34 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_MAP_FIELD__KEY = 0;
+	int LANGUAGE_TO_TEXT_MAP_ENTRY__KEY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_MAP_FIELD__VALUE = 1;
+	int LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Text Map Field</em>' class.
+	 * The number of structural features of the '<em>Language To Text Map Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_MAP_FIELD_FEATURE_COUNT = 2;
+	int LANGUAGE_TO_TEXT_MAP_ENTRY_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Text Map Field</em>' class.
+	 * The number of operations of the '<em>Language To Text Map Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_MAP_FIELD_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapImpl <em>Text Map</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapImpl
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getTextMap()
-	 * @generated
-	 */
-	int TEXT_MAP = 22;
-
-	/**
-	 * The feature id for the '<em><b>Fields</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_MAP__FIELDS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Text Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_MAP_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Text Map</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_MAP_OPERATION_COUNT = 0;
+	int LANGUAGE_TO_TEXT_MAP_ENTRY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Languages <em>Languages</em>}' enum.
@@ -1312,7 +1311,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguages()
 	 * @generated
 	 */
-	int LANGUAGES = 23;
+	int LANGUAGES = 22;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Styles <em>Styles</em>}' enum.
@@ -1322,7 +1321,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getStyles()
 	 * @generated
 	 */
-	int STYLES = 24;
+	int STYLES = 23;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Colors <em>Colors</em>}' enum.
@@ -1332,7 +1331,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getColors()
 	 * @generated
 	 */
-	int COLORS = 25;
+	int COLORS = 24;
 
 
 	/**
@@ -1378,10 +1377,10 @@ public interface CvclipsePackage extends EPackage {
 	EClass getLetter();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getOpening <em>Opening</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getOpening <em>Opening</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Opening</em>'.
+	 * @return the meta object for the map '<em>Opening</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getOpening()
 	 * @see #getLetter()
 	 * @generated
@@ -1389,10 +1388,10 @@ public interface CvclipsePackage extends EPackage {
 	EReference getLetter_Opening();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getClosing <em>Closing</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getClosing <em>Closing</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Closing</em>'.
+	 * @return the meta object for the map '<em>Closing</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getClosing()
 	 * @see #getLetter()
 	 * @generated
@@ -1400,10 +1399,10 @@ public interface CvclipsePackage extends EPackage {
 	EReference getLetter_Closing();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getEnclosure <em>Enclosure</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getEnclosure <em>Enclosure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Enclosure</em>'.
+	 * @return the meta object for the map '<em>Enclosure</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getEnclosure()
 	 * @see #getLetter()
 	 * @generated
@@ -1411,15 +1410,70 @@ public interface CvclipsePackage extends EPackage {
 	EReference getLetter_Enclosure();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getText <em>Text</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Text</em>'.
+	 * @return the meta object for the map '<em>Text</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getText()
 	 * @see #getLetter()
 	 * @generated
 	 */
 	EReference getLetter_Text();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientCompany <em>Recipient Company</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recipient Company</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientCompany()
+	 * @see #getLetter()
+	 * @generated
+	 */
+	EAttribute getLetter_RecipientCompany();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientStreet <em>Recipient Street</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recipient Street</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientStreet()
+	 * @see #getLetter()
+	 * @generated
+	 */
+	EAttribute getLetter_RecipientStreet();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientCity <em>Recipient City</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recipient City</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientCity()
+	 * @see #getLetter()
+	 * @generated
+	 */
+	EAttribute getLetter_RecipientCity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientCountry <em>Recipient Country</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recipient Country</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientCountry()
+	 * @see #getLetter()
+	 * @generated
+	 */
+	EAttribute getLetter_RecipientCountry();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientAttention <em>Recipient Attention</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recipient Attention</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Letter#getRecipientAttention()
+	 * @see #getLetter()
+	 * @generated
+	 */
+	EAttribute getLetter_RecipientAttention();
 
 	/**
 	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.Application <em>Application</em>}'.
@@ -1596,17 +1650,6 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getPersonalInformation_Street();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getHouseNumber <em>House Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>House Number</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getHouseNumber()
-	 * @see #getPersonalInformation()
-	 * @generated
-	 */
-	EAttribute getPersonalInformation_HouseNumber();
-
-	/**
 	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1616,17 +1659,6 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPersonalInformation_Country();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getZipCode <em>Zip Code</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Zip Code</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getZipCode()
-	 * @see #getPersonalInformation()
-	 * @generated
-	 */
-	EAttribute getPersonalInformation_ZipCode();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCity <em>City</em>}'.
@@ -1717,10 +1749,10 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getPersonalInformation_LinkedIn();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getMaritalStatus <em>Marital Status</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getMaritalStatus <em>Marital Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Marital Status</em>'.
+	 * @return the meta object for the map '<em>Marital Status</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getMaritalStatus()
 	 * @see #getPersonalInformation()
 	 * @generated
@@ -1728,10 +1760,10 @@ public interface CvclipsePackage extends EPackage {
 	EReference getPersonalInformation_MaritalStatus();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getNationality <em>Nationality</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getNationality <em>Nationality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Nationality</em>'.
+	 * @return the meta object for the map '<em>Nationality</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getNationality()
 	 * @see #getPersonalInformation()
 	 * @generated
@@ -1748,6 +1780,17 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPersonalInformation_Birthdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto <em>Photo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Photo</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto()
+	 * @see #getPersonalInformation()
+	 * @generated
+	 */
+	EAttribute getPersonalInformation_Photo();
 
 	/**
 	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.Block <em>Block</em>}'.
@@ -1771,10 +1814,10 @@ public interface CvclipsePackage extends EPackage {
 	EReference getBlock_Items();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.Block#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.Block#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Title</em>'.
+	 * @return the meta object for the map '<em>Title</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Block#getTitle()
 	 * @see #getBlock()
 	 * @generated
@@ -1913,10 +1956,10 @@ public interface CvclipsePackage extends EPackage {
 	EClass getItem();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.Item#getRightContent <em>Right Content</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.Item#getRightContent <em>Right Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right Content</em>'.
+	 * @return the meta object for the map '<em>Right Content</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Item#getRightContent()
 	 * @see #getItem()
 	 * @generated
@@ -1976,10 +2019,10 @@ public interface CvclipsePackage extends EPackage {
 	EClass getTextItem();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextItem#getLeftContent <em>Left Content</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextItem#getLeftContent <em>Left Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left Content</em>'.
+	 * @return the meta object for the map '<em>Left Content</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextItem#getLeftContent()
 	 * @see #getTextItem()
 	 * @generated
@@ -2030,57 +2073,38 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getDate_Year();
 
 	/**
-	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMapField <em>Text Map Field</em>}'.
+	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Language To Text Map Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text Map Field</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMapField
+	 * @return the meta object for class '<em>Language To Text Map Entry</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyDataType="de.tu_bs.cs.isf.mbse.cvclipse.Languages" keyRequired="true"
+	 *        valueType="de.tu_bs.cs.isf.mbse.cvclipse.Text" valueContainment="true" valueRequired="true"
 	 * @generated
 	 */
-	EClass getTextMapField();
+	EClass getLanguageToTextMapEntry();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMapField#getKey <em>Key</em>}'.
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMapField#getKey()
-	 * @see #getTextMapField()
+	 * @see java.util.Map.Entry
+	 * @see #getLanguageToTextMapEntry()
 	 * @generated
 	 */
-	EAttribute getTextMapField_Key();
+	EAttribute getLanguageToTextMapEntry_Key();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMapField#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link java.util.Map.Entry <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Value</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMapField#getValue()
-	 * @see #getTextMapField()
+	 * @return the meta object for the containment reference '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getLanguageToTextMapEntry()
 	 * @generated
 	 */
-	EReference getTextMapField_Value();
-
-	/**
-	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMap <em>Text Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text Map</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMap
-	 * @generated
-	 */
-	EClass getTextMap();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMap#getFields <em>Fields</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Fields</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMap#getFields()
-	 * @see #getTextMap()
-	 * @generated
-	 */
-	EReference getTextMap_Fields();
+	EReference getLanguageToTextMapEntry_Value();
 
 	/**
 	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Languages <em>Languages</em>}'.
@@ -2172,7 +2196,7 @@ public interface CvclipsePackage extends EPackage {
 		EClass LETTER = eINSTANCE.getLetter();
 
 		/**
-		 * The meta object literal for the '<em><b>Opening</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Opening</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2180,7 +2204,7 @@ public interface CvclipsePackage extends EPackage {
 		EReference LETTER__OPENING = eINSTANCE.getLetter_Opening();
 
 		/**
-		 * The meta object literal for the '<em><b>Closing</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Closing</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2188,7 +2212,7 @@ public interface CvclipsePackage extends EPackage {
 		EReference LETTER__CLOSING = eINSTANCE.getLetter_Closing();
 
 		/**
-		 * The meta object literal for the '<em><b>Enclosure</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Enclosure</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2196,12 +2220,52 @@ public interface CvclipsePackage extends EPackage {
 		EReference LETTER__ENCLOSURE = eINSTANCE.getLetter_Enclosure();
 
 		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Text</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference LETTER__TEXT = eINSTANCE.getLetter_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Recipient Company</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LETTER__RECIPIENT_COMPANY = eINSTANCE.getLetter_RecipientCompany();
+
+		/**
+		 * The meta object literal for the '<em><b>Recipient Street</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LETTER__RECIPIENT_STREET = eINSTANCE.getLetter_RecipientStreet();
+
+		/**
+		 * The meta object literal for the '<em><b>Recipient City</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LETTER__RECIPIENT_CITY = eINSTANCE.getLetter_RecipientCity();
+
+		/**
+		 * The meta object literal for the '<em><b>Recipient Country</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LETTER__RECIPIENT_COUNTRY = eINSTANCE.getLetter_RecipientCountry();
+
+		/**
+		 * The meta object literal for the '<em><b>Recipient Attention</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LETTER__RECIPIENT_ATTENTION = eINSTANCE.getLetter_RecipientAttention();
 
 		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ApplicationImpl <em>Application</em>}' class.
@@ -2336,28 +2400,12 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute PERSONAL_INFORMATION__STREET = eINSTANCE.getPersonalInformation_Street();
 
 		/**
-		 * The meta object literal for the '<em><b>House Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSONAL_INFORMATION__HOUSE_NUMBER = eINSTANCE.getPersonalInformation_HouseNumber();
-
-		/**
 		 * The meta object literal for the '<em><b>Country</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PERSONAL_INFORMATION__COUNTRY = eINSTANCE.getPersonalInformation_Country();
-
-		/**
-		 * The meta object literal for the '<em><b>Zip Code</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSONAL_INFORMATION__ZIP_CODE = eINSTANCE.getPersonalInformation_ZipCode();
 
 		/**
 		 * The meta object literal for the '<em><b>City</b></em>' attribute feature.
@@ -2424,7 +2472,7 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute PERSONAL_INFORMATION__LINKED_IN = eINSTANCE.getPersonalInformation_LinkedIn();
 
 		/**
-		 * The meta object literal for the '<em><b>Marital Status</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Marital Status</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2432,7 +2480,7 @@ public interface CvclipsePackage extends EPackage {
 		EReference PERSONAL_INFORMATION__MARITAL_STATUS = eINSTANCE.getPersonalInformation_MaritalStatus();
 
 		/**
-		 * The meta object literal for the '<em><b>Nationality</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Nationality</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2446,6 +2494,14 @@ public interface CvclipsePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERSONAL_INFORMATION__BIRTHDATE = eINSTANCE.getPersonalInformation_Birthdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Photo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PERSONAL_INFORMATION__PHOTO = eINSTANCE.getPersonalInformation_Photo();
 
 		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BlockImpl <em>Block</em>}' class.
@@ -2466,7 +2522,7 @@ public interface CvclipsePackage extends EPackage {
 		EReference BLOCK__ITEMS = eINSTANCE.getBlock_Items();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Title</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2602,7 +2658,7 @@ public interface CvclipsePackage extends EPackage {
 		EClass ITEM = eINSTANCE.getItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Right Content</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Right Content</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2656,7 +2712,7 @@ public interface CvclipsePackage extends EPackage {
 		EClass TEXT_ITEM = eINSTANCE.getTextItem();
 
 		/**
-		 * The meta object literal for the '<em><b>Left Content</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Left Content</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2698,14 +2754,14 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute DATE__YEAR = eINSTANCE.getDate_Year();
 
 		/**
-		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapFieldImpl <em>Text Map Field</em>}' class.
+		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapFieldImpl
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getTextMapField()
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguageToTextMapEntry()
 		 * @generated
 		 */
-		EClass TEXT_MAP_FIELD = eINSTANCE.getTextMapField();
+		EClass LANGUAGE_TO_TEXT_MAP_ENTRY = eINSTANCE.getLanguageToTextMapEntry();
 
 		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -2713,33 +2769,15 @@ public interface CvclipsePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEXT_MAP_FIELD__KEY = eINSTANCE.getTextMapField_Key();
+		EAttribute LANGUAGE_TO_TEXT_MAP_ENTRY__KEY = eINSTANCE.getLanguageToTextMapEntry_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEXT_MAP_FIELD__VALUE = eINSTANCE.getTextMapField_Value();
-
-		/**
-		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapImpl <em>Text Map</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.TextMapImpl
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getTextMap()
-		 * @generated
-		 */
-		EClass TEXT_MAP = eINSTANCE.getTextMap();
-
-		/**
-		 * The meta object literal for the '<em><b>Fields</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEXT_MAP__FIELDS = eINSTANCE.getTextMap_Fields();
+		EReference LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE = eINSTANCE.getLanguageToTextMapEntry_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Languages <em>Languages</em>}' enum.

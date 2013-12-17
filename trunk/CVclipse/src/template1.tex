@@ -1,0 +1,84 @@
+\documentclass[12pt,a4paper,sans]{moderncv}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[${language.toString()}]{babel}
+\usepackage[scale=0.75]{geometry}
+
+\moderncvstyle{${application.getStyle().toString()}}
+\moderncvcolor{${application.getColor().toString()}}
+
+\name{${application.getPersonalInformation().getFirstname()}}{${application.getPersonalInformation().getSurname()}}
+\address{${application.getPersonalInformation().getStreet()}}{${application.getPersonalInformation().getCity()}<#if application.getPersonalInformation().getCountry()??>, ${application.getPersonalInformation().getCountry()}</#if>}
+<#if application.getPersonalInformation().getMobile()??>
+\phone[mobile]{${application.getPersonalInformation().getMobile()}}
+</#if>
+<#if application.getPersonalInformation().getPhone()??>
+\phone[fixed]{${application.getPersonalInformation().getPhone()}}
+</#if>
+<#if application.getPersonalInformation().getFax()??>
+\phone[fax]{${application.getPersonalInformation().getFax()}}
+</#if>
+<#if application.getPersonalInformation().getEmail()??>
+\email{${application.getPersonalInformation().getEmail()}}
+</#if>
+<#if application.getPersonalInformation().getHomepage()??>
+\homepage{${application.getPersonalInformation().getHomepage()}}
+</#if>
+<#if application.getPersonalInformation().getTwitter()??>
+\social[twitter]{${application.getPersonalInformation().getTwitter()}}
+</#if>
+<#if application.getPersonalInformation().getLinkedIn()??>
+\social[linkedin]{${application.getPersonalInformation().getLinkedIn()}}
+</#if>
+<#if application.getPersonalInformation().getGithub()??>
+\social[github]{${application.getPersonalInformation().getGithub()}}
+</#if>
+<#if application.getPersonalInformation().getPhoto()??>
+\photo[64pt][0.4pt]{${application.getPersonalInformation().getPhoto()}}
+</#if>
+
+% redefine without fullstop at end
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
+    %.\strut%
+    \strut%
+    \ifx&#7&%
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
+\setlength{\hintscolumnwidth}{3.5cm}		% change date column width
+
+\begin{document}
+
+<#assign letter = application.getLetter()>
+<#if letter??>
+\recipient{<#if letter.getRecipientAttention()??>${letter.getRecipientAttention()}</#if>}{${letter.getRecipientCompany()}\\${letter.getRecipientStreet()}\\${letter.getRecipientCity()}<#if letter.getRecipientCountry()??>, ${letter.getRecipientCountry()}</#if>}
+\date{<#if application.getDate()>${application.getDate().toString()}<#else>\today</#if>}
+\opening{${application.getOpening().get(language).toString()}}
+\closing{${application.getClosing().get(language).toString()}}
+\enclosure{${application.getEnclosure().get(language).toString()}}
+\makelettertitle
+
+${application.getText().get(language).toString()}
+
+\makeletterclosing
+
+\clearpage
+</#if>
+
+\makecvtitle
+
+\section{Angaben zur Person}	% TEMPLATE
+\cventry{Staatsangehörigkeit}{deutsch}{}{}{}{}	% TEMPLATE
+
+\section{Schulausbildung}	% TEMPLATE
+\cventry{1995--1999}{Grundschule Oyten}{}{}{}{}	% TEMPLATE
+
+\emptysection \closesection \vspace{4cm}
+Braunschweig, den \today	% TEMPLATE
+
+\end {document}

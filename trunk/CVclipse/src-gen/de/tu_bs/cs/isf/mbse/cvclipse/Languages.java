@@ -26,7 +26,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GERMAN(0, "GERMAN", "GERMAN"),
+	GERMAN(0, "GERMAN", "ngerman"),
 
 	/**
 	 * The '<em><b>ENGLISH</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENGLISH(1, "ENGLISH", "ENGLISH"),
+	ENGLISH(1, "ENGLISH", "english"),
 
 	/**
 	 * The '<em><b>FRENCH</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FRENCH(2, "FRENCH", "FRENCH"),
+	FRENCH(2, "FRENCH", "french"),
 
 	/**
 	 * The '<em><b>ITALIAN</b></em>' literal object.
@@ -56,7 +56,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ITALIAN(3, "ITALIAN", "ITALIAN"),
+	ITALIAN(3, "ITALIAN", "italian"),
 
 	/**
 	 * The '<em><b>SPANISH</b></em>' literal object.
@@ -66,7 +66,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPANISH(4, "SPANISH", "SPANISH"),
+	SPANISH(4, "SPANISH", "spanish"),
 
 	/**
 	 * The '<em><b>PORTUGUESE</b></em>' literal object.
@@ -76,7 +76,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PORTUGUESE(5, "PORTUGUESE", "PORTUGUESE"),
+	PORTUGUESE(5, "PORTUGUESE", "portuguese"),
 
 	/**
 	 * The '<em><b>POLISH</b></em>' literal object.
@@ -86,7 +86,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POLISH(6, "POLISH", "POLISH"),
+	POLISH(6, "POLISH", "polish"),
 
 	/**
 	 * The '<em><b>CZECH</b></em>' literal object.
@@ -96,7 +96,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CZECH(7, "CZECH", "CZECH");
+	CZECH(7, "CZECH", "czech");
 
 	/**
 	 * The '<em><b>GERMAN</b></em>' literal value.
@@ -107,7 +107,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #GERMAN
-	 * @model
+	 * @model literal="ngerman"
 	 * @generated
 	 * @ordered
 	 */
@@ -122,7 +122,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ENGLISH
-	 * @model
+	 * @model literal="english"
 	 * @generated
 	 * @ordered
 	 */
@@ -137,7 +137,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #FRENCH
-	 * @model
+	 * @model literal="french"
 	 * @generated
 	 * @ordered
 	 */
@@ -152,7 +152,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ITALIAN
-	 * @model
+	 * @model literal="italian"
 	 * @generated
 	 * @ordered
 	 */
@@ -167,7 +167,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SPANISH
-	 * @model
+	 * @model literal="spanish"
 	 * @generated
 	 * @ordered
 	 */
@@ -182,7 +182,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PORTUGUESE
-	 * @model
+	 * @model literal="portuguese"
 	 * @generated
 	 * @ordered
 	 */
@@ -197,7 +197,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POLISH
-	 * @model
+	 * @model literal="polish"
 	 * @generated
 	 * @ordered
 	 */
@@ -212,7 +212,7 @@ public enum Languages implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CZECH
-	 * @model
+	 * @model literal="czech"
 	 * @generated
 	 * @ordered
 	 */

@@ -4,7 +4,10 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextMap;
+import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
+
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,14 +33,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public abstract class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	/**
-	 * The cached value of the '{@link #getRightContent() <em>Right Content</em>}' containment reference.
+	 * The cached value of the '{@link #getRightContent() <em>Right Content</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRightContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected TextMap rightContent;
+	protected Map.Entry<Languages, Text> rightContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,7 +66,7 @@ public abstract class ItemImpl extends MinimalEObjectImpl.Container implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TextMap getRightContent() {
+	public Map.Entry<Languages, Text> getRightContent() {
 		return rightContent;
 	}
 
@@ -72,8 +75,8 @@ public abstract class ItemImpl extends MinimalEObjectImpl.Container implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRightContent(TextMap newRightContent, NotificationChain msgs) {
-		TextMap oldRightContent = rightContent;
+	public NotificationChain basicSetRightContent(Map.Entry<Languages, Text> newRightContent, NotificationChain msgs) {
+		Map.Entry<Languages, Text> oldRightContent = rightContent;
 		rightContent = newRightContent;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.ITEM__RIGHT_CONTENT, oldRightContent, newRightContent);
@@ -87,7 +90,7 @@ public abstract class ItemImpl extends MinimalEObjectImpl.Container implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setRightContent(TextMap newRightContent) {
+	public void setRightContent(Map.Entry<Languages, Text> newRightContent) {
 		if (newRightContent != rightContent) {
 			NotificationChain msgs = null;
 			if (rightContent != null)
@@ -134,11 +137,12 @@ public abstract class ItemImpl extends MinimalEObjectImpl.Container implements I
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				setRightContent((TextMap)newValue);
+				setRightContent((Map.Entry<Languages, Text>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,7 +157,7 @@ public abstract class ItemImpl extends MinimalEObjectImpl.Container implements I
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				setRightContent((TextMap)null);
+				setRightContent((Map.Entry<Languages, Text>)null);
 				return;
 		}
 		super.eUnset(featureID);

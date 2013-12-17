@@ -4,6 +4,8 @@ package de.tu_bs.cs.isf.mbse.cvclipse.util;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.*;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -152,12 +154,8 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 				return createDateAdapter();
 			}
 			@Override
-			public Adapter caseTextMapField(TextMapField object) {
-				return createTextMapFieldAdapter();
-			}
-			@Override
-			public Adapter caseTextMap(TextMap object) {
-				return createTextMapAdapter();
+			public Adapter caseLanguageToTextMapEntry(Map.Entry<Languages, Text> object) {
+				return createLanguageToTextMapEntryAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -474,30 +472,16 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMapField <em>Text Map Field</em>}'.
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Language To Text Map Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMapField
+	 * @see java.util.Map.Entry
 	 * @generated
 	 */
-	public Adapter createTextMapFieldAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.TextMap <em>Text Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.TextMap
-	 * @generated
-	 */
-	public Adapter createTextMapAdapter() {
+	public Adapter createLanguageToTextMapEntryAdapter() {
 		return null;
 	}
 
