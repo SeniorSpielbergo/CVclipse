@@ -5,8 +5,16 @@
 \usepackage[${language.toString()}]{babel}
 \usepackage[scale=0.75]{geometry}
 
-\moderncvstyle{${application.getStyle().toString()}}
-\moderncvcolor{${application.getColor().toString()}}
+\moderncvstyle{<#if application.getStyle().toString()??> 
+${application.getStyle().toString()}
+<#else>
+casual
+</#if>}
+\moderncvcolor{<#if application.getColor().toString()??> 
+${application.getColor().toString()}
+<#else>
+blue
+</#if>}
 
 \name{${application.getPersonalInformation().getFirstname()}}{${application.getPersonalInformation().getSurname()}}
 \address{${application.getPersonalInformation().getStreet()}}{${application.getPersonalInformation().getCity()}<#if application.getPersonalInformation().getCountry()??>, ${application.getPersonalInformation().getCountry()}</#if>}
