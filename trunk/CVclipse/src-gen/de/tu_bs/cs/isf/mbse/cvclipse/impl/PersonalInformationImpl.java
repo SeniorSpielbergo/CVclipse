@@ -48,7 +48,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getNationality <em>Nationality</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getBirthdate <em>Birthdate</em>}</li>
- *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getPhoto <em>Photo</em>}</li>
  * </ul>
  * </p>
  *
@@ -384,26 +383,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected Date birthdate;
-
-	/**
-	 * The default value of the '{@link #getPhoto() <em>Photo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhoto()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PHOTO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPhoto() <em>Photo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPhoto()
-	 * @generated
-	 * @ordered
-	 */
-	protected String photo = PHOTO_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -811,27 +790,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPhoto() {
-		return photo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPhoto(String newPhoto) {
-		String oldPhoto = photo;
-		photo = newPhoto;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.PERSONAL_INFORMATION__PHOTO, oldPhoto, photo));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -891,8 +849,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				else return getNationality().map();
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				return getBirthdate();
-			case CvclipsePackage.PERSONAL_INFORMATION__PHOTO:
-				return getPhoto();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -958,9 +914,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return;
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				setBirthdate((Date)newValue);
-				return;
-			case CvclipsePackage.PERSONAL_INFORMATION__PHOTO:
-				setPhoto((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1028,9 +981,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				setBirthdate((Date)null);
 				return;
-			case CvclipsePackage.PERSONAL_INFORMATION__PHOTO:
-				setPhoto(PHOTO_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1079,8 +1029,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return nationality != null && !nationality.isEmpty();
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				return birthdate != null;
-			case CvclipsePackage.PERSONAL_INFORMATION__PHOTO:
-				return PHOTO_EDEFAULT == null ? photo != null : !PHOTO_EDEFAULT.equals(photo);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1125,8 +1073,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 		result.append(github);
 		result.append(", linkedIn: ");
 		result.append(linkedIn);
-		result.append(", photo: ");
-		result.append(photo);
 		result.append(')');
 		return result.toString();
 	}

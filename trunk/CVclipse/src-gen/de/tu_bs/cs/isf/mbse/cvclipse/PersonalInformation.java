@@ -32,7 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getNationality <em>Nationality</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthdate <em>Birthdate</em>}</li>
- *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto <em>Photo</em>}</li>
  * </ul>
  * </p>
  *
@@ -490,31 +489,5 @@ public interface PersonalInformation extends EObject {
 	 * @generated
 	 */
 	void setBirthdate(Date value);
-
-	/**
-	 * Returns the value of the '<em><b>Photo</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Photo</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Photo</em>' attribute.
-	 * @see #setPhoto(String)
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_Photo()
-	 * @model
-	 * @generated
-	 */
-	String getPhoto();
-
-	/**
-	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto <em>Photo</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Photo</em>' attribute.
-	 * @see #getPhoto()
-	 * @generated
-	 */
-	void setPhoto(String value);
 
 } // PersonalInformation

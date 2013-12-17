@@ -46,11 +46,7 @@
     <eLiterals name="GERMAN" literal="ngerman"/>
     <eLiterals name="ENGLISH" value="1" literal="english"/>
     <eLiterals name="FRENCH" value="2" literal="french"/>
-    <eLiterals name="ITALIAN" value="3" literal="italian"/>
-    <eLiterals name="SPANISH" value="4" literal="spanish"/>
-    <eLiterals name="PORTUGUESE" value="5" literal="portuguese"/>
-    <eLiterals name="POLISH" value="6" literal="polish"/>
-    <eLiterals name="CZECH" value="7" literal="czech"/>
+    <eLiterals name="SPANISH" value="3" literal="spanish"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PersonalInformation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="twitter" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

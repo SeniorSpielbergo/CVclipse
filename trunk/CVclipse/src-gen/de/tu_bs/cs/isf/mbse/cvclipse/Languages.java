@@ -49,16 +49,6 @@ public enum Languages implements Enumerator {
 	FRENCH(2, "FRENCH", "french"),
 
 	/**
-	 * The '<em><b>ITALIAN</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #ITALIAN_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	ITALIAN(3, "ITALIAN", "italian"),
-
-	/**
 	 * The '<em><b>SPANISH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,37 +56,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPANISH(4, "SPANISH", "spanish"),
-
-	/**
-	 * The '<em><b>PORTUGUESE</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #PORTUGUESE_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	PORTUGUESE(5, "PORTUGUESE", "portuguese"),
-
-	/**
-	 * The '<em><b>POLISH</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #POLISH_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	POLISH(6, "POLISH", "polish"),
-
-	/**
-	 * The '<em><b>CZECH</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #CZECH_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	CZECH(7, "CZECH", "czech");
+	SPANISH(3, "SPANISH", "spanish");
 
 	/**
 	 * The '<em><b>GERMAN</b></em>' literal value.
@@ -144,21 +104,6 @@ public enum Languages implements Enumerator {
 	public static final int FRENCH_VALUE = 2;
 
 	/**
-	 * The '<em><b>ITALIAN</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>ITALIAN</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #ITALIAN
-	 * @model literal="italian"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int ITALIAN_VALUE = 3;
-
-	/**
 	 * The '<em><b>SPANISH</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -171,52 +116,7 @@ public enum Languages implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPANISH_VALUE = 4;
-
-	/**
-	 * The '<em><b>PORTUGUESE</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>PORTUGUESE</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #PORTUGUESE
-	 * @model literal="portuguese"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int PORTUGUESE_VALUE = 5;
-
-	/**
-	 * The '<em><b>POLISH</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>POLISH</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #POLISH
-	 * @model literal="polish"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int POLISH_VALUE = 6;
-
-	/**
-	 * The '<em><b>CZECH</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>CZECH</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #CZECH
-	 * @model literal="czech"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int CZECH_VALUE = 7;
+	public static final int SPANISH_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Languages</b></em>' enumerators.
@@ -229,11 +129,7 @@ public enum Languages implements Enumerator {
 			GERMAN,
 			ENGLISH,
 			FRENCH,
-			ITALIAN,
 			SPANISH,
-			PORTUGUESE,
-			POLISH,
-			CZECH,
 		};
 
 	/**
@@ -287,11 +183,7 @@ public enum Languages implements Enumerator {
 			case GERMAN_VALUE: return GERMAN;
 			case ENGLISH_VALUE: return ENGLISH;
 			case FRENCH_VALUE: return FRENCH;
-			case ITALIAN_VALUE: return ITALIAN;
 			case SPANISH_VALUE: return SPANISH;
-			case PORTUGUESE_VALUE: return PORTUGUESE;
-			case POLISH_VALUE: return POLISH;
-			case CZECH_VALUE: return CZECH;
 		}
 		return null;
 	}

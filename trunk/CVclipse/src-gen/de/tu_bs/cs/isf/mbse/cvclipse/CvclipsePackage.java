@@ -486,22 +486,13 @@ public interface CvclipsePackage extends EPackage {
 	int PERSONAL_INFORMATION__BIRTHDATE = 17;
 
 	/**
-	 * The feature id for the '<em><b>Photo</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSONAL_INFORMATION__PHOTO = 18;
-
-	/**
 	 * The number of structural features of the '<em>Personal Information</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION_FEATURE_COUNT = 19;
+	int PERSONAL_INFORMATION_FEATURE_COUNT = 18;
 
 	/**
 	 * The number of operations of the '<em>Personal Information</em>' class.
@@ -1837,17 +1828,6 @@ public interface CvclipsePackage extends EPackage {
 	EReference getPersonalInformation_Birthdate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto <em>Photo</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Photo</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhoto()
-	 * @see #getPersonalInformation()
-	 * @generated
-	 */
-	EAttribute getPersonalInformation_Photo();
-
-	/**
 	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.Block <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2569,14 +2549,6 @@ public interface CvclipsePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PERSONAL_INFORMATION__BIRTHDATE = eINSTANCE.getPersonalInformation_Birthdate();
-
-		/**
-		 * The meta object literal for the '<em><b>Photo</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSONAL_INFORMATION__PHOTO = eINSTANCE.getPersonalInformation_Photo();
 
 		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BlockImpl <em>Block</em>}' class.

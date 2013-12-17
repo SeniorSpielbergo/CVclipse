@@ -656,15 +656,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPersonalInformation_Photo() {
-		return (EAttribute)personalInformationEClass.getEStructuralFeatures().get(18);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getBlock() {
 		return blockEClass;
 	}
@@ -1047,7 +1038,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEReference(personalInformationEClass, PERSONAL_INFORMATION__MARITAL_STATUS);
 		createEReference(personalInformationEClass, PERSONAL_INFORMATION__NATIONALITY);
 		createEReference(personalInformationEClass, PERSONAL_INFORMATION__BIRTHDATE);
-		createEAttribute(personalInformationEClass, PERSONAL_INFORMATION__PHOTO);
 
 		blockEClass = createEClass(BLOCK);
 		createEReference(blockEClass, BLOCK__ITEMS);
@@ -1192,7 +1182,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEReference(getPersonalInformation_MaritalStatus(), this.getLanguageToTextMapEntry(), null, "maritalStatus", null, 0, -1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPersonalInformation_Nationality(), this.getLanguageToTextMapEntry(), null, "nationality", null, 0, -1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPersonalInformation_Birthdate(), this.getDate(), null, "birthdate", null, 1, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPersonalInformation_Photo(), ecorePackage.getEString(), "photo", null, 0, 1, PersonalInformation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBlock_Items(), this.getItem(), null, "items", null, 1, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1251,11 +1240,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		addEEnumLiteral(languagesEEnum, Languages.GERMAN);
 		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
 		addEEnumLiteral(languagesEEnum, Languages.FRENCH);
-		addEEnumLiteral(languagesEEnum, Languages.ITALIAN);
 		addEEnumLiteral(languagesEEnum, Languages.SPANISH);
-		addEEnumLiteral(languagesEEnum, Languages.PORTUGUESE);
-		addEEnumLiteral(languagesEEnum, Languages.POLISH);
-		addEEnumLiteral(languagesEEnum, Languages.CZECH);
 
 		initEEnum(stylesEEnum, Styles.class, "Styles");
 		addEEnumLiteral(stylesEEnum, Styles.CASUAL);
