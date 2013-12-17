@@ -5,8 +5,10 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -254,18 +256,26 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CvclipsePackage.DATE___TO_STRING:
+				return toString();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (day: ");
-		result.append(day);
-		result.append(", month: ");
-		result.append(month);
-		result.append(", year: ");
-		result.append(year);
-		result.append(')');
-		return result.toString();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if(day!=0) {
+			return ""+year+"/"+month+"/"+day;
+		} else {
+			return ""+year+"/"+month;
+		}
 	}
 
 } //DateImpl

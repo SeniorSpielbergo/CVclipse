@@ -33,6 +33,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -709,6 +710,15 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getText__ToString() {
+		return textEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBoldText() {
 		return boldTextEClass;
 	}
@@ -907,6 +917,15 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDate__ToString() {
+		return dateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLanguageToTextMapEntry() {
 		return languageToTextMapEntryEClass;
 	}
@@ -1036,6 +1055,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 
 		textEClass = createEClass(TEXT);
 		createEAttribute(textEClass, TEXT__CONTENT);
+		createEOperation(textEClass, TEXT___TO_STRING);
 
 		boldTextEClass = createEClass(BOLD_TEXT);
 
@@ -1073,6 +1093,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEAttribute(dateEClass, DATE__DAY);
 		createEAttribute(dateEClass, DATE__MONTH);
 		createEAttribute(dateEClass, DATE__YEAR);
+		createEOperation(dateEClass, DATE___TO_STRING);
 
 		languageToTextMapEntryEClass = createEClass(LANGUAGE_TO_TEXT_MAP_ENTRY);
 		createEAttribute(languageToTextMapEntryEClass, LANGUAGE_TO_TEXT_MAP_ENTRY__KEY);
@@ -1180,6 +1201,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getText__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(boldTextEClass, BoldText.class, "BoldText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(italicTextEClass, ItalicText.class, "ItalicText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1216,6 +1239,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEAttribute(getDate_Day(), ecorePackage.getEInt(), "day", null, 0, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDate_Month(), ecorePackage.getEInt(), "month", null, 1, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDate_Year(), ecorePackage.getEInt(), "year", null, 1, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getDate__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(languageToTextMapEntryEClass, Map.Entry.class, "LanguageToTextMapEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLanguageToTextMapEntry_Key(), this.getLanguages(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

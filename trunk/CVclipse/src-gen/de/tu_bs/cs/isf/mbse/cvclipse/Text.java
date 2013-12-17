@@ -47,4 +47,12 @@ public interface Text extends EObject {
 	 */
 	void setContent(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='return content;'"
+	 * @generated
+	 */
+	String toString();
+
 } // Text

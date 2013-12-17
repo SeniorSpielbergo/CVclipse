@@ -5,8 +5,10 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -150,14 +152,22 @@ public class TextImpl extends MinimalEObjectImpl.Container implements Text {
 	 * @generated
 	 */
 	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CvclipsePackage.TEXT___TO_STRING:
+				return toString();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (content: ");
-		result.append(content);
-		result.append(')');
-		return result.toString();
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		return content;
 	}
 
 } //TextImpl

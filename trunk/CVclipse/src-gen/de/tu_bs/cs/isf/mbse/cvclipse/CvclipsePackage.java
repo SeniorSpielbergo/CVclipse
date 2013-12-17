@@ -5,6 +5,7 @@ package de.tu_bs.cs.isf.mbse.cvclipse;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -586,13 +587,22 @@ public interface CvclipsePackage extends EPackage {
 	int TEXT_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT___TO_STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_OPERATION_COUNT = 0;
+	int TEXT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BoldTextImpl <em>Bold Text</em>}' class.
@@ -621,6 +631,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int BOLD_TEXT_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_TEXT___TO_STRING = TEXT___TO_STRING;
 
 	/**
 	 * The number of operations of the '<em>Bold Text</em>' class.
@@ -660,6 +679,15 @@ public interface CvclipsePackage extends EPackage {
 	int ITALIC_TEXT_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITALIC_TEXT___TO_STRING = TEXT___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Italic Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -695,6 +723,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int BOLD_ITALIC_TEXT_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_ITALIC_TEXT___TO_STRING = TEXT___TO_STRING;
 
 	/**
 	 * The number of operations of the '<em>Bold Italic Text</em>' class.
@@ -1010,6 +1047,15 @@ public interface CvclipsePackage extends EPackage {
 	int LINE_BREAK_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINE_BREAK___TO_STRING = TEXT___TO_STRING;
+
+	/**
 	 * The number of operations of the '<em>Line Break</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1249,13 +1295,22 @@ public interface CvclipsePackage extends EPackage {
 	int DATE_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE___TO_STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Date</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_OPERATION_COUNT = 0;
+	int DATE_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
@@ -1846,6 +1901,16 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getText_Content();
 
 	/**
+	 * Returns the meta object for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Text#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Text#toString()
+	 * @generated
+	 */
+	EOperation getText__ToString();
+
+	/**
 	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.BoldText <em>Bold Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2071,6 +2136,16 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getDate_Year();
+
+	/**
+	 * Returns the meta object for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Date#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Date#toString()
+	 * @generated
+	 */
+	EOperation getDate__ToString();
 
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Language To Text Map Entry</em>}'.
@@ -2548,6 +2623,14 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute TEXT__CONTENT = eINSTANCE.getText_Content();
 
 		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TEXT___TO_STRING = eINSTANCE.getText__ToString();
+
+		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BoldTextImpl <em>Bold Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2752,6 +2835,14 @@ public interface CvclipsePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DATE__YEAR = eINSTANCE.getDate_Year();
+
+		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATE___TO_STRING = eINSTANCE.getDate__ToString();
 
 		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
