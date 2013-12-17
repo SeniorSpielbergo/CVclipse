@@ -378,22 +378,13 @@ public interface CvclipsePackage extends EPackage {
 	int PERSONAL_INFORMATION__STREET = 5;
 
 	/**
-	 * The feature id for the '<em><b>Country</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSONAL_INFORMATION__COUNTRY = 6;
-
-	/**
 	 * The feature id for the '<em><b>City</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__CITY = 7;
+	int PERSONAL_INFORMATION__CITY = 6;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
@@ -402,7 +393,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__EMAIL = 8;
+	int PERSONAL_INFORMATION__EMAIL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Phone</b></em>' attribute.
@@ -411,7 +402,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__PHONE = 9;
+	int PERSONAL_INFORMATION__PHONE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Mobile</b></em>' attribute.
@@ -420,7 +411,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__MOBILE = 10;
+	int PERSONAL_INFORMATION__MOBILE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Fax</b></em>' attribute.
@@ -429,7 +420,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__FAX = 11;
+	int PERSONAL_INFORMATION__FAX = 10;
 
 	/**
 	 * The feature id for the '<em><b>Website</b></em>' attribute.
@@ -438,7 +429,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__WEBSITE = 12;
+	int PERSONAL_INFORMATION__WEBSITE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Github</b></em>' attribute.
@@ -447,7 +438,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__GITHUB = 13;
+	int PERSONAL_INFORMATION__GITHUB = 12;
 
 	/**
 	 * The feature id for the '<em><b>Linked In</b></em>' attribute.
@@ -456,7 +447,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__LINKED_IN = 14;
+	int PERSONAL_INFORMATION__LINKED_IN = 13;
 
 	/**
 	 * The feature id for the '<em><b>Marital Status</b></em>' map.
@@ -465,7 +456,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__MARITAL_STATUS = 15;
+	int PERSONAL_INFORMATION__MARITAL_STATUS = 14;
 
 	/**
 	 * The feature id for the '<em><b>Nationality</b></em>' map.
@@ -474,7 +465,7 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__NATIONALITY = 16;
+	int PERSONAL_INFORMATION__NATIONALITY = 15;
 
 	/**
 	 * The feature id for the '<em><b>Birthdate</b></em>' containment reference.
@@ -483,7 +474,16 @@ public interface CvclipsePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PERSONAL_INFORMATION__BIRTHDATE = 17;
+	int PERSONAL_INFORMATION__BIRTHDATE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Country</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSONAL_INFORMATION__COUNTRY = 17;
 
 	/**
 	 * The number of structural features of the '<em>Personal Information</em>' class.
@@ -1696,15 +1696,15 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getPersonalInformation_Street();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}'.
+	 * Returns the meta object for the map '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Country</em>'.
+	 * @return the meta object for the map '<em>Country</em>'.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry()
 	 * @see #getPersonalInformation()
 	 * @generated
 	 */
-	EAttribute getPersonalInformation_Country();
+	EReference getPersonalInformation_Country();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCity <em>City</em>}'.
@@ -2455,12 +2455,12 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute PERSONAL_INFORMATION__STREET = eINSTANCE.getPersonalInformation_Street();
 
 		/**
-		 * The meta object literal for the '<em><b>Country</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Country</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PERSONAL_INFORMATION__COUNTRY = eINSTANCE.getPersonalInformation_Country();
+		EReference PERSONAL_INFORMATION__COUNTRY = eINSTANCE.getPersonalInformation_Country();
 
 		/**
 		 * The meta object literal for the '<em><b>City</b></em>' attribute feature.

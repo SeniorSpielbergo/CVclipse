@@ -36,7 +36,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getBirthName <em>Birth Name</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getBirthplace <em>Birthplace</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getStreet <em>Street</em>}</li>
- *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getCountry <em>Country</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getCity <em>City</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getPhone <em>Phone</em>}</li>
@@ -48,6 +47,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getNationality <em>Nationality</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getBirthdate <em>Birthdate</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl#getCountry <em>Country</em>}</li>
  * </ul>
  * </p>
  *
@@ -173,26 +173,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected String street = STREET_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCountry() <em>Country</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCountry()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String COUNTRY_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCountry() <em>Country</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCountry()
-	 * @generated
-	 * @ordered
-	 */
-	protected String country = COUNTRY_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCity() <em>City</em>}' attribute.
@@ -385,6 +365,16 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 	protected Date birthdate;
 
 	/**
+	 * The cached value of the '{@link #getCountry() <em>Country</em>}' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCountry()
+	 * @generated
+	 * @ordered
+	 */
+	protected EMap<Languages, Text> country;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -534,20 +524,11 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getCountry() {
+	public EMap<Languages, Text> getCountry() {
+		if (country == null) {
+			country = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__COUNTRY);
+		}
 		return country;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setCountry(String newCountry) {
-		String oldCountry = country;
-		country = newCountry;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.PERSONAL_INFORMATION__COUNTRY, oldCountry, country));
 	}
 
 	/**
@@ -799,6 +780,8 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return ((InternalEList<?>)getNationality()).basicRemove(otherEnd, msgs);
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				return basicSetBirthdate(null, msgs);
+			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
+				return ((InternalEList<?>)getCountry()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -823,8 +806,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return getBirthplace();
 			case CvclipsePackage.PERSONAL_INFORMATION__STREET:
 				return getStreet();
-			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
-				return getCountry();
 			case CvclipsePackage.PERSONAL_INFORMATION__CITY:
 				return getCity();
 			case CvclipsePackage.PERSONAL_INFORMATION__EMAIL:
@@ -849,6 +830,9 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				else return getNationality().map();
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				return getBirthdate();
+			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
+				if (coreType) return getCountry();
+				else return getCountry().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -878,9 +862,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return;
 			case CvclipsePackage.PERSONAL_INFORMATION__STREET:
 				setStreet((String)newValue);
-				return;
-			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
-				setCountry((String)newValue);
 				return;
 			case CvclipsePackage.PERSONAL_INFORMATION__CITY:
 				setCity((String)newValue);
@@ -915,6 +896,9 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				setBirthdate((Date)newValue);
 				return;
+			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
+				((EStructuralFeature.Setting)getCountry()).set(newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -944,9 +928,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return;
 			case CvclipsePackage.PERSONAL_INFORMATION__STREET:
 				setStreet(STREET_EDEFAULT);
-				return;
-			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
-				setCountry(COUNTRY_EDEFAULT);
 				return;
 			case CvclipsePackage.PERSONAL_INFORMATION__CITY:
 				setCity(CITY_EDEFAULT);
@@ -981,6 +962,9 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				setBirthdate((Date)null);
 				return;
+			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
+				getCountry().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1005,8 +989,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return BIRTHPLACE_EDEFAULT == null ? birthplace != null : !BIRTHPLACE_EDEFAULT.equals(birthplace);
 			case CvclipsePackage.PERSONAL_INFORMATION__STREET:
 				return STREET_EDEFAULT == null ? street != null : !STREET_EDEFAULT.equals(street);
-			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
-				return COUNTRY_EDEFAULT == null ? country != null : !COUNTRY_EDEFAULT.equals(country);
 			case CvclipsePackage.PERSONAL_INFORMATION__CITY:
 				return CITY_EDEFAULT == null ? city != null : !CITY_EDEFAULT.equals(city);
 			case CvclipsePackage.PERSONAL_INFORMATION__EMAIL:
@@ -1029,6 +1011,8 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 				return nationality != null && !nationality.isEmpty();
 			case CvclipsePackage.PERSONAL_INFORMATION__BIRTHDATE:
 				return birthdate != null;
+			case CvclipsePackage.PERSONAL_INFORMATION__COUNTRY:
+				return country != null && !country.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1055,8 +1039,6 @@ public class PersonalInformationImpl extends MinimalEObjectImpl.Container implem
 		result.append(birthplace);
 		result.append(", street: ");
 		result.append(street);
-		result.append(", country: ");
-		result.append(country);
 		result.append(", city: ");
 		result.append(city);
 		result.append(", email: ");

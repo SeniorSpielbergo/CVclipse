@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthName <em>Birth Name</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthplace <em>Birthplace</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getStreet <em>Street</em>}</li>
- *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCity <em>City</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getEmail <em>Email</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getPhone <em>Phone</em>}</li>
@@ -32,6 +31,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getMaritalStatus <em>Marital Status</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getNationality <em>Nationality</em>}</li>
  *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getBirthdate <em>Birthdate</em>}</li>
+ *   <li>{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}</li>
  * </ul>
  * </p>
  *
@@ -197,30 +197,21 @@ public interface PersonalInformation extends EObject {
 	void setStreet(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Country</b></em>' attribute.
+	 * Returns the value of the '<em><b>Country</b></em>' map.
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Country</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Country</em>' attribute.
-	 * @see #setCountry(String)
+	 * @return the value of the '<em>Country</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_Country()
-	 * @model
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	String getCountry();
-
-	/**
-	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation#getCountry <em>Country</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Country</em>' attribute.
-	 * @see #getCountry()
-	 * @generated
-	 */
-	void setCountry(String value);
+	EMap<Languages, Text> getCountry();
 
 	/**
 	 * Returns the value of the '<em><b>City</b></em>' attribute.
