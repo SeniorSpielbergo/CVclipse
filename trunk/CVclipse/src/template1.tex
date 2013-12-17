@@ -34,8 +34,8 @@
 <#if application.getPersonalInformation().getGithub()??>
 \social[github]{${application.getPersonalInformation().getGithub()}}
 </#if>
-<#if application.getPersonalInformation().getPhoto()??>
-\photo[64pt][0.4pt]{${application.getPersonalInformation().getPhoto()}}
+<#if application.getCV().getPicture()??>
+\photo[64pt][0.4pt]{${application.getCV().getPicture()}}
 </#if>
 
 % redefine without fullstop at end
@@ -72,13 +72,20 @@ ${application.getText().get(language).toString()}
 
 \makecvtitle
 
-\section{Angaben zur Person}	% TEMPLATE
-\cventry{Staatsangehörigkeit}{deutsch}{}{}{}{}	% TEMPLATE
+<#list application.getCV().getBlocks() as block>
 
-\section{Schulausbildung}	% TEMPLATE
-\cventry{1995--1999}{Grundschule Oyten}{}{}{}{}	% TEMPLATE
+\section{${block.getTitle().get(language).toString()}}
+
+<#list block.getItems() as item>
+<#if item.class.simpleName == "DateItem">
+\cventry{${item.getBegin().toString()}<#if item.getEnd()??>--${item.getEnd().toString()}</#if>}{${item.getRightContent().get(language).toString()}{}{}{}{}
+<#else>
+\cventry{${item.getLeftContent().get(language).toString()}}{${item.getRightContent().get(language).toString()}}{}{}{}{}
+</#if>
+</#list>
+</#list>
 
 \emptysection \closesection \vspace{4cm}
-Braunschweig, den \today	% TEMPLATE
+${application.getPlace().toString()}, <#if application.getDate()??>${application.getDate().toString()}><#else>\today</#if>
 
 \end {document}

@@ -194,10 +194,6 @@
         <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/linkedIn"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_ftg3xWcKEeObOpAE5N_OHg"/>
       </children>
-      <children xmi:type="notation:Node" xmi:id="_fthe0GcKEeObOpAE5N_OHg" type="2001">
-        <element xmi:type="ecore:EAttribute" href="CVclipse.ecore#//PersonalInformation/photo"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_fthe0WcKEeObOpAE5N_OHg"/>
-      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_ftdNZGcKEeObOpAE5N_OHg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_ftdNZWcKEeObOpAE5N_OHg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_ftdNZmcKEeObOpAE5N_OHg"/>
