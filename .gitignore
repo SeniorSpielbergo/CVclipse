@@ -4,4 +4,6 @@
 *.out
 *.snm
 *.toc
+*.class
+*.synctex.gz
 trunk/CVclipse/bin/*
