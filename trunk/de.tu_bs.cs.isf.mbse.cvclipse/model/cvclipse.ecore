@@ -8,12 +8,12 @@
         upperBound="-1" eType="#//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Letter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opening" lowerBound="1"
-        eType="#//LanguageToTextMapEntry" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="closing" lowerBound="1"
-        eType="#//LanguageToTextMapEntry" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosure" lowerBound="1"
-        eType="#//LanguageToTextMapEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opening" eType="#//LanguageToTextMapEntry"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="closing" eType="#//LanguageToTextMapEntry"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosure" eType="#//LanguageToTextMapEntry"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" eType="#//LanguageToTextMapEntry"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCompany" lowerBound="1"
@@ -22,10 +22,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCity" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCountry" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientAttention" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCountry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientAttention" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cv" lowerBound="1" eType="#//CV"

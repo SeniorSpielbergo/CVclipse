@@ -5,6 +5,8 @@ START Application
 TOKENS {
 	DEFINE EMAIL TEXT + $'@'$ + TEXT + $'.'$ + TEXT;
 	DEFINE TWITTER $'@'$ + TEXT;
+	DEFINE TWO_DIGIT $('0'..'9')('0'..'9')$;
+	DEFINE FOUR_DIGIT $('0'..'9')('0'..'9')('0'..'9')('0'..'9')$;
 }
 
 RULES {
@@ -36,13 +38,25 @@ RULES {
 							("github" ":" github[TEXT])?
 							("linkedin" ":" linkedIn[TEXT])?
 							("twitter" ":" twitter[TWITTER])?;
+							
 	Letter ::= "letter"
 				"recipient"
 				("company" ":" recipientCompany[TEXT])
 				("street" ":" recipientStreet[TEXT])
 				("city" ":" recipientCity[TEXT])
-				;
-	Date ::= "date";
-	CV ::= "cv";
+				("country" ":" recipientCountry[TEXT])?
+				("attention" ":" recipientAttention[TEXT])?
+				("opening" ":" opening)?
+				("text" ":" text)
+				("closing" ":" closing)?
+				("enclosure" ":" enclosure)?;
+				
+	CV ::= "cv"
+			"picture" ":" picture[TEXT]?
+			blocks+;
+			
+	Date ::= year[FOUR_DIGIT] "/" month[TWO_DIGIT] ("/" day[TWO_DIGIT])?;
+	
 	LanguageToTextMapEntry ::= "bla";
+	ItemBlock ::= "block";
 }
