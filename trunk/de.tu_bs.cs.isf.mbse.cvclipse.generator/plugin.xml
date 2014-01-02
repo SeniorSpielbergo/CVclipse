@@ -4,13 +4,69 @@
    <extension
          point="org.eclipse.ui.commands">
       <category
-            id="de.tu_bs.cs.isf.mbse.cvclipse.generator.category1"
+            id="de.tu_bs.cs.isf.mbse.cvclipse.generator.commands.category"
             name="CVclipse">
       </category>
       <command
-            id="de.tu_bs.cs.isf.mbse.cvclipse.generator.command1"
+            id="de.tu_bs.cs.isf.mbse.cvclipse.generator.commands.runCommand"
             name="Generate CV">
       </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.tu_bs.cs.isf.mbse.cvclipse.handlers.RunHandler"
+            commandId="de.tu_bs.cs.isf.mbse.cvclipse.generator.commands.runCommand">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               id="de.tu_bs.cs.isf.mbse.cvclipse.generator.menus.cvMenu"
+               label="CVclipse">
+            <command
+                  commandId="de.tu_bs.cs.isf.mbse.cvclipse.generator.commands.runCommand"
+                  id="de.tu_bs.cs.isf.mbse.cvclipse.generator.menus.runCommand"
+                  mnemonic="R"
+                  style="push">
+               <visibleWhen
+                     checkEnabled="false">
+               </visibleWhen>
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
+         <menu
+               id="de.tu_bs.cs.isf.mbse.cvclipse.generator.menus.cvMenu"
+               label="CVclipse">
+            <visibleWhen>
+               <iterate
+                     operator="and">
+                  <or>
+                     <adapt
+                           type="org.eclipse.core.resources.IResource">
+                        <or>
+                           <test
+                                 property="org.eclipse.core.resources.name"
+                                 value="*.cv">
+                           </test>
+                        </or>
+                     </adapt>
+                  </or>
+               </iterate>
+            </visibleWhen>
+            <command
+                  commandId="de.tu_bs.cs.isf.mbse.cvclipse.generator.commands.runCommand"
+                  label="Generate CV"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
    </extension>
 
 </plugin>
