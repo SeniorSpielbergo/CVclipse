@@ -25,11 +25,11 @@ RULES {
 							("birthname" ":" birthName[TEXT]) 		| // ?
 							("birthplace" ":" birthplace[TEXT])		|
 							("birthdate" ":" birthdate)				|
-							("marital status" ":" maritalStatus) 	| // ?
-							("nationality" ":" nationality) 		| // ?
+							("marital status" ":" maritalStatus ("," maritalStatus)*) 	| // ?
+							("nationality" ":" nationality ("," nationality)*) 		| // ?
 							("street" ":" street[TEXT])				|
 							("city" ":" city[TEXT])					|
-							("country" ":" country) 				| // ?
+							("country" ":" country ("," country)*) 				| // ?
 							("email" ":" email[EMAIL]) 				| // ?
 							("phone" ":" phone[TEXT]) 				| // ?
 							("mobile" ":" mobile[TEXT]) 			| // ?
@@ -47,10 +47,10 @@ RULES {
 				("city" ":" recipientCity[TEXT])					|
 				("country" ":" recipientCountry[TEXT])				| // ?
 				("attention" ":" recipientAttention[TEXT])			| // ?
-				("opening" ":" opening)								| // ?
-				("text" ":" text)									|
-				("closing" ":" closing)								| // ?
-				("enclosure" ":" enclosure)							  // ?
+				("opening" ":" opening ("," opening)*)								| // ?
+				("text" ":" text ("," text)*)									|
+				("closing" ":" closing("," closing)*)								| // ?
+				("enclosure" ":" enclosure ("," enclosure)*)							  // ?
 				)*;
 				
 	CV ::= "cv"
@@ -58,11 +58,11 @@ RULES {
 			blocks+;
 	
 	ItemBlock ::= "block"
-					"title" ":" title
+					"title" ":" title ("," title)*
 					(items)+;
 					
-	TextItem ::= ((leftContent) ("," leftContent)*)? "|" rightContent;
-	DateItem ::= begin ("-" end)? "|" rightContent;
+	TextItem ::= ((leftContent) ("," leftContent)*)? "|" rightContent ("," rightContent)*;
+	DateItem ::= begin ("-" end)? "|" rightContent ("," rightContent)*;
 			
 	Date ::= year[FOUR_DIGIT] "/" month[TWO_DIGIT] ("/" day[TWO_DIGIT])?;
 	
