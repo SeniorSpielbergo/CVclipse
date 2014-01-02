@@ -125,8 +125,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextItem" eSuperTypes="#//Item">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="leftContent" eType="#//LanguageToTextMapEntry"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftContent" upperBound="-1"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Date">
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
