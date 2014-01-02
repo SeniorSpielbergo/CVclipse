@@ -11,6 +11,12 @@ public class CvTokenStyleInformationProvider {
 	public static String TASK_ITEM_TOKEN_NAME = "TASK_ITEM";
 	
 	public de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenStyle getDefaultTokenStyle(String tokenName) {
+		if ("EMAIL".equals(tokenName)) {
+			return new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTokenStyle(new int[] {0x00, 0x00, 0xFF}, null, false, false, false, false);
+		}
+		if ("TWITTER".equals(tokenName)) {
+			return new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTokenStyle(new int[] {0x00, 0x00, 0xFF}, null, false, false, false, false);
+		}
 		if ("options".equals(tokenName)) {
 			return new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTokenStyle(new int[] {0x80, 0x00, 0x55}, null, true, false, false, false);
 		}

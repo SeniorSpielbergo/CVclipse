@@ -3,10 +3,15 @@ FOR <http://www.tu-braunschweig.de/isf/cvclipse/1.0><model/cvlipse.genmodel>
 START Application
 
 TOKENS {
-	DEFINE EMAIL TEXT + $'@'$ + TEXT + $'.'$ + TEXT;
-	DEFINE TWITTER $'@'$ + TEXT;
+	DEFINE EMAIL $'"'$ + TEXT + $'@'$ + TEXT + $'.'$ + TEXT + $'"'$;
+	DEFINE TWITTER $'"'$ + $'@'$ + TEXT + $'"'$;
 	DEFINE TWO_DIGIT $('0'..'9')('0'..'9')$;
 	DEFINE FOUR_DIGIT $('0'..'9')('0'..'9')('0'..'9')('0'..'9')$;
+}
+
+TOKENSTYLES {
+	"EMAIL" COLOR #0000FF;
+	"TWITTER" COLOR #0000FF;
 }
 
 RULES {
