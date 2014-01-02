@@ -8,14 +8,14 @@
         upperBound="-1" eType="#//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Letter">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opening" eType="#//LanguageToTextMapEntry"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="closing" eType="#//LanguageToTextMapEntry"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosure" eType="#//LanguageToTextMapEntry"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" eType="#//LanguageToTextMapEntry"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opening" upperBound="-1"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="closing" upperBound="-1"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosure" upperBound="-1"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" lowerBound="1" upperBound="-1"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientCompany" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recipientStreet" lowerBound="1"
@@ -92,8 +92,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Block" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" lowerBound="1" upperBound="-1"
         eType="#//Item" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="title" lowerBound="1" eType="#//LanguageToTextMapEntry"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="title" lowerBound="1" upperBound="-1"
+        eType="#//LanguageToTextMapEntry" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Text">
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -116,7 +116,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LineBreak" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightContent" lowerBound="1"
-        eType="#//LanguageToTextMapEntry" containment="true"/>
+        upperBound="-1" eType="#//LanguageToTextMapEntry" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProfessionalTrainingBlock" eSuperTypes="#//ItemBlock"/>
   <eClassifiers xsi:type="ecore:EClass" name="DateItem" eSuperTypes="#//Item">
