@@ -1,10 +1,16 @@
-package de.tu_bs.cs.isf.mbse.cvclipse
+package de.tu_bs.cs.isf.mbse.cvclipse.generator
 
+import de.tu_bs.cs.isf.mbse.cvclipse.Application
+import de.tu_bs.cs.isf.mbse.cvclipse.Languages
 import java.io.File
 import java.io.FileOutputStream
 import java.util.List
 
 class M2T {
+	def M2T() {
+		
+	}
+	
 	// defaults
 	String DEFAULT_STYLE = "casual";
 	String DEFAULT_COLOR = "blue";

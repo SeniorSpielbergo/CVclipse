@@ -15,7 +15,7 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="de.tu_bs.cs.isf.mbse.cvclipse.handlers.RunHandler"
+            class="de.tu_bs.cs.isf.mbse.cvclipse.generator.RunHandler"
             commandId="de.tu_bs.cs.isf.mbse.cvclipse.generator.commands.runCommand">
       </handler>
    </extension>

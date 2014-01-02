@@ -1,7 +1,6 @@
-package de.tu_bs.cs.isf.mbse.cvclipse;
+package de.tu_bs.cs.isf.mbse.cvclipse.generator;
 
 import com.google.common.base.Objects;
-
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.CV;
 import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
@@ -9,11 +8,9 @@ import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
 import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
 import de.tu_bs.cs.isf.mbse.cvclipse.generator.ModelLoader;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
@@ -21,6 +18,10 @@ import org.eclipse.xtext.xbase.lib.Functions.Function0;
 
 @SuppressWarnings("all")
 public class M2T {
+  public Object M2T() {
+    return null;
+  }
+  
   private String DEFAULT_STYLE = "casual";
   
   private String DEFAULT_COLOR = "blue";

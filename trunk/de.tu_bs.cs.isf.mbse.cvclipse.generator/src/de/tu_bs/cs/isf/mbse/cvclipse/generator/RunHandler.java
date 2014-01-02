@@ -1,5 +1,6 @@
-package de.tu_bs.cs.isf.mbse.cvclipse.handlers;
+package de.tu_bs.cs.isf.mbse.cvclipse.generator;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,6 +13,8 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.handlers.HandlerUtil;
+
+import de.tu_bs.cs.isf.mbse.cvclipse.M2T;
 
 public class RunHandler extends AbstractHandler {
 
@@ -36,6 +39,12 @@ public class RunHandler extends AbstractHandler {
 		if (inputs.size() == 0) {
 			showErrorDialog(event, "No *.cv file selected in package explorer.");
 			return null;
+		}
+		
+		M2T m2t = new M2T();
+		for(String fileName : inputs) {
+			File file = new File(fileName);
+			m2t.generate(file.getParent(), file.getName().replace(".cv", ""));
 		}
 		
 		return null;
