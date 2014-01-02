@@ -14,50 +14,54 @@ RULES {
 					("languages" ":" languages[GERMAN : "german", ENGLISH : "english", FRENCH : "french", SPANISH : "spanish"](","languages[GERMAN : "german", ENGLISH : "english", FRENCH : "french", SPANISH : "spanish"])*) 
 					("style" ":" style[CASUAL : "casual", CLASSIC : "classic", OLDSTYLE : "oldstyle", BANKING : "banking"])?
 					("color" ":" color[BLUE : "blue", ORANGE : "orange", GREEN : "green", RED : "red", PURPLE : "purple", GREY : "grey", BLACK : "black"])?
-					("place" ":" place[TEXT])?
-					("date" ":" date)
-					("personal" personalInformation)
+					("place" ":" place['"','"'])?
+					("date" ":" date)?
+					(personalInformation)
 					(letter | cv)*; // letter?
 
 	PersonalInformation ::= "personal"
-							(("firstname" ":" firstname[TEXT])
-							("surname" ":" surname[TEXT])			|
-							("birthname" ":" birthName[TEXT]) 		| // ?
-							("birthplace" ":" birthplace[TEXT])		|
+							(("firstname" ":" firstname['"','"'])		|
+							("surname" ":" surname['"','"'])			|
+							("birthname" ":" birthName['"','"']) 		| // ?
+							("birthplace" ":" birthplace['"','"'])		|
 							("birthdate" ":" birthdate)				|
 							("marital status" ":" maritalStatus ("," maritalStatus)*) 	| // ?
 							("nationality" ":" nationality ("," nationality)*) 		| // ?
-							("street" ":" street[TEXT])				|
-							("city" ":" city[TEXT])					|
-							("country" ":" country ("," country)*) 				| // ?
+							("street" ":" street['"','"'])				|
+							("city" ":" city['"','"'])					|
+							("country" ":" country ("," country)*) 	| // ?
 							("email" ":" email[EMAIL]) 				| // ?
-							("phone" ":" phone[TEXT]) 				| // ?
-							("mobile" ":" mobile[TEXT]) 			| // ?
-							("fax" ":" fax[TEXT])					| // ?
-							("website" ":" website[TEXT])			| // ?
-							("github" ":" github[TEXT])				| // ?
-							("linkedin" ":" linkedIn[TEXT])			| // ?
+							("phone" ":" phone['"','"']) 				| // ?
+							("mobile" ":" mobile['"','"']) 			| // ?
+							("fax" ":" fax['"','"'])					| // ?
+							("website" ":" website['"','"'])			| // ?
+							("github" ":" github['"','"'])				| // ?
+							("linkedin" ":" linkedIn['"','"'])			| // ?
 							("twitter" ":" twitter[TWITTER]) 		  // ?
 							)*;
 							
 	Letter ::= "letter"
 				"recipient"
-				(("company" ":" recipientCompany[TEXT])				|
-				("street" ":" recipientStreet[TEXT])				|
-				("city" ":" recipientCity[TEXT])					|
-				("country" ":" recipientCountry[TEXT])				| // ?
-				("attention" ":" recipientAttention[TEXT])			| // ?
-				("opening" ":" opening ("," opening)*)								| // ?
-				("text" ":" text ("," text)*)									|
-				("closing" ":" closing("," closing)*)								| // ?
-				("enclosure" ":" enclosure ("," enclosure)*)							  // ?
+				(("company" ":" recipientCompany['"','"'])				|
+				("street" ":" recipientStreet['"','"'])				|
+				("city" ":" recipientCity['"','"'])					|
+				("country" ":" recipientCountry['"','"'])				| // ?
+				("attention" ":" recipientAttention['"','"'])			| // ?
+				("opening" ":" opening ("," opening)*)				| // ?
+				("text" ":" text ("," text)*)						|
+				("closing" ":" closing("," closing)*)				| // ?
+				("enclosure" ":" enclosure ("," enclosure)*)		  // ?
 				)*;
 				
 	CV ::= "cv"
-			"picture" ":" picture[TEXT]?
+			"picture" ":" picture['"','"']?
 			blocks+;
 	
 	ItemBlock ::= "block"
+					"title" ":" title ("," title)*
+					(items)+;
+					
+	ListBlock ::= "list"
 					"title" ":" title ("," title)*
 					(items)+;
 					
@@ -66,8 +70,8 @@ RULES {
 			
 	Date ::= year[FOUR_DIGIT] "/" month[TWO_DIGIT] ("/" day[TWO_DIGIT])?;
 	
-	LanguageToTextMapEntry ::= key[GERMAN : "german", ENGLISH : "english", FRENCH : "french", SPANISH : "spanish"] ":" value;
+	LanguageToTextMapEntry ::= key[GERMAN : "german", ENGLISH : "english", FRENCH : "french", SPANISH : "spanish"] value;
 	
-	Text ::= content[TEXT];
+	Text ::= content['"','"'];
 	
 }

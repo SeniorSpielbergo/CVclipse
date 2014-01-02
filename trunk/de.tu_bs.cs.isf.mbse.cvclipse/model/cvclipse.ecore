@@ -37,8 +37,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//Styles"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Colors"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="place" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="date" lowerBound="1" eType="#//Date"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Languages">
     <eLiterals name="GERMAN" literal="ngerman"/>

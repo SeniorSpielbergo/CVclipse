@@ -12,11 +12,15 @@ import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +44,7 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> rightContent;
+	protected EMap<Languages, Text> rightContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,42 +70,11 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<Languages, Text> getRightContent() {
+	public EMap<Languages, Text> getRightContent() {
+		if (rightContent == null) {
+			rightContent = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.ITEM__RIGHT_CONTENT);
+		}
 		return rightContent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetRightContent(Map.Entry<Languages, Text> newRightContent, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldRightContent = rightContent;
-		rightContent = newRightContent;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.ITEM__RIGHT_CONTENT, oldRightContent, newRightContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRightContent(Map.Entry<Languages, Text> newRightContent) {
-		if (newRightContent != rightContent) {
-			NotificationChain msgs = null;
-			if (rightContent != null)
-				msgs = ((InternalEObject)rightContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.ITEM__RIGHT_CONTENT, null, msgs);
-			if (newRightContent != null)
-				msgs = ((InternalEObject)newRightContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.ITEM__RIGHT_CONTENT, null, msgs);
-			msgs = basicSetRightContent(newRightContent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.ITEM__RIGHT_CONTENT, newRightContent, newRightContent));
 	}
 
 	/**
@@ -113,7 +86,7 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				return basicSetRightContent(null, msgs);
+				return ((InternalEList<?>)getRightContent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -127,7 +100,8 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				return getRightContent();
+				if (coreType) return getRightContent();
+				else return getRightContent().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -142,7 +116,7 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				setRightContent((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getRightContent()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -157,7 +131,7 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				setRightContent((Map.Entry<Languages, Text>)null);
+				getRightContent().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -172,7 +146,7 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.ITEM__RIGHT_CONTENT:
-				return rightContent != null;
+				return rightContent != null && !rightContent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

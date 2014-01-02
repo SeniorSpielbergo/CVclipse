@@ -12,10 +12,14 @@ import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +43,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> leftContent;
+	protected EMap<Languages, Text> leftContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,42 +69,11 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<Languages, Text> getLeftContent() {
+	public EMap<Languages, Text> getLeftContent() {
+		if (leftContent == null) {
+			leftContent = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.TEXT_ITEM__LEFT_CONTENT);
+		}
 		return leftContent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetLeftContent(Map.Entry<Languages, Text> newLeftContent, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldLeftContent = leftContent;
-		leftContent = newLeftContent;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.TEXT_ITEM__LEFT_CONTENT, oldLeftContent, newLeftContent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setLeftContent(Map.Entry<Languages, Text> newLeftContent) {
-		if (newLeftContent != leftContent) {
-			NotificationChain msgs = null;
-			if (leftContent != null)
-				msgs = ((InternalEObject)leftContent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.TEXT_ITEM__LEFT_CONTENT, null, msgs);
-			if (newLeftContent != null)
-				msgs = ((InternalEObject)newLeftContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.TEXT_ITEM__LEFT_CONTENT, null, msgs);
-			msgs = basicSetLeftContent(newLeftContent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.TEXT_ITEM__LEFT_CONTENT, newLeftContent, newLeftContent));
 	}
 
 	/**
@@ -112,7 +85,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				return basicSetLeftContent(null, msgs);
+				return ((InternalEList<?>)getLeftContent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -126,7 +99,8 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				return getLeftContent();
+				if (coreType) return getLeftContent();
+				else return getLeftContent().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -141,7 +115,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				setLeftContent((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getLeftContent()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,7 +130,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				setLeftContent((Map.Entry<Languages, Text>)null);
+				getLeftContent().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -171,7 +145,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.TEXT_ITEM__LEFT_CONTENT:
-				return leftContent != null;
+				return leftContent != null && !leftContent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

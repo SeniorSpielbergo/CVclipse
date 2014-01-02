@@ -12,11 +12,15 @@ import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +52,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> opening;
+	protected EMap<Languages, Text> opening;
 
 	/**
 	 * The cached value of the '{@link #getClosing() <em>Closing</em>}' map.
@@ -58,7 +62,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> closing;
+	protected EMap<Languages, Text> closing;
 
 	/**
 	 * The cached value of the '{@link #getEnclosure() <em>Enclosure</em>}' map.
@@ -68,7 +72,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> enclosure;
+	protected EMap<Languages, Text> enclosure;
 
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' map.
@@ -78,7 +82,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> text;
+	protected EMap<Languages, Text> text;
 
 	/**
 	 * The default value of the '{@link #getRecipientCompany() <em>Recipient Company</em>}' attribute.
@@ -204,7 +208,10 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<Languages, Text> getOpening() {
+	public EMap<Languages, Text> getOpening() {
+		if (opening == null) {
+			opening = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__OPENING);
+		}
 		return opening;
 	}
 
@@ -213,41 +220,10 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOpening(Map.Entry<Languages, Text> newOpening, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldOpening = opening;
-		opening = newOpening;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__OPENING, oldOpening, newOpening);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EMap<Languages, Text> getClosing() {
+		if (closing == null) {
+			closing = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__CLOSING);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOpening(Map.Entry<Languages, Text> newOpening) {
-		if (newOpening != opening) {
-			NotificationChain msgs = null;
-			if (opening != null)
-				msgs = ((InternalEObject)opening).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__OPENING, null, msgs);
-			if (newOpening != null)
-				msgs = ((InternalEObject)newOpening).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__OPENING, null, msgs);
-			msgs = basicSetOpening(newOpening, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__OPENING, newOpening, newOpening));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<Languages, Text> getClosing() {
 		return closing;
 	}
 
@@ -256,41 +232,10 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetClosing(Map.Entry<Languages, Text> newClosing, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldClosing = closing;
-		closing = newClosing;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__CLOSING, oldClosing, newClosing);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EMap<Languages, Text> getEnclosure() {
+		if (enclosure == null) {
+			enclosure = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__ENCLOSURE);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClosing(Map.Entry<Languages, Text> newClosing) {
-		if (newClosing != closing) {
-			NotificationChain msgs = null;
-			if (closing != null)
-				msgs = ((InternalEObject)closing).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__CLOSING, null, msgs);
-			if (newClosing != null)
-				msgs = ((InternalEObject)newClosing).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__CLOSING, null, msgs);
-			msgs = basicSetClosing(newClosing, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__CLOSING, newClosing, newClosing));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<Languages, Text> getEnclosure() {
 		return enclosure;
 	}
 
@@ -299,76 +244,11 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnclosure(Map.Entry<Languages, Text> newEnclosure, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldEnclosure = enclosure;
-		enclosure = newEnclosure;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__ENCLOSURE, oldEnclosure, newEnclosure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EMap<Languages, Text> getText() {
+		if (text == null) {
+			text = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__TEXT);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEnclosure(Map.Entry<Languages, Text> newEnclosure) {
-		if (newEnclosure != enclosure) {
-			NotificationChain msgs = null;
-			if (enclosure != null)
-				msgs = ((InternalEObject)enclosure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__ENCLOSURE, null, msgs);
-			if (newEnclosure != null)
-				msgs = ((InternalEObject)newEnclosure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__ENCLOSURE, null, msgs);
-			msgs = basicSetEnclosure(newEnclosure, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__ENCLOSURE, newEnclosure, newEnclosure));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<Languages, Text> getText() {
 		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetText(Map.Entry<Languages, Text> newText, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldText = text;
-		text = newText;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__TEXT, oldText, newText);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setText(Map.Entry<Languages, Text> newText) {
-		if (newText != text) {
-			NotificationChain msgs = null;
-			if (text != null)
-				msgs = ((InternalEObject)text).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__TEXT, null, msgs);
-			if (newText != null)
-				msgs = ((InternalEObject)newText).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.LETTER__TEXT, null, msgs);
-			msgs = basicSetText(newText, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LETTER__TEXT, newText, newText));
 	}
 
 	/**
@@ -485,13 +365,13 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				return basicSetOpening(null, msgs);
+				return ((InternalEList<?>)getOpening()).basicRemove(otherEnd, msgs);
 			case CvclipsePackage.LETTER__CLOSING:
-				return basicSetClosing(null, msgs);
+				return ((InternalEList<?>)getClosing()).basicRemove(otherEnd, msgs);
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				return basicSetEnclosure(null, msgs);
+				return ((InternalEList<?>)getEnclosure()).basicRemove(otherEnd, msgs);
 			case CvclipsePackage.LETTER__TEXT:
-				return basicSetText(null, msgs);
+				return ((InternalEList<?>)getText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -505,13 +385,17 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				return getOpening();
+				if (coreType) return getOpening();
+				else return getOpening().map();
 			case CvclipsePackage.LETTER__CLOSING:
-				return getClosing();
+				if (coreType) return getClosing();
+				else return getClosing().map();
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				return getEnclosure();
+				if (coreType) return getEnclosure();
+				else return getEnclosure().map();
 			case CvclipsePackage.LETTER__TEXT:
-				return getText();
+				if (coreType) return getText();
+				else return getText().map();
 			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
 				return getRecipientCompany();
 			case CvclipsePackage.LETTER__RECIPIENT_STREET:
@@ -536,16 +420,16 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				setOpening((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getOpening()).set(newValue);
 				return;
 			case CvclipsePackage.LETTER__CLOSING:
-				setClosing((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getClosing()).set(newValue);
 				return;
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				setEnclosure((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getEnclosure()).set(newValue);
 				return;
 			case CvclipsePackage.LETTER__TEXT:
-				setText((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getText()).set(newValue);
 				return;
 			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
 				setRecipientCompany((String)newValue);
@@ -575,16 +459,16 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				setOpening((Map.Entry<Languages, Text>)null);
+				getOpening().clear();
 				return;
 			case CvclipsePackage.LETTER__CLOSING:
-				setClosing((Map.Entry<Languages, Text>)null);
+				getClosing().clear();
 				return;
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				setEnclosure((Map.Entry<Languages, Text>)null);
+				getEnclosure().clear();
 				return;
 			case CvclipsePackage.LETTER__TEXT:
-				setText((Map.Entry<Languages, Text>)null);
+				getText().clear();
 				return;
 			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
 				setRecipientCompany(RECIPIENT_COMPANY_EDEFAULT);
@@ -614,13 +498,13 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case CvclipsePackage.LETTER__OPENING:
-				return opening != null;
+				return opening != null && !opening.isEmpty();
 			case CvclipsePackage.LETTER__CLOSING:
-				return closing != null;
+				return closing != null && !closing.isEmpty();
 			case CvclipsePackage.LETTER__ENCLOSURE:
-				return enclosure != null;
+				return enclosure != null && !enclosure.isEmpty();
 			case CvclipsePackage.LETTER__TEXT:
-				return text != null;
+				return text != null && !text.isEmpty();
 			case CvclipsePackage.LETTER__RECIPIENT_COMPANY:
 				return RECIPIENT_COMPANY_EDEFAULT == null ? recipientCompany != null : !RECIPIENT_COMPANY_EDEFAULT.equals(recipientCompany);
 			case CvclipsePackage.LETTER__RECIPIENT_STREET:

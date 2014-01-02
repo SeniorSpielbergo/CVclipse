@@ -221,7 +221,7 @@ public interface Application extends EObject {
 	 * @return the value of the '<em>Date</em>' containment reference.
 	 * @see #setDate(Date)
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getApplication_Date()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Date getDate();

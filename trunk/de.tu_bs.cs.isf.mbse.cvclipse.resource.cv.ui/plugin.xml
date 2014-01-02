@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.emftext.access.syntax.ui">
+		<metaInformationProvider class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvUIMetaInformation" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvUIMetaInformation">
+		</metaInformationProvider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors">
+		<editor class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvEditor" contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor" extensions="cv" icon="icons/editor_icon.gif" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvEditor" name="EMFText cv Editor">
+			<contentTypeBinding contentTypeId="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv">
+			</contentTypeBinding>
+		</editor>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvPreferenceInitializer">
+		</initializer>
+	</extension>
+	
+	<extension point="org.eclipse.ui.preferencePages">
+		<page name="Cv Text Editor" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvPreferencePage" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvPreferencePage" category="org.eclipse.ui.preferencePages.GeneralTextEditor">
+		</page>
+		<page name="Syntax Coloring" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvSyntaxColoringPreferencePage" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvSyntaxColoringPreferencePage" category="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvPreferencePage">
+		</page>
+		<page name="Brackets" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvBracketPreferencePage" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvBracketPreferencePage" category="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvPreferencePage">
+		</page>
+	</extension>
+	
+	<extension point="org.eclipse.ui.newWizards">
+		<category id="org.emftext.runtime.ui.EMFTextFileCategory" name="EMFText File">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextFileCategory" icon="/icons/default_new_icon.gif" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvNewFileWizard" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvNewFileWizard" name="EMFText .cv file">
+		</wizard>
+		<category id="org.emftext.runtime.ui.EMFTextProjectCategory" name="EMFText Project">
+		</category>
+		<wizard category="org.emftext.runtime.ui.EMFTextProjectCategory" icon="/icons/default_new_icon.gif" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvNewProjectWizard" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvNewProjectWizard" name="EMFText cv project" project="true">
+		</wizard>
+	</extension>
+	
+	<extension point="org.eclipse.ui.ide.markerResolution">
+		<markerResolutionGenerator class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvMarkerResolutionGenerator" markerType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.problem">
+		</markerResolutionGenerator>
+	</extension>
+	
+	<extension point="org.eclipse.core.filebuffers.annotationModelCreation">
+		<factory class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvAnnotationModelFactory" extensions="cv">
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv" name=".cv File" base-type="org.eclipse.core.runtime.text" file-extensions="cv">
+		</content-type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.documentProviders">
+		<provider class="org.eclipse.ui.editors.text.TextFileDocumentProvider" extensions="cv" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.provider">
+		</provider>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.occurences">
+		</type>
+		<type name="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.occurences.declaration" super="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.occurences">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.occurences" label="Occurrences (in .cv files)" icon="/icons/occurrence_icon.gif" textPreferenceKey="cv.occurrenceIndication" textPreferenceValue="false" highlightPreferenceKey="cv.occurrenceHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="cv.occurrenceIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="cv.occurrenceIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="cv.occurrenceIndicationColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="cv.showOccurrenceInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="cv.isOccurrenceGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="cv.isOccurrenceGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="cv.occurrenceTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+		<specification annotationType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.occurences.declaration" label="Declarations (in .cv files)" textPreferenceKey="cv.declarationIndication" textPreferenceValue="false" highlightPreferenceKey="cv.declarationHighlighting" highlightPreferenceValue="true" overviewRulerPreferenceKey="cv.declarationIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="cv.declarationIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="cv.declarationIndicationColor" colorPreferenceValue="240,216,168" presentationLayer="4" textStylePreferenceKey="cv.declarationTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.launchConfigurationType" id="de.tu_bs.cs.isf.mbse.cv.launchImage">
+		</launchConfigurationTypeImage>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+		<launchConfigurationTabGroup type="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.launchConfigurationType" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.launch.CvLaunchConfigurationTabGroup" id="de.tu_bs.cs.isf.mbse.cv.launchConfigurationTabGroup" helpContextId="de.tu_bs.cs.isf.mbse.cv.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug cv model.">
+			</launchMode>
+			<launchMode mode="run" description="Run cv model.">
+			</launchMode>
+		</launchConfigurationTabGroup>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.launchShortcuts">
+		<shortcut label="cv Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="de.tu_bs.cs.isf.mbse.cv.launch" modes="run,debug" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.launch.CvLaunchShortcut" description="Launch a cv model" id="de.tu_bs.cs.isf.mbse.cv.launchShortcut">
+			<description description="Run cv model" mode="run">
+			</description>
+			<description description="Debug cv model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="de.tu_bs.cs.isf.mbse.cv.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.launchConfigurationType">
+			</configurationType>
+		</shortcut>
+	</extension>
+	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester id="de.tu_bs.cs.isf.mbse.cv.PropertyTester" type="java.lang.Object" namespace="de.tu_bs.cs.isf.mbse.cv" properties="isLaunchable" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvPropertyTester">
+		</propertyTester>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.annotationTypes">
+		<type name="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.lineBreakpoint" markerType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.debug.lineBreakpoint.marker" super="org.eclipse.debug.core.breakpoint">
+		</type>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editors.markerAnnotationSpecification">
+		<specification annotationType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.lineBreakpoint" label="Breakpoints (in .cv files)" icon="/icons/breakpoint_icon.gif" textPreferenceKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.lineBreakpoint" textPreferenceValue="false" highlightPreferenceKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.lineBreakpointHighlighting" highlightPreferenceValue="true" contributesToHeader="false" overviewRulerPreferenceKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.lineBreakpointIndicationInOverviewRuler" overviewRulerPreferenceValue="true" verticalRulerPreferenceKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.lineBreakpointIndicationInVerticalRuler" verticalRulerPreferenceValue="false" colorPreferenceKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.lineBreakpointColor" colorPreferenceValue="212,212,212" presentationLayer="4" showInNextPrevDropdownToolbarActionKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.showLineBreakpointInNextPrevDropdownToolbarAction" showInNextPrevDropdownToolbarAction="true" isGoToNextNavigationTargetKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.isLineBreakpointGoToNextNavigationTarget" isGoToNextNavigationTarget="false" isGoToPreviousNavigationTargetKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.isLineBreakpointGoToPreviousNavigationTarget" isGoToPreviousNavigationTarget="false" textStylePreferenceKey="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.lineBreakpointTextStyle" textStylePreferenceValue="NONE">
+		</specification>
+	</extension>
+	
+	<extension point="org.eclipse.core.runtime.adapters">
+		<factory adaptableType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvEditor" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.CvAdapterFactory">
+			<adapter type="org.eclipse.debug.ui.actions.IToggleBreakpointsTarget">
+			</adapter>
+		</factory>
+		<factory adaptableType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.debug.CvDebugVariable" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.CvAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementLabelProvider">
+			</adapter>
+		</factory>
+		<factory adaptableType="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.debug.CvDebugVariable" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.CvAdapterFactory">
+			<adapter type="org.eclipse.debug.internal.ui.viewers.model.provisional.IElementContentProvider">
+			</adapter>
+		</factory>
+	</extension>
+	
+	<extension point="org.eclipse.ui.popupMenus">
+		<viewerContribution id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.RulerPopupActions" targetID="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.EditorRuler">
+			<action id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.toggleBreakpointAction" icon="icons/breakpoint_icon.gif" label="Toggle Breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" menubarPath="debug">
+			</action>
+		</viewerContribution>
+	</extension>
+	
+	<extension point="org.eclipse.ui.editorActions">
+		<editorContribution targetID="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.CvEditor" id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.BreakpointRulerActions">
+			<action id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.RulerToggleBreakpointAction" label="Add breakpoint" class="org.eclipse.debug.ui.actions.RulerToggleBreakpointActionDelegate" actionID="RulerDoubleClick">
+			</action>
+		</editorContribution>
+	</extension>
+	
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation id="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.debugModel" class="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ui.debug.CvDebugModelPresentation">
+		</debugModelPresentation>
+	</extension>
+	
+</plugin>

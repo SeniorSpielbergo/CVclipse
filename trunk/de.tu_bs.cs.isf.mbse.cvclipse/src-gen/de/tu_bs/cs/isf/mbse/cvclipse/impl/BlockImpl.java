@@ -16,13 +16,16 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -58,7 +61,7 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 	 * @generated
 	 * @ordered
 	 */
-	protected Map.Entry<Languages, Text> title;
+	protected EMap<Languages, Text> title;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,42 +99,11 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<Languages, Text> getTitle() {
+	public EMap<Languages, Text> getTitle() {
+		if (title == null) {
+			title = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.BLOCK__TITLE);
+		}
 		return title;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTitle(Map.Entry<Languages, Text> newTitle, NotificationChain msgs) {
-		Map.Entry<Languages, Text> oldTitle = title;
-		title = newTitle;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CvclipsePackage.BLOCK__TITLE, oldTitle, newTitle);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTitle(Map.Entry<Languages, Text> newTitle) {
-		if (newTitle != title) {
-			NotificationChain msgs = null;
-			if (title != null)
-				msgs = ((InternalEObject)title).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.BLOCK__TITLE, null, msgs);
-			if (newTitle != null)
-				msgs = ((InternalEObject)newTitle).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CvclipsePackage.BLOCK__TITLE, null, msgs);
-			msgs = basicSetTitle(newTitle, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.BLOCK__TITLE, newTitle, newTitle));
 	}
 
 	/**
@@ -145,7 +117,7 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 			case CvclipsePackage.BLOCK__ITEMS:
 				return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
 			case CvclipsePackage.BLOCK__TITLE:
-				return basicSetTitle(null, msgs);
+				return ((InternalEList<?>)getTitle()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -161,7 +133,8 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 			case CvclipsePackage.BLOCK__ITEMS:
 				return getItems();
 			case CvclipsePackage.BLOCK__TITLE:
-				return getTitle();
+				if (coreType) return getTitle();
+				else return getTitle().map();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,7 +153,7 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 				getItems().addAll((Collection<? extends Item>)newValue);
 				return;
 			case CvclipsePackage.BLOCK__TITLE:
-				setTitle((Map.Entry<Languages, Text>)newValue);
+				((EStructuralFeature.Setting)getTitle()).set(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -198,7 +171,7 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 				getItems().clear();
 				return;
 			case CvclipsePackage.BLOCK__TITLE:
-				setTitle((Map.Entry<Languages, Text>)null);
+				getTitle().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -215,7 +188,7 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 			case CvclipsePackage.BLOCK__ITEMS:
 				return items != null && !items.isEmpty();
 			case CvclipsePackage.BLOCK__TITLE:
-				return title != null;
+				return title != null && !title.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
