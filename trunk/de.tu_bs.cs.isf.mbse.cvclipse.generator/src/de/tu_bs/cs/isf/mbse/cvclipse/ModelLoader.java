@@ -9,11 +9,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvResourceFactory;
 
-public class Generator {
-
-	private static String folder = "/home/david/runtime-EclipseApplication/CV/";
-
-	public static void main(String[] args) {
+public class ModelLoader {
+	public Application loadModel(String folder) {
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap(
 				).put("cv", new CvResourceFactory());
 
@@ -22,7 +19,6 @@ public class Generator {
 		URI uri = URI.createFileURI(orig.getAbsolutePath());
 		Resource resource = rs.getResource(uri, true);
 		Application model = (Application) resource.getContents().get(0);
-		System.out.println(model.getStyle().getName());
+		return model;
 	}
-
 }
