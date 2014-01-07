@@ -30,7 +30,7 @@ public class Console {
 		disablePluginConsole = bool;
 	}
 	
-	public static final String CONSOLE = "familymining_output_console";
+	public static final String CONSOLE = "CVclipse Console";
 
 	// http://wiki.eclipse.org/FAQ_How_do_I_write_to_the_console_from_a_plug-in%3F
 	private static MessageConsole getConsole(String name) {
