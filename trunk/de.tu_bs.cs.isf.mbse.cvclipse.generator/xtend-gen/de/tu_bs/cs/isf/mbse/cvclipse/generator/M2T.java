@@ -4,18 +4,19 @@ import com.google.common.base.Objects;
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.CV;
-import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
+import de.tu_bs.cs.isf.mbse.cvclipse.Color;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
 import de.tu_bs.cs.isf.mbse.cvclipse.DateItem;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
 import de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
 import de.tu_bs.cs.isf.mbse.cvclipse.ListBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
-import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
+import de.tu_bs.cs.isf.mbse.cvclipse.Style;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
+import de.tu_bs.cs.isf.mbse.cvclipse.generator.Console;
 import de.tu_bs.cs.isf.mbse.cvclipse.generator.ModelLoader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -102,7 +103,7 @@ public class M2T {
   
   private Application app;
   
-  private List<Languages> languages;
+  private List<Language> languages;
   
   private File targetFile;
   
@@ -114,9 +115,9 @@ public class M2T {
     try {
       Application _loadModel = this.m.loadModel(folder, fileName);
       this.app = _loadModel;
-      EList<Languages> _languages = this.app.getLanguages();
+      EList<Language> _languages = this.app.getLanguages();
       this.languages = _languages;
-      for (final Languages l : this.languages) {
+      for (final Language l : this.languages) {
         {
           String _name = l.getName();
           String _lowerCase = _name.toLowerCase();
@@ -127,6 +128,10 @@ public class M2T {
           this.targetFile.createNewFile();
           FileOutputStream _fileOutputStream = new FileOutputStream(this.targetFile);
           this.streamy = _fileOutputStream;
+          String _name_1 = l.getName();
+          String _plus_2 = ("Generating CV in: \"" + _name_1);
+          String _plus_3 = (_plus_2 + "\"");
+          Console.println(_plus_3);
           String _generateContents = this.generateContents(l);
           String _replaceAll = _generateContents.replaceAll("\"", "");
           this.output = _replaceAll;
@@ -140,7 +145,7 @@ public class M2T {
     }
   }
   
-  public String generateContents(final Languages language) {
+  public String generateContents(final Language language) {
     StringConcatenation _builder = new StringConcatenation();
     String _generateHead = this.generateHead(language);
     _builder.append(_generateHead, "");
@@ -172,7 +177,7 @@ public class M2T {
     return _builder.toString();
   }
   
-  public String generateHead(final Languages language) {
+  public String generateHead(final Language language) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\documentclass[12pt,a4paper,sans]{moderncv}");
     _builder.newLine();
@@ -191,12 +196,12 @@ public class M2T {
     _builder.newLine();
     _builder.append("\\moderncvstyle{");
     {
-      Styles _style = this.app.getStyle();
+      Style _style = this.app.getStyle();
       boolean _equals = Objects.equal(_style, null);
       if (_equals) {
         _builder.append(this.DEFAULT_STYLE, "");
       } else {
-        Styles _style_1 = this.app.getStyle();
+        Style _style_1 = this.app.getStyle();
         String _literal_1 = _style_1.getLiteral();
         _builder.append(_literal_1, "");
       }
@@ -205,12 +210,12 @@ public class M2T {
     _builder.newLineIfNotEmpty();
     _builder.append("\\moderncvcolor{");
     {
-      Colors _color = this.app.getColor();
+      Color _color = this.app.getColor();
       boolean _equals_1 = Objects.equal(_color, null);
       if (_equals_1) {
         _builder.append(this.DEFAULT_COLOR, "");
       } else {
-        Colors _color_1 = this.app.getColor();
+        Color _color_1 = this.app.getColor();
         String _literal_2 = _color_1.getLiteral();
         _builder.append(_literal_2, "");
       }
@@ -220,7 +225,7 @@ public class M2T {
     return _builder.toString();
   }
   
-  public String generatePersonal(final Languages languages) {
+  public String generatePersonal(final Language languages) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\name{");
     PersonalInformation _personalInformation = this.app.getPersonalInformation();
@@ -362,7 +367,7 @@ public class M2T {
     return _builder.toString();
   }
   
-  public String generateLetter(final Languages languages) {
+  public String generateLetter(final Language languages) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\recipient{");
     {
@@ -416,28 +421,28 @@ public class M2T {
     _builder.append("\\opening{");
     {
       Letter _letter_7 = this.app.getLetter();
-      EMap<Languages,Text> _opening = _letter_7.getOpening();
+      EMap<Language,Text> _opening = _letter_7.getOpening();
       boolean _isEmpty = _opening.isEmpty();
       boolean _not = (!_isEmpty);
       if (_not) {
         Letter _letter_8 = this.app.getLetter();
-        EMap<Languages,Text> _opening_1 = _letter_8.getOpening();
+        EMap<Language,Text> _opening_1 = _letter_8.getOpening();
         Text _get = _opening_1.get(languages);
         _builder.append(_get, "");
       } else {
-        boolean _equals = languages.equals(Languages.ENGLISH);
+        boolean _equals = languages.equals(Language.ENGLISH);
         if (_equals) {
           _builder.append(this.ENGLISH_OPENING, "");
         } else {
-          boolean _equals_1 = languages.equals(Languages.GERMAN);
+          boolean _equals_1 = languages.equals(Language.GERMAN);
           if (_equals_1) {
             _builder.append(this.GERMAN_OPENING, "");
           } else {
-            boolean _equals_2 = languages.equals(Languages.SPANISH);
+            boolean _equals_2 = languages.equals(Language.SPANISH);
             if (_equals_2) {
               _builder.append(this.SPANISH_OPENING, "");
             } else {
-              boolean _equals_3 = languages.equals(Languages.FRENCH);
+              boolean _equals_3 = languages.equals(Language.FRENCH);
               if (_equals_3) {
                 _builder.append(this.FRENCH_OPENING, "");
               }
@@ -451,28 +456,28 @@ public class M2T {
     _builder.append("\\closing{");
     {
       Letter _letter_9 = this.app.getLetter();
-      EMap<Languages,Text> _closing = _letter_9.getClosing();
+      EMap<Language,Text> _closing = _letter_9.getClosing();
       boolean _isEmpty_1 = _closing.isEmpty();
       boolean _not_1 = (!_isEmpty_1);
       if (_not_1) {
         Letter _letter_10 = this.app.getLetter();
-        EMap<Languages,Text> _closing_1 = _letter_10.getClosing();
+        EMap<Language,Text> _closing_1 = _letter_10.getClosing();
         Text _get_1 = _closing_1.get(languages);
         _builder.append(_get_1, "");
       } else {
-        boolean _equals_4 = languages.equals(Languages.ENGLISH);
+        boolean _equals_4 = languages.equals(Language.ENGLISH);
         if (_equals_4) {
           _builder.append(this.ENGLISH_CLOSING, "");
         } else {
-          boolean _equals_5 = languages.equals(Languages.GERMAN);
+          boolean _equals_5 = languages.equals(Language.GERMAN);
           if (_equals_5) {
             _builder.append(this.GERMAN_CLOSING, "");
           } else {
-            boolean _equals_6 = languages.equals(Languages.SPANISH);
+            boolean _equals_6 = languages.equals(Language.SPANISH);
             if (_equals_6) {
               _builder.append(this.SPANISH_CLOSING, "");
             } else {
-              boolean _equals_7 = languages.equals(Languages.FRENCH);
+              boolean _equals_7 = languages.equals(Language.FRENCH);
               if (_equals_7) {
                 _builder.append(this.FRENCH_CLOSING, "");
               }
@@ -485,13 +490,13 @@ public class M2T {
     _builder.newLineIfNotEmpty();
     {
       Letter _letter_11 = this.app.getLetter();
-      EMap<Languages,Text> _enclosure = _letter_11.getEnclosure();
+      EMap<Language,Text> _enclosure = _letter_11.getEnclosure();
       boolean _isEmpty_2 = _enclosure.isEmpty();
       boolean _not_2 = (!_isEmpty_2);
       if (_not_2) {
         _builder.append("\\enclosure{");
         Letter _letter_12 = this.app.getLetter();
-        EMap<Languages,Text> _enclosure_1 = _letter_12.getEnclosure();
+        EMap<Language,Text> _enclosure_1 = _letter_12.getEnclosure();
         Text _get_2 = _enclosure_1.get(languages);
         _builder.append(_get_2, "");
         _builder.append("}");
@@ -501,7 +506,7 @@ public class M2T {
     _builder.append("\\makelettertitle");
     _builder.newLine();
     Letter _letter_13 = this.app.getLetter();
-    EMap<Languages,Text> _text = _letter_13.getText();
+    EMap<Language,Text> _text = _letter_13.getText();
     Text _get_3 = _text.get(languages);
     _builder.append(_get_3, "");
     _builder.newLineIfNotEmpty();
@@ -513,25 +518,25 @@ public class M2T {
     return _builder.toString();
   }
   
-  public String generateCv(final Languages languages) {
+  public String generateCv(final Language languages) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\makecvtitle");
     _builder.newLine();
     _builder.append("\\section{");
     {
-      boolean _equals = languages.equals(Languages.ENGLISH);
+      boolean _equals = languages.equals(Language.ENGLISH);
       if (_equals) {
         _builder.append(this.ENGLISH_PERSONAL, "");
       } else {
-        boolean _equals_1 = languages.equals(Languages.GERMAN);
+        boolean _equals_1 = languages.equals(Language.GERMAN);
         if (_equals_1) {
           _builder.append(this.GERMAN_PERSONAL, "");
         } else {
-          boolean _equals_2 = languages.equals(Languages.SPANISH);
+          boolean _equals_2 = languages.equals(Language.SPANISH);
           if (_equals_2) {
             _builder.append(this.SPANISH_PERSONAL, "");
           } else {
-            boolean _equals_3 = languages.equals(Languages.FRENCH);
+            boolean _equals_3 = languages.equals(Language.FRENCH);
             if (_equals_3) {
               _builder.append(this.FRENCH_PERSONAL, "");
             }
@@ -543,25 +548,25 @@ public class M2T {
     _builder.newLineIfNotEmpty();
     {
       PersonalInformation _personalInformation = this.app.getPersonalInformation();
-      EMap<Languages,Text> _nationality = _personalInformation.getNationality();
+      EMap<Language,Text> _nationality = _personalInformation.getNationality();
       boolean _isEmpty = _nationality.isEmpty();
       boolean _not = (!_isEmpty);
       if (_not) {
         _builder.append("\\cvitem{\\textbf{");
         {
-          boolean _equals_4 = languages.equals(Languages.ENGLISH);
+          boolean _equals_4 = languages.equals(Language.ENGLISH);
           if (_equals_4) {
             _builder.append(this.ENGLISH_NATIONALITY, "");
           } else {
-            boolean _equals_5 = languages.equals(Languages.GERMAN);
+            boolean _equals_5 = languages.equals(Language.GERMAN);
             if (_equals_5) {
               _builder.append(this.GERMAN_NATIONALITY, "");
             } else {
-              boolean _equals_6 = languages.equals(Languages.SPANISH);
+              boolean _equals_6 = languages.equals(Language.SPANISH);
               if (_equals_6) {
                 _builder.append(this.SPANISH_NATIONALITY, "");
               } else {
-                boolean _equals_7 = languages.equals(Languages.FRENCH);
+                boolean _equals_7 = languages.equals(Language.FRENCH);
                 if (_equals_7) {
                   _builder.append(this.FRENCH_NATIONALITY, "");
                 }
@@ -571,7 +576,7 @@ public class M2T {
         }
         _builder.append("}}{");
         PersonalInformation _personalInformation_1 = this.app.getPersonalInformation();
-        EMap<Languages,Text> _nationality_1 = _personalInformation_1.getNationality();
+        EMap<Language,Text> _nationality_1 = _personalInformation_1.getNationality();
         Text _get = _nationality_1.get(languages);
         _builder.append(_get, "");
         _builder.append("}");
@@ -580,19 +585,19 @@ public class M2T {
     _builder.newLineIfNotEmpty();
     _builder.append("\\cvitem{\\textbf{");
     {
-      boolean _equals_8 = languages.equals(Languages.ENGLISH);
+      boolean _equals_8 = languages.equals(Language.ENGLISH);
       if (_equals_8) {
         _builder.append(this.ENGLISH_BIRTHDATE, "");
       } else {
-        boolean _equals_9 = languages.equals(Languages.GERMAN);
+        boolean _equals_9 = languages.equals(Language.GERMAN);
         if (_equals_9) {
           _builder.append(this.GERMAN_BIRTHDATE, "");
         } else {
-          boolean _equals_10 = languages.equals(Languages.SPANISH);
+          boolean _equals_10 = languages.equals(Language.SPANISH);
           if (_equals_10) {
             _builder.append(this.SPANISH_BIRTHDATE, "");
           } else {
-            boolean _equals_11 = languages.equals(Languages.FRENCH);
+            boolean _equals_11 = languages.equals(Language.FRENCH);
             if (_equals_11) {
               _builder.append(this.FRENCH_BIRTHDATE, "");
             }
@@ -608,19 +613,19 @@ public class M2T {
     _builder.newLineIfNotEmpty();
     _builder.append("\\cvitem{\\textbf{");
     {
-      boolean _equals_12 = languages.equals(Languages.ENGLISH);
+      boolean _equals_12 = languages.equals(Language.ENGLISH);
       if (_equals_12) {
         _builder.append(this.ENGLISH_BIRTHPLACE, "");
       } else {
-        boolean _equals_13 = languages.equals(Languages.GERMAN);
+        boolean _equals_13 = languages.equals(Language.GERMAN);
         if (_equals_13) {
           _builder.append(this.GERMAN_BIRTHPLACE, "");
         } else {
-          boolean _equals_14 = languages.equals(Languages.SPANISH);
+          boolean _equals_14 = languages.equals(Language.SPANISH);
           if (_equals_14) {
             _builder.append(this.SPANISH_BIRTHPLACE, "");
           } else {
-            boolean _equals_15 = languages.equals(Languages.FRENCH);
+            boolean _equals_15 = languages.equals(Language.FRENCH);
             if (_equals_15) {
               _builder.append(this.FRENCH_BIRTHPLACE, "");
             }
@@ -639,7 +644,7 @@ public class M2T {
       EList<Block> _blocks = _cv.getBlocks();
       for(final Block block : _blocks) {
         _builder.append("\\section{");
-        EMap<Languages,Text> _title = block.getTitle();
+        EMap<Language,Text> _title = block.getTitle();
         Text _get_1 = _title.get(languages);
         _builder.append(_get_1, "");
         _builder.append("}");
@@ -657,13 +662,13 @@ public class M2T {
                     _builder.append("\\cvdoubleitem{\\textbf{");
                     EList<Item> _items_1 = ((ListBlock)block).getItems();
                     Item _get_2 = _items_1.get((i).intValue());
-                    EMap<Languages,Text> _leftContent = ((TextItem) _get_2).getLeftContent();
+                    EMap<Language,Text> _leftContent = ((TextItem) _get_2).getLeftContent();
                     Text _get_3 = _leftContent.get(languages);
                     _builder.append(_get_3, "");
                     _builder.append("}}{");
                     EList<Item> _items_2 = ((ListBlock)block).getItems();
                     Item _get_4 = _items_2.get((i).intValue());
-                    EMap<Languages,Text> _rightContent = _get_4.getRightContent();
+                    EMap<Language,Text> _rightContent = _get_4.getRightContent();
                     Text _get_5 = _rightContent.get(languages);
                     _builder.append(_get_5, "");
                     _builder.append("}");
@@ -675,13 +680,13 @@ public class M2T {
                         _builder.append("{\\textbf{");
                         EList<Item> _items_4 = ((ListBlock)block).getItems();
                         Item _get_6 = _items_4.get(((i).intValue() + 1));
-                        EMap<Languages,Text> _leftContent_1 = ((TextItem) _get_6).getLeftContent();
+                        EMap<Language,Text> _leftContent_1 = ((TextItem) _get_6).getLeftContent();
                         Text _get_7 = _leftContent_1.get(languages);
                         _builder.append(_get_7, "");
                         _builder.append("}}{");
                         EList<Item> _items_5 = ((ListBlock)block).getItems();
                         Item _get_8 = _items_5.get(((i).intValue() + 1));
-                        EMap<Languages,Text> _rightContent_1 = _get_8.getRightContent();
+                        EMap<Language,Text> _rightContent_1 = _get_8.getRightContent();
                         Text _get_9 = _rightContent_1.get(languages);
                         _builder.append(_get_9, "");
                         _builder.append("}");
@@ -703,7 +708,7 @@ public class M2T {
                   {
                     if ((item instanceof TextItem)) {
                       _builder.append("\\textbf{");
-                      EMap<Languages,Text> _leftContent_2 = ((TextItem) item).getLeftContent();
+                      EMap<Language,Text> _leftContent_2 = ((TextItem) item).getLeftContent();
                       Text _get_10 = _leftContent_2.get(languages);
                       _builder.append(_get_10, "");
                       _builder.append("}");
@@ -724,19 +729,19 @@ public class M2T {
                           _builder.append(_string_1, "");
                         } else {
                           {
-                            boolean _equals_16 = languages.equals(Languages.ENGLISH);
+                            boolean _equals_16 = languages.equals(Language.ENGLISH);
                             if (_equals_16) {
                               _builder.append(this.ENGLISH_SINCE, "");
                             } else {
-                              boolean _equals_17 = languages.equals(Languages.GERMAN);
+                              boolean _equals_17 = languages.equals(Language.GERMAN);
                               if (_equals_17) {
                                 _builder.append(this.GERMAN_SINCE, "");
                               } else {
-                                boolean _equals_18 = languages.equals(Languages.SPANISH);
+                                boolean _equals_18 = languages.equals(Language.SPANISH);
                                 if (_equals_18) {
                                   _builder.append(this.SPANISH_SINCE, "");
                                 } else {
-                                  boolean _equals_19 = languages.equals(Languages.FRENCH);
+                                  boolean _equals_19 = languages.equals(Language.FRENCH);
                                   if (_equals_19) {
                                     _builder.append(this.FRENCH_SINCE, "");
                                   }
@@ -753,7 +758,7 @@ public class M2T {
                     }
                   }
                   _builder.append("}{");
-                  EMap<Languages,Text> _rightContent_2 = item.getRightContent();
+                  EMap<Language,Text> _rightContent_2 = item.getRightContent();
                   Text _get_11 = _rightContent_2.get(languages);
                   _builder.append(_get_11, "");
                   _builder.append("}");

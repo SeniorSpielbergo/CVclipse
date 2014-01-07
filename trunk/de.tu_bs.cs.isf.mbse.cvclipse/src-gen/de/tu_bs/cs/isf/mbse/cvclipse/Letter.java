@@ -2,9 +2,8 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -34,7 +33,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Letter extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Opening</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -44,14 +43,14 @@ public interface Letter extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Opening</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getLetter_Opening()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getOpening();
+	EMap<Language, Text> getOpening();
 
 	/**
 	 * Returns the value of the '<em><b>Closing</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -61,14 +60,14 @@ public interface Letter extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Closing</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getLetter_Closing()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getClosing();
+	EMap<Language, Text> getClosing();
 
 	/**
 	 * Returns the value of the '<em><b>Enclosure</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -78,14 +77,14 @@ public interface Letter extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enclosure</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getLetter_Enclosure()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getEnclosure();
+	EMap<Language, Text> getEnclosure();
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -95,10 +94,10 @@ public interface Letter extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Text</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getLetter_Text()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getText();
+	EMap<Language, Text> getText();
 
 	/**
 	 * Returns the value of the '<em><b>Recipient Company</b></em>' attribute.

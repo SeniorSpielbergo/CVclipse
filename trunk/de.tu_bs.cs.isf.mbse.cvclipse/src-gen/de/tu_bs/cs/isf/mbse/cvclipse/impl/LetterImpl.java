@@ -3,22 +3,17 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-
-import java.util.Map;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -43,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class LetterImpl extends EObjectImpl implements Letter {
+public class LetterImpl extends MinimalEObjectImpl.Container implements Letter {
 	/**
 	 * The cached value of the '{@link #getOpening() <em>Opening</em>}' map.
 	 * <!-- begin-user-doc -->
@@ -52,7 +47,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> opening;
+	protected EMap<Language, Text> opening;
 
 	/**
 	 * The cached value of the '{@link #getClosing() <em>Closing</em>}' map.
@@ -62,7 +57,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> closing;
+	protected EMap<Language, Text> closing;
 
 	/**
 	 * The cached value of the '{@link #getEnclosure() <em>Enclosure</em>}' map.
@@ -72,7 +67,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> enclosure;
+	protected EMap<Language, Text> enclosure;
 
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' map.
@@ -82,7 +77,7 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> text;
+	protected EMap<Language, Text> text;
 
 	/**
 	 * The default value of the '{@link #getRecipientCompany() <em>Recipient Company</em>}' attribute.
@@ -208,9 +203,9 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getOpening() {
+	public EMap<Language, Text> getOpening() {
 		if (opening == null) {
-			opening = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__OPENING);
+			opening = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__OPENING);
 		}
 		return opening;
 	}
@@ -220,9 +215,9 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getClosing() {
+	public EMap<Language, Text> getClosing() {
 		if (closing == null) {
-			closing = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__CLOSING);
+			closing = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__CLOSING);
 		}
 		return closing;
 	}
@@ -232,9 +227,9 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getEnclosure() {
+	public EMap<Language, Text> getEnclosure() {
 		if (enclosure == null) {
-			enclosure = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__ENCLOSURE);
+			enclosure = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__ENCLOSURE);
 		}
 		return enclosure;
 	}
@@ -244,9 +239,9 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getText() {
+	public EMap<Language, Text> getText() {
 		if (text == null) {
-			text = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__TEXT);
+			text = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.LETTER__TEXT);
 		}
 		return text;
 	}
@@ -415,7 +410,6 @@ public class LetterImpl extends EObjectImpl implements Letter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

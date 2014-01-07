@@ -4,21 +4,14 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-
-import java.util.Map;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -35,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class ItemImpl extends EObjectImpl implements Item {
+public abstract class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	/**
 	 * The cached value of the '{@link #getRightContent() <em>Right Content</em>}' map.
 	 * <!-- begin-user-doc -->
@@ -44,7 +37,7 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> rightContent;
+	protected EMap<Language, Text> rightContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,9 +63,9 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getRightContent() {
+	public EMap<Language, Text> getRightContent() {
 		if (rightContent == null) {
-			rightContent = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.ITEM__RIGHT_CONTENT);
+			rightContent = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.ITEM__RIGHT_CONTENT);
 		}
 		return rightContent;
 	}
@@ -111,7 +104,6 @@ public abstract class ItemImpl extends EObjectImpl implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

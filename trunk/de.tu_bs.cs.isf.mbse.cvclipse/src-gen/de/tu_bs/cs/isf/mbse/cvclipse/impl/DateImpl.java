@@ -4,13 +4,12 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
-
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +26,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class DateImpl extends EObjectImpl implements Date {
+public class DateImpl extends MinimalEObjectImpl.Container implements Date {
 	/**
 	 * The default value of the '{@link #getDay() <em>Day</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -259,6 +258,20 @@ public class DateImpl extends EObjectImpl implements Date {
 				return year != YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CvclipsePackage.DATE___TO_STRING:
+				return toString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //DateImpl

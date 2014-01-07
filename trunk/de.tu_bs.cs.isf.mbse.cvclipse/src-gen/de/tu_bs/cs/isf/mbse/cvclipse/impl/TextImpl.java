@@ -4,13 +4,12 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class TextImpl extends EObjectImpl implements Text {
+public class TextImpl extends MinimalEObjectImpl.Container implements Text {
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -151,6 +150,20 @@ public class TextImpl extends EObjectImpl implements Text {
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case CvclipsePackage.TEXT___TO_STRING:
+				return toString();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //TextImpl

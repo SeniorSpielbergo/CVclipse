@@ -4,27 +4,21 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.CV;
-import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
+import de.tu_bs.cs.isf.mbse.cvclipse.Color;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
-import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
-
+import de.tu_bs.cs.isf.mbse.cvclipse.Style;
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -47,7 +41,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *
  * @generated
  */
-public class ApplicationImpl extends EObjectImpl implements Application {
+public class ApplicationImpl extends MinimalEObjectImpl.Container implements Application {
 	/**
 	 * The cached value of the '{@link #getCv() <em>Cv</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -76,7 +70,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Languages> languages;
+	protected EList<Language> languages;
 
 	/**
 	 * The cached value of the '{@link #getPersonalInformation() <em>Personal Information</em>}' containment reference.
@@ -96,7 +90,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Styles STYLE_EDEFAULT = Styles.CASUAL;
+	protected static final Style STYLE_EDEFAULT = Style.CASUAL;
 
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' attribute.
@@ -106,7 +100,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @generated
 	 * @ordered
 	 */
-	protected Styles style = STYLE_EDEFAULT;
+	protected Style style = STYLE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
@@ -116,7 +110,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Colors COLOR_EDEFAULT = Colors.BLUE;
+	protected static final Color COLOR_EDEFAULT = Color.BLUE;
 
 	/**
 	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
@@ -126,7 +120,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * @generated
 	 * @ordered
 	 */
-	protected Colors color = COLOR_EDEFAULT;
+	protected Color color = COLOR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPlace() <em>Place</em>}' attribute.
@@ -268,9 +262,9 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Languages> getLanguages() {
+	public EList<Language> getLanguages() {
 		if (languages == null) {
-			languages = new EDataTypeUniqueEList<Languages>(Languages.class, this, CvclipsePackage.APPLICATION__LANGUAGES);
+			languages = new EDataTypeUniqueEList<Language>(Language.class, this, CvclipsePackage.APPLICATION__LANGUAGES);
 		}
 		return languages;
 	}
@@ -323,7 +317,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Styles getStyle() {
+	public Style getStyle() {
 		return style;
 	}
 
@@ -332,8 +326,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStyle(Styles newStyle) {
-		Styles oldStyle = style;
+	public void setStyle(Style newStyle) {
+		Style oldStyle = style;
 		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.APPLICATION__STYLE, oldStyle, style));
@@ -344,7 +338,7 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Colors getColor() {
+	public Color getColor() {
 		return color;
 	}
 
@@ -353,8 +347,8 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setColor(Colors newColor) {
-		Colors oldColor = color;
+	public void setColor(Color newColor) {
+		Color oldColor = color;
 		color = newColor == null ? COLOR_EDEFAULT : newColor;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.APPLICATION__COLOR, oldColor, color));
@@ -489,16 +483,16 @@ public class ApplicationImpl extends EObjectImpl implements Application {
 				return;
 			case CvclipsePackage.APPLICATION__LANGUAGES:
 				getLanguages().clear();
-				getLanguages().addAll((Collection<? extends Languages>)newValue);
+				getLanguages().addAll((Collection<? extends Language>)newValue);
 				return;
 			case CvclipsePackage.APPLICATION__PERSONAL_INFORMATION:
 				setPersonalInformation((PersonalInformation)newValue);
 				return;
 			case CvclipsePackage.APPLICATION__STYLE:
-				setStyle((Styles)newValue);
+				setStyle((Style)newValue);
 				return;
 			case CvclipsePackage.APPLICATION__COLOR:
-				setColor((Colors)newValue);
+				setColor((Color)newValue);
 				return;
 			case CvclipsePackage.APPLICATION__PLACE:
 				setPlace((String)newValue);

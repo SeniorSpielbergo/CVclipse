@@ -2,7 +2,6 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
-import java.util.Map;
 import org.eclipse.emf.common.util.EMap;
 
 /**
@@ -24,7 +23,7 @@ import org.eclipse.emf.common.util.EMap;
 public interface TextItem extends Item {
 	/**
 	 * Returns the value of the '<em><b>Left Content</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -34,9 +33,9 @@ public interface TextItem extends Item {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Left Content</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getTextItem_LeftContent()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getLeftContent();
+	EMap<Language, Text> getLeftContent();
 
 } // TextItem

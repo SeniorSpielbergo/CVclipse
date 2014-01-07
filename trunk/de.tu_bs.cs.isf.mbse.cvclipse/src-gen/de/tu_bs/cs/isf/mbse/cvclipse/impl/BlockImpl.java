@@ -5,25 +5,16 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-
 import java.util.Collection;
-import java.util.Map;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -42,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class BlockImpl extends EObjectImpl implements Block {
+public abstract class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	/**
 	 * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -61,7 +52,7 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> title;
+	protected EMap<Language, Text> title;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,9 +90,9 @@ public abstract class BlockImpl extends EObjectImpl implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getTitle() {
+	public EMap<Language, Text> getTitle() {
 		if (title == null) {
-			title = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.BLOCK__TITLE);
+			title = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.BLOCK__TITLE);
 		}
 		return title;
 	}

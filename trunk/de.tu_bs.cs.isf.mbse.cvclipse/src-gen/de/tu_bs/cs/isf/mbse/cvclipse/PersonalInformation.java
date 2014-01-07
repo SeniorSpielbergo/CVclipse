@@ -406,7 +406,7 @@ public interface PersonalInformation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Marital Status</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -416,14 +416,14 @@ public interface PersonalInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Marital Status</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_MaritalStatus()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getMaritalStatus();
+	EMap<Language, Text> getMaritalStatus();
 
 	/**
 	 * Returns the value of the '<em><b>Nationality</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -433,10 +433,10 @@ public interface PersonalInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nationality</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_Nationality()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getNationality();
+	EMap<Language, Text> getNationality();
 
 	/**
 	 * Returns the value of the '<em><b>Birthdate</b></em>' containment reference.
@@ -466,7 +466,7 @@ public interface PersonalInformation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Country</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -476,9 +476,9 @@ public interface PersonalInformation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Country</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getPersonalInformation_Country()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getCountry();
+	EMap<Language, Text> getCountry();
 
 } // PersonalInformation

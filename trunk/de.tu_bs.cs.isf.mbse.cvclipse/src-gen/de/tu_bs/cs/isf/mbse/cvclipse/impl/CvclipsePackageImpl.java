@@ -6,7 +6,7 @@ import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText;
 import de.tu_bs.cs.isf.mbse.cvclipse.BoldText;
-import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
+import de.tu_bs.cs.isf.mbse.cvclipse.Color;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipseFactory;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
@@ -16,15 +16,15 @@ import de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.ItalicText;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
 import de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
 import de.tu_bs.cs.isf.mbse.cvclipse.LineBreak;
 import de.tu_bs.cs.isf.mbse.cvclipse.ListBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
 import de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock;
-import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
+import de.tu_bs.cs.isf.mbse.cvclipse.Style;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 
@@ -33,6 +33,7 @@ import java.util.Map;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -204,21 +205,21 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum languagesEEnum = null;
+	private EEnum languageEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum stylesEEnum = null;
+	private EEnum styleEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum colorsEEnum = null;
+	private EEnum colorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -700,6 +701,15 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getText__ToString() {
+		return textEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getBoldText() {
 		return boldTextEClass;
 	}
@@ -898,6 +908,15 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDate__ToString() {
+		return dateEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLanguageToTextMapEntry() {
 		return languageToTextMapEntryEClass;
 	}
@@ -925,8 +944,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getLanguages() {
-		return languagesEEnum;
+	public EEnum getLanguage() {
+		return languageEEnum;
 	}
 
 	/**
@@ -934,8 +953,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getStyles() {
-		return stylesEEnum;
+	public EEnum getStyle() {
+		return styleEEnum;
 	}
 
 	/**
@@ -943,8 +962,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getColors() {
-		return colorsEEnum;
+	public EEnum getColor() {
+		return colorEEnum;
 	}
 
 	/**
@@ -1026,6 +1045,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 
 		textEClass = createEClass(TEXT);
 		createEAttribute(textEClass, TEXT__CONTENT);
+		createEOperation(textEClass, TEXT___TO_STRING);
 
 		boldTextEClass = createEClass(BOLD_TEXT);
 
@@ -1063,15 +1083,16 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEAttribute(dateEClass, DATE__DAY);
 		createEAttribute(dateEClass, DATE__MONTH);
 		createEAttribute(dateEClass, DATE__YEAR);
+		createEOperation(dateEClass, DATE___TO_STRING);
 
 		languageToTextMapEntryEClass = createEClass(LANGUAGE_TO_TEXT_MAP_ENTRY);
 		createEAttribute(languageToTextMapEntryEClass, LANGUAGE_TO_TEXT_MAP_ENTRY__KEY);
 		createEReference(languageToTextMapEntryEClass, LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE);
 
 		// Create enums
-		languagesEEnum = createEEnum(LANGUAGES);
-		stylesEEnum = createEEnum(STYLES);
-		colorsEEnum = createEEnum(COLORS);
+		languageEEnum = createEEnum(LANGUAGE);
+		styleEEnum = createEEnum(STYLE);
+		colorEEnum = createEEnum(COLOR);
 	}
 
 	/**
@@ -1116,7 +1137,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		dateItemEClass.getESuperTypes().add(this.getItem());
 		textItemEClass.getESuperTypes().add(this.getItem());
 
-		// Initialize classes and features; add operations and parameters
+		// Initialize classes, features, and operations; add parameters
 		initEClass(cvEClass, de.tu_bs.cs.isf.mbse.cvclipse.CV.class, "CV", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCV_Picture(), ecorePackage.getEString(), "picture", null, 0, 1, de.tu_bs.cs.isf.mbse.cvclipse.CV.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCV_Blocks(), this.getBlock(), null, "blocks", null, 1, -1, de.tu_bs.cs.isf.mbse.cvclipse.CV.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1135,10 +1156,10 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getApplication_Cv(), this.getCV(), null, "cv", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Letter(), this.getLetter(), null, "letter", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplication_Languages(), this.getLanguages(), "languages", null, 1, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplication_Languages(), this.getLanguage(), "languages", null, 1, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_PersonalInformation(), this.getPersonalInformation(), null, "personalInformation", null, 1, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplication_Style(), this.getStyles(), "style", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getApplication_Color(), this.getColors(), "color", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplication_Style(), this.getStyle(), "style", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getApplication_Color(), this.getColor(), "color", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getApplication_Place(), ecorePackage.getEString(), "place", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getApplication_Date(), this.getDate(), null, "date", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1169,7 +1190,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(textEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getText__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(boldTextEClass, BoldText.class, "BoldText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1208,33 +1229,33 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		initEAttribute(getDate_Month(), ecorePackage.getEInt(), "month", null, 1, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDate_Year(), ecorePackage.getEInt(), "year", null, 1, 1, Date.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(dateEClass, ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getDate__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(languageToTextMapEntryEClass, Map.Entry.class, "LanguageToTextMapEntry", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLanguageToTextMapEntry_Key(), this.getLanguages(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLanguageToTextMapEntry_Key(), this.getLanguage(), "key", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLanguageToTextMapEntry_Value(), this.getText(), null, "value", null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(languagesEEnum, Languages.class, "Languages");
-		addEEnumLiteral(languagesEEnum, Languages.GERMAN);
-		addEEnumLiteral(languagesEEnum, Languages.ENGLISH);
-		addEEnumLiteral(languagesEEnum, Languages.FRENCH);
-		addEEnumLiteral(languagesEEnum, Languages.SPANISH);
+		initEEnum(languageEEnum, Language.class, "Language");
+		addEEnumLiteral(languageEEnum, Language.GERMAN);
+		addEEnumLiteral(languageEEnum, Language.ENGLISH);
+		addEEnumLiteral(languageEEnum, Language.FRENCH);
+		addEEnumLiteral(languageEEnum, Language.SPANISH);
 
-		initEEnum(stylesEEnum, Styles.class, "Styles");
-		addEEnumLiteral(stylesEEnum, Styles.CASUAL);
-		addEEnumLiteral(stylesEEnum, Styles.CLASSIC);
-		addEEnumLiteral(stylesEEnum, Styles.OLDSTYLE);
-		addEEnumLiteral(stylesEEnum, Styles.BANKING);
+		initEEnum(styleEEnum, Style.class, "Style");
+		addEEnumLiteral(styleEEnum, Style.CASUAL);
+		addEEnumLiteral(styleEEnum, Style.CLASSIC);
+		addEEnumLiteral(styleEEnum, Style.OLDSTYLE);
+		addEEnumLiteral(styleEEnum, Style.BANKING);
 
-		initEEnum(colorsEEnum, Colors.class, "Colors");
-		addEEnumLiteral(colorsEEnum, Colors.BLUE);
-		addEEnumLiteral(colorsEEnum, Colors.ORANGE);
-		addEEnumLiteral(colorsEEnum, Colors.GREEN);
-		addEEnumLiteral(colorsEEnum, Colors.RED);
-		addEEnumLiteral(colorsEEnum, Colors.PURPLE);
-		addEEnumLiteral(colorsEEnum, Colors.GREY);
-		addEEnumLiteral(colorsEEnum, Colors.BLACK);
+		initEEnum(colorEEnum, Color.class, "Color");
+		addEEnumLiteral(colorEEnum, Color.BLUE);
+		addEEnumLiteral(colorEEnum, Color.ORANGE);
+		addEEnumLiteral(colorEEnum, Color.GREEN);
+		addEEnumLiteral(colorEEnum, Color.RED);
+		addEEnumLiteral(colorEEnum, Color.PURPLE);
+		addEEnumLiteral(colorEEnum, Color.GREY);
+		addEEnumLiteral(colorEEnum, Color.BLACK);
 
 		// Create resource
 		createResource(eNS_URI);

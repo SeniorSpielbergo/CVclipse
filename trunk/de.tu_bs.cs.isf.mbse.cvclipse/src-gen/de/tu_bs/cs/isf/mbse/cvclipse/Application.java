@@ -84,8 +84,8 @@ public interface Application extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Languages</b></em>' attribute list.
-	 * The list contents are of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages}.
-	 * The literals are from the enumeration {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages}.
+	 * The list contents are of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language}.
+	 * The literals are from the enumeration {@link de.tu_bs.cs.isf.mbse.cvclipse.Language}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Languages</em>' attribute list isn't clear,
@@ -93,12 +93,12 @@ public interface Application extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Languages</em>' attribute list.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Languages
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Language
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getApplication_Languages()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Languages> getLanguages();
+	EList<Language> getLanguages();
 
 	/**
 	 * Returns the value of the '<em><b>Personal Information</b></em>' containment reference.
@@ -128,7 +128,7 @@ public interface Application extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.tu_bs.cs.isf.mbse.cvclipse.Styles}.
+	 * The literals are from the enumeration {@link de.tu_bs.cs.isf.mbse.cvclipse.Style}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Style</em>' attribute isn't clear,
@@ -136,28 +136,28 @@ public interface Application extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Style</em>' attribute.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Styles
-	 * @see #setStyle(Styles)
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Style
+	 * @see #setStyle(Style)
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getApplication_Style()
 	 * @model
 	 * @generated
 	 */
-	Styles getStyle();
+	Style getStyle();
 
 	/**
 	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Application#getStyle <em>Style</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Style</em>' attribute.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Styles
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Style
 	 * @see #getStyle()
 	 * @generated
 	 */
-	void setStyle(Styles value);
+	void setStyle(Style value);
 
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute.
-	 * The literals are from the enumeration {@link de.tu_bs.cs.isf.mbse.cvclipse.Colors}.
+	 * The literals are from the enumeration {@link de.tu_bs.cs.isf.mbse.cvclipse.Color}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Color</em>' attribute isn't clear,
@@ -165,24 +165,24 @@ public interface Application extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Color</em>' attribute.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Colors
-	 * @see #setColor(Colors)
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Color
+	 * @see #setColor(Color)
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getApplication_Color()
 	 * @model
 	 * @generated
 	 */
-	Colors getColor();
+	Color getColor();
 
 	/**
 	 * Sets the value of the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Application#getColor <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Color</em>' attribute.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Colors
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Color
 	 * @see #getColor()
 	 * @generated
 	 */
-	void setColor(Colors value);
+	void setColor(Color value);
 
 	/**
 	 * Returns the value of the '<em><b>Place</b></em>' attribute.

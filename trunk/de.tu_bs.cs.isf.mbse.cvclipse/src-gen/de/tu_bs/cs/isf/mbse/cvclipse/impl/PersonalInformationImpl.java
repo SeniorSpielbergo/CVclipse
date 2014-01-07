@@ -4,22 +4,17 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -53,7 +48,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class PersonalInformationImpl extends EObjectImpl implements PersonalInformation {
+public class PersonalInformationImpl extends MinimalEObjectImpl.Container implements PersonalInformation {
 	/**
 	 * The default value of the '{@link #getTwitter() <em>Twitter</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -342,7 +337,7 @@ public class PersonalInformationImpl extends EObjectImpl implements PersonalInfo
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> maritalStatus;
+	protected EMap<Language, Text> maritalStatus;
 
 	/**
 	 * The cached value of the '{@link #getNationality() <em>Nationality</em>}' map.
@@ -352,7 +347,7 @@ public class PersonalInformationImpl extends EObjectImpl implements PersonalInfo
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> nationality;
+	protected EMap<Language, Text> nationality;
 
 	/**
 	 * The cached value of the '{@link #getBirthdate() <em>Birthdate</em>}' containment reference.
@@ -372,7 +367,7 @@ public class PersonalInformationImpl extends EObjectImpl implements PersonalInfo
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> country;
+	protected EMap<Language, Text> country;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -692,9 +687,9 @@ public class PersonalInformationImpl extends EObjectImpl implements PersonalInfo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getMaritalStatus() {
+	public EMap<Language, Text> getMaritalStatus() {
 		if (maritalStatus == null) {
-			maritalStatus = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__MARITAL_STATUS);
+			maritalStatus = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__MARITAL_STATUS);
 		}
 		return maritalStatus;
 	}
@@ -704,9 +699,9 @@ public class PersonalInformationImpl extends EObjectImpl implements PersonalInfo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getNationality() {
+	public EMap<Language, Text> getNationality() {
 		if (nationality == null) {
-			nationality = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__NATIONALITY);
+			nationality = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__NATIONALITY);
 		}
 		return nationality;
 	}
@@ -759,9 +754,9 @@ public class PersonalInformationImpl extends EObjectImpl implements PersonalInfo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getCountry() {
+	public EMap<Language, Text> getCountry() {
 		if (country == null) {
-			country = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__COUNTRY);
+			country = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.PERSONAL_INFORMATION__COUNTRY);
 		}
 		return country;
 	}

@@ -213,7 +213,7 @@ public class CvclipseSwitch<T> extends Switch<T> {
 				return result;
 			}
 			case CvclipsePackage.LANGUAGE_TO_TEXT_MAP_ENTRY: {
-				@SuppressWarnings("unchecked") Map.Entry<Languages, Text> languageToTextMapEntry = (Map.Entry<Languages, Text>)theEObject;
+				@SuppressWarnings("unchecked") Map.Entry<Language, Text> languageToTextMapEntry = (Map.Entry<Language, Text>)theEObject;
 				T result = caseLanguageToTextMapEntry(languageToTextMapEntry);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -548,7 +548,7 @@ public class CvclipseSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseLanguageToTextMapEntry(Map.Entry<Languages, Text> object) {
+	public T caseLanguageToTextMapEntry(Map.Entry<Language, Text> object) {
 		return null;
 	}
 

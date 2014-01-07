@@ -92,12 +92,12 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case CvclipsePackage.LANGUAGES:
-				return createLanguagesFromString(eDataType, initialValue);
-			case CvclipsePackage.STYLES:
-				return createStylesFromString(eDataType, initialValue);
-			case CvclipsePackage.COLORS:
-				return createColorsFromString(eDataType, initialValue);
+			case CvclipsePackage.LANGUAGE:
+				return createLanguageFromString(eDataType, initialValue);
+			case CvclipsePackage.STYLE:
+				return createStyleFromString(eDataType, initialValue);
+			case CvclipsePackage.COLOR:
+				return createColorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -111,12 +111,12 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case CvclipsePackage.LANGUAGES:
-				return convertLanguagesToString(eDataType, instanceValue);
-			case CvclipsePackage.STYLES:
-				return convertStylesToString(eDataType, instanceValue);
-			case CvclipsePackage.COLORS:
-				return convertColorsToString(eDataType, instanceValue);
+			case CvclipsePackage.LANGUAGE:
+				return convertLanguageToString(eDataType, instanceValue);
+			case CvclipsePackage.STYLE:
+				return convertStyleToString(eDataType, instanceValue);
+			case CvclipsePackage.COLOR:
+				return convertColorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -317,7 +317,7 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Map.Entry<Languages, Text> createLanguageToTextMapEntry() {
+	public Map.Entry<Language, Text> createLanguageToTextMapEntry() {
 		LanguageToTextMapEntryImpl languageToTextMapEntry = new LanguageToTextMapEntryImpl();
 		return languageToTextMapEntry;
 	}
@@ -327,8 +327,8 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Languages createLanguagesFromString(EDataType eDataType, String initialValue) {
-		Languages result = Languages.get(initialValue);
+	public Language createLanguageFromString(EDataType eDataType, String initialValue) {
+		Language result = Language.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -338,7 +338,7 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertLanguagesToString(EDataType eDataType, Object instanceValue) {
+	public String convertLanguageToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -347,8 +347,8 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Styles createStylesFromString(EDataType eDataType, String initialValue) {
-		Styles result = Styles.get(initialValue);
+	public Style createStyleFromString(EDataType eDataType, String initialValue) {
+		Style result = Style.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -358,7 +358,7 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertStylesToString(EDataType eDataType, Object instanceValue) {
+	public String convertStyleToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -367,8 +367,8 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Colors createColorsFromString(EDataType eDataType, String initialValue) {
-		Colors result = Colors.get(initialValue);
+	public Color createColorFromString(EDataType eDataType, String initialValue) {
+		Color result = Color.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -378,7 +378,7 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertColorsToString(EDataType eDataType, Object instanceValue) {
+	public String convertColorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

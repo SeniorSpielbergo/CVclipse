@@ -2,9 +2,8 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -26,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Item extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Right Content</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -36,9 +35,9 @@ public interface Item extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Right Content</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getItem_RightContent()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getRightContent();
+	EMap<Language, Text> getRightContent();
 
 } // Item

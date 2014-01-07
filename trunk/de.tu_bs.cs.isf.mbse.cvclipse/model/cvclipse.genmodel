@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.tu_bs.cs.isf.mbse.cvclipse/src-gen" modelPluginID="de.tu_bs.cs.isf.mbse.cvclipse"
-    modelName="cvclipse" complianceLevel="5.0" copyrightFields="false">
+    modelName="Cvclipse" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cvclipse.ecore</foreignModel>
   <genPackages prefix="Cvclipse" basePackage="de.tu_bs.cs.isf.mbse" disposableProviderFactory="true"
       fileExtensions="cv" ecorePackage="cvclipse.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cvclipse.ecore#//Languages">
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Languages/GERMAN"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Languages/ENGLISH"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Languages/FRENCH"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Languages/SPANISH"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cvclipse.ecore#//Language">
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Language/GERMAN"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Language/ENGLISH"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Language/FRENCH"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Language/SPANISH"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cvclipse.ecore#//Styles">
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Styles/CASUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Styles/CLASSIC"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Styles/OLDSTYLE"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Styles/BANKING"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cvclipse.ecore#//Style">
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Style/CASUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Style/CLASSIC"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Style/OLDSTYLE"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Style/BANKING"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cvclipse.ecore#//Colors">
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/BLUE"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/ORANGE"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/GREEN"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/RED"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/PURPLE"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/GREY"/>
-      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Colors/BLACK"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cvclipse.ecore#//Color">
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/BLUE"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/ORANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/GREEN"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/RED"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/PURPLE"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/GREY"/>
+      <genEnumLiterals ecoreEnumLiteral="cvclipse.ecore#//Color/BLACK"/>
     </genEnums>
     <genClasses ecoreClass="cvclipse.ecore#//CV">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cvclipse.ecore#//CV/picture"/>

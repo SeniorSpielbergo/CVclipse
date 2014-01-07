@@ -5,6 +5,7 @@ package de.tu_bs.cs.isf.mbse.cvclipse;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -92,6 +93,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int CV_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>CV</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CV_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LetterImpl <em>Letter</em>}' class.
@@ -194,6 +204,15 @@ public interface CvclipsePackage extends EPackage {
 	int LETTER_FEATURE_COUNT = 9;
 
 	/**
+	 * The number of operations of the '<em>Letter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LETTER_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ApplicationImpl <em>Application</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -283,6 +302,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int APPLICATION_FEATURE_COUNT = 8;
+
+	/**
+	 * The number of operations of the '<em>Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.PersonalInformationImpl <em>Personal Information</em>}' class.
@@ -466,6 +494,15 @@ public interface CvclipsePackage extends EPackage {
 	int PERSONAL_INFORMATION_FEATURE_COUNT = 18;
 
 	/**
+	 * The number of operations of the '<em>Personal Information</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PERSONAL_INFORMATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BlockImpl <em>Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -503,6 +540,15 @@ public interface CvclipsePackage extends EPackage {
 	int BLOCK_FEATURE_COUNT = 2;
 
 	/**
+	 * The number of operations of the '<em>Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.TextImpl <em>Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -529,6 +575,24 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT___TO_STRING = 0;
+
+	/**
+	 * The number of operations of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BoldTextImpl <em>Bold Text</em>}' class.
@@ -559,6 +623,24 @@ public interface CvclipsePackage extends EPackage {
 	int BOLD_TEXT_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_TEXT___TO_STRING = TEXT___TO_STRING;
+
+	/**
+	 * The number of operations of the '<em>Bold Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_TEXT_OPERATION_COUNT = TEXT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ItalicTextImpl <em>Italic Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -587,6 +669,24 @@ public interface CvclipsePackage extends EPackage {
 	int ITALIC_TEXT_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITALIC_TEXT___TO_STRING = TEXT___TO_STRING;
+
+	/**
+	 * The number of operations of the '<em>Italic Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITALIC_TEXT_OPERATION_COUNT = TEXT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BoldItalicTextImpl <em>Bold Italic Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,6 +713,24 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int BOLD_ITALIC_TEXT_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_ITALIC_TEXT___TO_STRING = TEXT___TO_STRING;
+
+	/**
+	 * The number of operations of the '<em>Bold Italic Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOLD_ITALIC_TEXT_OPERATION_COUNT = TEXT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ItemBlockImpl <em>Item Block</em>}' class.
@@ -652,6 +770,15 @@ public interface CvclipsePackage extends EPackage {
 	int ITEM_BLOCK_FEATURE_COUNT = BLOCK_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Item Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_BLOCK_OPERATION_COUNT = BLOCK_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.EducationBlockImpl <em>Education Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,6 +814,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int EDUCATION_BLOCK_FEATURE_COUNT = ITEM_BLOCK_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Education Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EDUCATION_BLOCK_OPERATION_COUNT = ITEM_BLOCK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ListBlockImpl <em>List Block</em>}' class.
@@ -726,6 +862,15 @@ public interface CvclipsePackage extends EPackage {
 	int LIST_BLOCK_FEATURE_COUNT = BLOCK_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>List Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_BLOCK_OPERATION_COUNT = BLOCK_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.HobbyBlockImpl <em>Hobby Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -761,6 +906,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int HOBBY_BLOCK_FEATURE_COUNT = LIST_BLOCK_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Hobby Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HOBBY_BLOCK_OPERATION_COUNT = LIST_BLOCK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ProfessionalExperienceBlockImpl <em>Professional Experience Block</em>}' class.
@@ -800,6 +954,15 @@ public interface CvclipsePackage extends EPackage {
 	int PROFESSIONAL_EXPERIENCE_BLOCK_FEATURE_COUNT = ITEM_BLOCK_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Professional Experience Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROFESSIONAL_EXPERIENCE_BLOCK_OPERATION_COUNT = ITEM_BLOCK_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageBlockImpl <em>Language Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -837,6 +1000,15 @@ public interface CvclipsePackage extends EPackage {
 	int LANGUAGE_BLOCK_FEATURE_COUNT = ITEM_BLOCK_FEATURE_COUNT + 0;
 
 	/**
+	 * The number of operations of the '<em>Language Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_BLOCK_OPERATION_COUNT = ITEM_BLOCK_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LineBreakImpl <em>Line Break</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -865,6 +1037,24 @@ public interface CvclipsePackage extends EPackage {
 	int LINE_BREAK_FEATURE_COUNT = TEXT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINE_BREAK___TO_STRING = TEXT___TO_STRING;
+
+	/**
+	 * The number of operations of the '<em>Line Break</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINE_BREAK_OPERATION_COUNT = TEXT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ItemImpl <em>Item</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -891,6 +1081,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int ITEM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.ProfessionalTrainingBlockImpl <em>Professional Training Block</em>}' class.
@@ -928,6 +1127,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int PROFESSIONAL_TRAINING_BLOCK_FEATURE_COUNT = ITEM_BLOCK_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Professional Training Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROFESSIONAL_TRAINING_BLOCK_OPERATION_COUNT = ITEM_BLOCK_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.DateItemImpl <em>Date Item</em>}' class.
@@ -976,6 +1184,15 @@ public interface CvclipsePackage extends EPackage {
 	int DATE_ITEM_FEATURE_COUNT = ITEM_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of operations of the '<em>Date Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_ITEM_OPERATION_COUNT = ITEM_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.TextItemImpl <em>Text Item</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1011,6 +1228,15 @@ public interface CvclipsePackage extends EPackage {
 	 * @ordered
 	 */
 	int TEXT_ITEM_FEATURE_COUNT = ITEM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Text Item</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_ITEM_OPERATION_COUNT = ITEM_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.DateImpl <em>Date</em>}' class.
@@ -1059,6 +1285,24 @@ public interface CvclipsePackage extends EPackage {
 	int DATE_FEATURE_COUNT = 3;
 
 	/**
+	 * The operation id for the '<em>To String</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE___TO_STRING = 0;
+
+	/**
+	 * The number of operations of the '<em>Date</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1096,34 +1340,43 @@ public interface CvclipsePackage extends EPackage {
 	int LANGUAGE_TO_TEXT_MAP_ENTRY_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Languages <em>Languages</em>}' enum.
+	 * The number of operations of the '<em>Language To Text Map Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Languages
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguages()
 	 * @generated
+	 * @ordered
 	 */
-	int LANGUAGES = 22;
+	int LANGUAGE_TO_TEXT_MAP_ENTRY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Styles <em>Styles</em>}' enum.
+	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Language <em>Language</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Styles
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getStyles()
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Language
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguage()
 	 * @generated
 	 */
-	int STYLES = 23;
+	int LANGUAGE = 22;
 
 	/**
-	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Colors <em>Colors</em>}' enum.
+	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Style <em>Style</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Colors
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getColors()
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Style
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getStyle()
 	 * @generated
 	 */
-	int COLORS = 24;
+	int STYLE = 23;
+
+	/**
+	 * The meta object id for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Color <em>Color</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Color
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getColor()
+	 * @generated
+	 */
+	int COLOR = 24;
 
 
 	/**
@@ -1627,6 +1880,16 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getText_Content();
 
 	/**
+	 * Returns the meta object for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Text#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Text#toString()
+	 * @generated
+	 */
+	EOperation getText__ToString();
+
+	/**
 	 * Returns the meta object for class '{@link de.tu_bs.cs.isf.mbse.cvclipse.BoldText <em>Bold Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1854,12 +2117,22 @@ public interface CvclipsePackage extends EPackage {
 	EAttribute getDate_Year();
 
 	/**
+	 * Returns the meta object for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Date#toString() <em>To String</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>To String</em>' operation.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Date#toString()
+	 * @generated
+	 */
+	EOperation getDate__ToString();
+
+	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry <em>Language To Text Map Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Language To Text Map Entry</em>'.
 	 * @see java.util.Map.Entry
-	 * @model keyDataType="de.tu_bs.cs.isf.mbse.cvclipse.Languages" keyRequired="true"
+	 * @model keyDataType="de.tu_bs.cs.isf.mbse.cvclipse.Language" keyRequired="true"
 	 *        valueType="de.tu_bs.cs.isf.mbse.cvclipse.Text" valueContainment="true" valueRequired="true"
 	 * @generated
 	 */
@@ -1888,34 +2161,34 @@ public interface CvclipsePackage extends EPackage {
 	EReference getLanguageToTextMapEntry_Value();
 
 	/**
-	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Languages <em>Languages</em>}'.
+	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Language <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Languages</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Languages
+	 * @return the meta object for enum '<em>Language</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Language
 	 * @generated
 	 */
-	EEnum getLanguages();
+	EEnum getLanguage();
 
 	/**
-	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Styles <em>Styles</em>}'.
+	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Style <em>Style</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Styles</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Styles
+	 * @return the meta object for enum '<em>Style</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Style
 	 * @generated
 	 */
-	EEnum getStyles();
+	EEnum getStyle();
 
 	/**
-	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Colors <em>Colors</em>}'.
+	 * Returns the meta object for enum '{@link de.tu_bs.cs.isf.mbse.cvclipse.Color <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Colors</em>'.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Colors
+	 * @return the meta object for enum '<em>Color</em>'.
+	 * @see de.tu_bs.cs.isf.mbse.cvclipse.Color
 	 * @generated
 	 */
-	EEnum getColors();
+	EEnum getColor();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2320,6 +2593,14 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute TEXT__CONTENT = eINSTANCE.getText_Content();
 
 		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TEXT___TO_STRING = eINSTANCE.getText__ToString();
+
+		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.BoldTextImpl <em>Bold Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2526,6 +2807,14 @@ public interface CvclipsePackage extends EPackage {
 		EAttribute DATE__YEAR = eINSTANCE.getDate_Year();
 
 		/**
+		 * The meta object literal for the '<em><b>To String</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATE___TO_STRING = eINSTANCE.getDate__ToString();
+
+		/**
 		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl <em>Language To Text Map Entry</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2552,34 +2841,34 @@ public interface CvclipsePackage extends EPackage {
 		EReference LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE = eINSTANCE.getLanguageToTextMapEntry_Value();
 
 		/**
-		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Languages <em>Languages</em>}' enum.
+		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Language <em>Language</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.Languages
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguages()
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.Language
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getLanguage()
 		 * @generated
 		 */
-		EEnum LANGUAGES = eINSTANCE.getLanguages();
+		EEnum LANGUAGE = eINSTANCE.getLanguage();
 
 		/**
-		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Styles <em>Styles</em>}' enum.
+		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Style <em>Style</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.Styles
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getStyles()
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.Style
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getStyle()
 		 * @generated
 		 */
-		EEnum STYLES = eINSTANCE.getStyles();
+		EEnum STYLE = eINSTANCE.getStyle();
 
 		/**
-		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Colors <em>Colors</em>}' enum.
+		 * The meta object literal for the '{@link de.tu_bs.cs.isf.mbse.cvclipse.Color <em>Color</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.Colors
-		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getColors()
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.Color
+		 * @see de.tu_bs.cs.isf.mbse.cvclipse.impl.CvclipsePackageImpl#getColor()
 		 * @generated
 		 */
-		EEnum COLORS = eINSTANCE.getColors();
+		EEnum COLOR = eINSTANCE.getColor();
 
 	}
 

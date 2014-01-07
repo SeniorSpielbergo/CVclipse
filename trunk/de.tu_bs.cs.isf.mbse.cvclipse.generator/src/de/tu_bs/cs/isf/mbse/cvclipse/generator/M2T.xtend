@@ -1,7 +1,7 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.generator
 
 import de.tu_bs.cs.isf.mbse.cvclipse.Application
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages
+import de.tu_bs.cs.isf.mbse.cvclipse.Language
 import de.tu_bs.cs.isf.mbse.cvclipse.ListBlock
 import de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem
@@ -57,7 +57,7 @@ class M2T {
 		
 	ModelLoader m = new ModelLoader();
 	Application app;
-	List<Languages> languages;
+	List<Language> languages;
 	File targetFile;
 	FileOutputStream streamy;
 	String output;
@@ -69,6 +69,9 @@ class M2T {
 			targetFile = new File(folder + File.separator + fileName + "_" + l.getName().toLowerCase + ".tex");
 			targetFile.createNewFile();
 			streamy = new FileOutputStream(targetFile);
+			
+			Console.println("Generating CV in: \"" + l.getName + "\"");
+			
 			output = generateContents(l).replaceAll("\"", "");
 			streamy.write(output.getBytes());
 			streamy.close();
@@ -76,7 +79,7 @@ class M2T {
 		
 	}
 	
-	def String generateContents(Languages language) {
+	def String generateContents(Language language) {
 		'''
 «generateHead(language)»
 
@@ -91,7 +94,7 @@ class M2T {
 		'''
 	}
 	
-	def String generateHead(Languages language) {
+	def String generateHead(Language language) {
 '''
 \documentclass[12pt,a4paper,sans]{moderncv}
 
@@ -105,7 +108,7 @@ class M2T {
 '''
 	}
 	
-	def String generatePersonal(Languages languages) {
+	def String generatePersonal(Language languages) {
 '''
 \name{«app.personalInformation.firstname»}{«app.personalInformation.surname»}
 \address{«app.personalInformation.street»}{«app.personalInformation.city»}
@@ -121,12 +124,12 @@ class M2T {
 '''
 	}
 	
-	def String generateLetter(Languages languages) {
+	def String generateLetter(Language languages) {
 		'''
 \recipient{«IF app.letter.recipientAttention != null»«app.letter.recipientAttention»«ENDIF»}{«app.letter.recipientCompany»\\«app.letter.recipientStreet»\\«app.letter.recipientCity»«IF app.letter.recipientCountry != null»\\«app.letter.recipientCountry»«ENDIF»}
 \date{«IF app.date != null»«app.date»«ELSE»\today«ENDIF»}
-\opening{«IF !app.letter.opening.empty»«app.letter.opening.get(languages)»«ELSEIF languages.equals(Languages.ENGLISH)»«ENGLISH_OPENING»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_OPENING»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_OPENING»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_OPENING»«ENDIF»,}
-\closing{«IF !app.letter.closing.empty»«app.letter.closing.get(languages)»«ELSEIF languages.equals(Languages.ENGLISH)»«ENGLISH_CLOSING»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_CLOSING»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_CLOSING»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_CLOSING»«ENDIF»,}
+\opening{«IF !app.letter.opening.empty»«app.letter.opening.get(languages)»«ELSEIF languages.equals(Language.ENGLISH)»«ENGLISH_OPENING»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_OPENING»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_OPENING»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_OPENING»«ENDIF»,}
+\closing{«IF !app.letter.closing.empty»«app.letter.closing.get(languages)»«ELSEIF languages.equals(Language.ENGLISH)»«ENGLISH_CLOSING»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_CLOSING»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_CLOSING»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_CLOSING»«ENDIF»,}
 «IF !app.letter.enclosure.empty»\enclosure{«app.letter.enclosure.get(languages)»}«ENDIF»
 \makelettertitle
 «app.letter.text.get(languages)»
@@ -136,20 +139,20 @@ class M2T {
 		'''
 	}
 	
-	def String generateCv(Languages languages) {
+	def String generateCv(Language languages) {
 		'''
 \makecvtitle
-\section{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_PERSONAL»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_PERSONAL»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_PERSONAL»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_PERSONAL»«ENDIF»}
-«IF !app.personalInformation.nationality.empty»\cvitem{\textbf{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_NATIONALITY»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_NATIONALITY»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_NATIONALITY»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_NATIONALITY»«ENDIF»}}{«app.personalInformation.nationality.get(languages)»}«ENDIF»
-\cvitem{\textbf{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_BIRTHDATE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_BIRTHDATE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_BIRTHDATE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_BIRTHDATE»«ENDIF»}}{«app.personalInformation.birthdate»}
-\cvitem{\textbf{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_BIRTHPLACE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_BIRTHPLACE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_BIRTHPLACE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_BIRTHPLACE»«ENDIF»}}{«app.personalInformation.birthplace»}
+\section{«IF languages.equals(Language.ENGLISH)»«ENGLISH_PERSONAL»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_PERSONAL»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_PERSONAL»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_PERSONAL»«ENDIF»}
+«IF !app.personalInformation.nationality.empty»\cvitem{\textbf{«IF languages.equals(Language.ENGLISH)»«ENGLISH_NATIONALITY»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_NATIONALITY»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_NATIONALITY»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_NATIONALITY»«ENDIF»}}{«app.personalInformation.nationality.get(languages)»}«ENDIF»
+\cvitem{\textbf{«IF languages.equals(Language.ENGLISH)»«ENGLISH_BIRTHDATE»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_BIRTHDATE»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_BIRTHDATE»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_BIRTHDATE»«ENDIF»}}{«app.personalInformation.birthdate»}
+\cvitem{\textbf{«IF languages.equals(Language.ENGLISH)»«ENGLISH_BIRTHPLACE»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_BIRTHPLACE»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_BIRTHPLACE»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_BIRTHPLACE»«ENDIF»}}{«app.personalInformation.birthplace»}
 «FOR block : app.cv.blocks»
 \section{«block.title.get(languages)»}
 «IF block instanceof ListBlock»
 «FOR i : 0..(block.items.size-1)»«IF i%2==0»\cvdoubleitem{\textbf{«(block.items.get(i) as TextItem).leftContent.get(languages)»}}{«block.items.get(i).rightContent.get(languages)»}«IF block.items.size>i+1»{\textbf{«(block.items.get(i+1) as TextItem).leftContent.get(languages)»}}{«block.items.get(i+1).rightContent.get(languages)»}«ELSE»{}{}«ENDIF»«ENDIF»«ENDFOR»
 «ELSEIF block instanceof ItemBlock»
 «FOR item: block.items»
-\cvitem{«IF item instanceof TextItem»\textbf{«(item as TextItem).leftContent.get(languages)»}«ENDIF»«IF item instanceof DateItem»«IF (item as DateItem).end != null»«(item as DateItem).begin.toString» -- «(item as DateItem).end.toString»«ELSE»«IF languages.equals(Languages.ENGLISH)»«ENGLISH_SINCE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_SINCE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_SINCE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_SINCE»«ENDIF» «(item as DateItem).begin.toString»«ENDIF»«ENDIF»}{«item.rightContent.get(languages)»}
+\cvitem{«IF item instanceof TextItem»\textbf{«(item as TextItem).leftContent.get(languages)»}«ENDIF»«IF item instanceof DateItem»«IF (item as DateItem).end != null»«(item as DateItem).begin.toString» -- «(item as DateItem).end.toString»«ELSE»«IF languages.equals(Language.ENGLISH)»«ENGLISH_SINCE»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_SINCE»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_SINCE»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_SINCE»«ENDIF» «(item as DateItem).begin.toString»«ENDIF»«ENDIF»}{«item.rightContent.get(languages)»}
 «ENDFOR»
 «ENDIF»
 «ENDFOR»

@@ -2,11 +2,9 @@
  */
 package de.tu_bs.cs.isf.mbse.cvclipse;
 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -45,7 +43,7 @@ public interface Block extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Title</b></em>' map.
-	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Languages},
+	 * The key is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Language},
 	 * and the value is of type {@link de.tu_bs.cs.isf.mbse.cvclipse.Text},
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -55,9 +53,9 @@ public interface Block extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Title</em>' map.
 	 * @see de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage#getBlock_Title()
-	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Languages, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
+	 * @model mapType="de.tu_bs.cs.isf.mbse.cvclipse.LanguageToTextMapEntry<de.tu_bs.cs.isf.mbse.cvclipse.Language, de.tu_bs.cs.isf.mbse.cvclipse.Text>"
 	 * @generated
 	 */
-	EMap<Languages, Text> getTitle();
+	EMap<Language, Text> getTitle();
 
 } // Block

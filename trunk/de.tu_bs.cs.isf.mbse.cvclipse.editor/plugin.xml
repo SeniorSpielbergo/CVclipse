@@ -28,7 +28,7 @@
             id="de.tu_bs.cs.isf.mbse.cvclipse.presentation.CvclipseEditorID"
             name="%_UI_CvclipseEditor_label"
             icon="icons/full/obj16/CvclipseModelFile.gif"
-            extensions="cvclipse"
+            extensions="cv"
             class="de.tu_bs.cs.isf.mbse.cvclipse.presentation.CvclipseEditor"
             contributorClass="de.tu_bs.cs.isf.mbse.cvclipse.presentation.CvclipseActionBarContributor">
       </editor>

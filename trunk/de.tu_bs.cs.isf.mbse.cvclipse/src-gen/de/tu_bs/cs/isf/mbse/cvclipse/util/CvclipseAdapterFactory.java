@@ -154,7 +154,7 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 				return createDateAdapter();
 			}
 			@Override
-			public Adapter caseLanguageToTextMapEntry(Map.Entry<Languages, Text> object) {
+			public Adapter caseLanguageToTextMapEntry(Map.Entry<Language, Text> object) {
 				return createLanguageToTextMapEntryAdapter();
 			}
 			@Override

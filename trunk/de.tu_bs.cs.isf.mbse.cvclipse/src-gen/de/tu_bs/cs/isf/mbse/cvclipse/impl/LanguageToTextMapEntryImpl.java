@@ -3,21 +3,17 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.BasicEMap;
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +29,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  *
  * @generated
  */
-public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap.Entry<Languages,Text> {
+public class LanguageToTextMapEntryImpl extends MinimalEObjectImpl.Container implements BasicEMap.Entry<Language,Text> {
 	/**
 	 * The default value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -42,7 +38,7 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Languages KEY_EDEFAULT = Languages.GERMAN;
+	protected static final Language KEY_EDEFAULT = Language.GERMAN;
 
 	/**
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' attribute.
@@ -52,7 +48,7 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * @generated
 	 * @ordered
 	 */
-	protected Languages key = KEY_EDEFAULT;
+	protected Language key = KEY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}' containment reference.
@@ -88,7 +84,7 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Languages getTypedKey() {
+	public Language getTypedKey() {
 		return key;
 	}
 
@@ -97,8 +93,8 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTypedKey(Languages newKey) {
-		Languages oldKey = key;
+	public void setTypedKey(Language newKey) {
+		Language oldKey = key;
 		key = newKey == null ? KEY_EDEFAULT : newKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CvclipsePackage.LANGUAGE_TO_TEXT_MAP_ENTRY__KEY, oldKey, key));
@@ -186,7 +182,7 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case CvclipsePackage.LANGUAGE_TO_TEXT_MAP_ENTRY__KEY:
-				setTypedKey((Languages)newValue);
+				setTypedKey((Language)newValue);
 				return;
 			case CvclipsePackage.LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE:
 				setTypedValue((Text)newValue);
@@ -279,7 +275,7 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Languages getKey() {
+	public Language getKey() {
 		return getTypedKey();
 	}
 
@@ -288,7 +284,7 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKey(Languages key) {
+	public void setKey(Language key) {
 		setTypedKey(key);
 	}
 
@@ -318,9 +314,9 @@ public class LanguageToTextMapEntryImpl extends EObjectImpl implements BasicEMap
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<Languages, Text> getEMap() {
+	public EMap<Language, Text> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null : (EMap<Languages, Text>)container.eGet(eContainmentFeature());
+		return container == null ? null : (EMap<Language, Text>)container.eGet(eContainmentFeature());
 	}
 
 } //LanguageToTextMapEntryImpl

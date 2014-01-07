@@ -31,15 +31,15 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="letter" eType="#//Letter"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="languages" lowerBound="1"
-        upperBound="-1" eType="#//Languages"/>
+        upperBound="-1" eType="#//Language"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="personalInformation" lowerBound="1"
         eType="#//PersonalInformation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//Styles"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Colors"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//Style"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="place" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Languages">
+  <eClassifiers xsi:type="ecore:EEnum" name="Language">
     <eLiterals name="GERMAN" literal="ngerman"/>
     <eLiterals name="ENGLISH" value="1" literal="english"/>
     <eLiterals name="FRENCH" value="2" literal="french"/>
@@ -73,13 +73,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="country" upperBound="-1"
         eType="#//LanguageToTextMapEntry" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Styles">
+  <eClassifiers xsi:type="ecore:EEnum" name="Style">
     <eLiterals name="CASUAL" literal="casual"/>
     <eLiterals name="CLASSIC" value="1" literal="classic"/>
     <eLiterals name="OLDSTYLE" value="2" literal="oldstyle"/>
     <eLiterals name="BANKING" value="3" literal="banking"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Colors">
+  <eClassifiers xsi:type="ecore:EEnum" name="Color">
     <eLiterals name="BLUE" literal="blue"/>
     <eLiterals name="ORANGE" value="1" literal="orange"/>
     <eLiterals name="GREEN" value="2" literal="green"/>
@@ -138,7 +138,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageToTextMapEntry" instanceClassName="java.util.Map$Entry">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="#//Languages"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="#//Language"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Text"
         containment="true"/>
   </eClassifiers>

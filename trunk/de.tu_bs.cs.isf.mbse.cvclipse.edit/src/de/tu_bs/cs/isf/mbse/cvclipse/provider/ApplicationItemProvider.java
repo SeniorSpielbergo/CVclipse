@@ -6,7 +6,7 @@ package de.tu_bs.cs.isf.mbse.cvclipse.provider;
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipseFactory;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
-import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
+import de.tu_bs.cs.isf.mbse.cvclipse.Style;
 
 import java.util.Collection;
 import java.util.List;
@@ -212,7 +212,7 @@ public class ApplicationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		Styles labelValue = ((Application)object).getStyle();
+		Style labelValue = ((Application)object).getStyle();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Application_type") :

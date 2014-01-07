@@ -3,21 +3,18 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
-import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 
-import java.util.Map;
-
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -43,7 +40,7 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<Languages, Text> leftContent;
+	protected EMap<Language, Text> leftContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,9 +66,9 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EMap<Languages, Text> getLeftContent() {
+	public EMap<Language, Text> getLeftContent() {
 		if (leftContent == null) {
-			leftContent = new EcoreEMap<Languages,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.TEXT_ITEM__LEFT_CONTENT);
+			leftContent = new EcoreEMap<Language,Text>(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY, LanguageToTextMapEntryImpl.class, this, CvclipsePackage.TEXT_ITEM__LEFT_CONTENT);
 		}
 		return leftContent;
 	}
@@ -110,7 +107,6 @@ public class TextItemImpl extends ItemImpl implements TextItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
