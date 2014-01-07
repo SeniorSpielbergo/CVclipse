@@ -15,6 +15,16 @@ class M2T {
 	String DEFAULT_STYLE = "casual";
 	String DEFAULT_COLOR = "blue";
 	
+	String GERMAN_OPENING = "Sehr geehrte Damen und Herren";
+	String ENGLISH_OPENING = "Dear Sir or Madam";
+	String FRENCH_OPENING = "Mesdames, Messieurs";
+	String SPANISH_OPENING = "Muy señores míos";
+	
+	String GERMAN_CLOSING = "Mit freundlichen Grüßen";
+	String ENGLISH_CLOSING = "Yours sincerly";
+	String FRENCH_CLOSING = "Je vous adresse, Madame, Monsieur, mes salutations distinguées";
+	String SPANISH_CLOSING = "Le saluda atentamente";
+	
 	ModelLoader m = new ModelLoader();
 	Application app;
 	List<Languages> languages;
@@ -41,6 +51,9 @@ class M2T {
 «generateHead(language)»
 
 «generatePersonal(language)»
+\begin{document}
+«IF app.letter != null»«generateLetter(language)»«ENDIF»
+\end{document}
 		'''
 	}
 	
@@ -73,4 +86,21 @@ class M2T {
 «IF app.cv.picture != null»\photo[64pt][0.4pt]{«app.cv.picture»}«ENDIF»
 '''
 	}
+	
+	def String generateLetter(Languages languages) {
+		'''
+\recipient{«IF app.letter.recipientAttention != null»«app.letter.recipientAttention»«ENDIF»}{«app.letter.recipientCompany»\\«app.letter.recipientStreet»\\«app.letter.recipientCity»«IF app.letter.recipientCountry != null»\\«app.letter.recipientCountry»«ENDIF»}
+\date{«IF app.date != null»«app.date»«ELSE»\today«ENDIF»}
+\opening{«IF app.letter.opening != null»«app.letter.opening.get(languages)»«ELSEIF languages.equals(Languages.ENGLISH_VALUE)»«ENGLISH_OPENING»«ELSEIF languages.equals(Languages.GERMAN_VALUE)»«GERMAN_OPENING»«ELSEIF languages.equals(Languages.SPANISH_VALUE)»«SPANISH_OPENING»«ELSEIF languages.equals(Languages.FRENCH_VALUE)»«FRENCH_OPENING»«ENDIF»,}
+\closing{«IF app.letter.closing != null»«app.letter.closing.get(languages)»«ELSEIF languages.equals(Languages.ENGLISH_VALUE)»«ENGLISH_CLOSING»«ELSEIF languages.equals(Languages.GERMAN_VALUE)»«GERMAN_CLOSING»«ELSEIF languages.equals(Languages.SPANISH_VALUE)»«SPANISH_CLOSING»«ELSEIF languages.equals(Languages.FRENCH_VALUE)»«FRENCH_CLOSING»«ENDIF»,}
+«IF app.letter.enclosure != null»\enclosure{«app.letter.enclosure.get(languages)»}«ENDIF»
+\makelettertitle
+«app.letter.text.get(languages)»
+
+\makeletterclosing
+\clearpage
+		'''
+	}
+	
+	
 }

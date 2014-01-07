@@ -4,14 +4,18 @@ import com.google.common.base.Objects;
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.CV;
 import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
+import de.tu_bs.cs.isf.mbse.cvclipse.Date;
 import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
+import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
 import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.generator.ModelLoader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
@@ -25,6 +29,22 @@ public class M2T {
   private String DEFAULT_STYLE = "casual";
   
   private String DEFAULT_COLOR = "blue";
+  
+  private String GERMAN_OPENING = "Sehr geehrte Damen und Herren";
+  
+  private String ENGLISH_OPENING = "Dear Sir or Madam";
+  
+  private String FRENCH_OPENING = "Mesdames, Messieurs";
+  
+  private String SPANISH_OPENING = "Muy señores míos";
+  
+  private String GERMAN_CLOSING = "Mit freundlichen Grüßen";
+  
+  private String ENGLISH_CLOSING = "Yours sincerly";
+  
+  private String FRENCH_CLOSING = "Je vous adresse, Madame, Monsieur, mes salutations distinguées";
+  
+  private String SPANISH_CLOSING = "Le saluda atentamente";
   
   private ModelLoader m = new Function0<ModelLoader>() {
     public ModelLoader apply() {
@@ -82,6 +102,19 @@ public class M2T {
     String _generatePersonal = this.generatePersonal(language);
     _builder.append(_generatePersonal, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("\\begin{document}");
+    _builder.newLine();
+    {
+      Letter _letter = this.app.getLetter();
+      boolean _notEquals = (!Objects.equal(_letter, null));
+      if (_notEquals) {
+        String _generateLetter = this.generateLetter(language);
+        _builder.append(_generateLetter, "");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\end{document}");
+    _builder.newLine();
     return _builder.toString();
   }
   
@@ -272,6 +305,154 @@ public class M2T {
       }
     }
     _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  public String generateLetter(final Languages languages) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\recipient{");
+    {
+      Letter _letter = this.app.getLetter();
+      String _recipientAttention = _letter.getRecipientAttention();
+      boolean _notEquals = (!Objects.equal(_recipientAttention, null));
+      if (_notEquals) {
+        Letter _letter_1 = this.app.getLetter();
+        String _recipientAttention_1 = _letter_1.getRecipientAttention();
+        _builder.append(_recipientAttention_1, "");
+      }
+    }
+    _builder.append("}{");
+    Letter _letter_2 = this.app.getLetter();
+    String _recipientCompany = _letter_2.getRecipientCompany();
+    _builder.append(_recipientCompany, "");
+    _builder.append("\\\\");
+    Letter _letter_3 = this.app.getLetter();
+    String _recipientStreet = _letter_3.getRecipientStreet();
+    _builder.append(_recipientStreet, "");
+    _builder.append("\\\\");
+    Letter _letter_4 = this.app.getLetter();
+    String _recipientCity = _letter_4.getRecipientCity();
+    _builder.append(_recipientCity, "");
+    {
+      Letter _letter_5 = this.app.getLetter();
+      String _recipientCountry = _letter_5.getRecipientCountry();
+      boolean _notEquals_1 = (!Objects.equal(_recipientCountry, null));
+      if (_notEquals_1) {
+        _builder.append("\\\\");
+        Letter _letter_6 = this.app.getLetter();
+        String _recipientCountry_1 = _letter_6.getRecipientCountry();
+        _builder.append(_recipientCountry_1, "");
+      }
+    }
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\date{");
+    {
+      Date _date = this.app.getDate();
+      boolean _notEquals_2 = (!Objects.equal(_date, null));
+      if (_notEquals_2) {
+        Date _date_1 = this.app.getDate();
+        _builder.append(_date_1, "");
+      } else {
+        _builder.append("\\today");
+      }
+    }
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\opening{");
+    {
+      Letter _letter_7 = this.app.getLetter();
+      EMap<Languages,Text> _opening = _letter_7.getOpening();
+      boolean _notEquals_3 = (!Objects.equal(_opening, null));
+      if (_notEquals_3) {
+        Letter _letter_8 = this.app.getLetter();
+        EMap<Languages,Text> _opening_1 = _letter_8.getOpening();
+        Text _get = _opening_1.get(languages);
+        _builder.append(_get, "");
+      } else {
+        boolean _equals = languages.equals(Integer.valueOf(Languages.ENGLISH_VALUE));
+        if (_equals) {
+          _builder.append(this.ENGLISH_OPENING, "");
+        } else {
+          boolean _equals_1 = languages.equals(Integer.valueOf(Languages.GERMAN_VALUE));
+          if (_equals_1) {
+            _builder.append(this.GERMAN_OPENING, "");
+          } else {
+            boolean _equals_2 = languages.equals(Integer.valueOf(Languages.SPANISH_VALUE));
+            if (_equals_2) {
+              _builder.append(this.SPANISH_OPENING, "");
+            } else {
+              boolean _equals_3 = languages.equals(Integer.valueOf(Languages.FRENCH_VALUE));
+              if (_equals_3) {
+                _builder.append(this.FRENCH_OPENING, "");
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder.append(",}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\closing{");
+    {
+      Letter _letter_9 = this.app.getLetter();
+      EMap<Languages,Text> _closing = _letter_9.getClosing();
+      boolean _notEquals_4 = (!Objects.equal(_closing, null));
+      if (_notEquals_4) {
+        Letter _letter_10 = this.app.getLetter();
+        EMap<Languages,Text> _closing_1 = _letter_10.getClosing();
+        Text _get_1 = _closing_1.get(languages);
+        _builder.append(_get_1, "");
+      } else {
+        boolean _equals_4 = languages.equals(Integer.valueOf(Languages.ENGLISH_VALUE));
+        if (_equals_4) {
+          _builder.append(this.ENGLISH_CLOSING, "");
+        } else {
+          boolean _equals_5 = languages.equals(Integer.valueOf(Languages.GERMAN_VALUE));
+          if (_equals_5) {
+            _builder.append(this.GERMAN_CLOSING, "");
+          } else {
+            boolean _equals_6 = languages.equals(Integer.valueOf(Languages.SPANISH_VALUE));
+            if (_equals_6) {
+              _builder.append(this.SPANISH_CLOSING, "");
+            } else {
+              boolean _equals_7 = languages.equals(Integer.valueOf(Languages.FRENCH_VALUE));
+              if (_equals_7) {
+                _builder.append(this.FRENCH_CLOSING, "");
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder.append(",}");
+    _builder.newLineIfNotEmpty();
+    {
+      Letter _letter_11 = this.app.getLetter();
+      EMap<Languages,Text> _enclosure = _letter_11.getEnclosure();
+      boolean _notEquals_5 = (!Objects.equal(_enclosure, null));
+      if (_notEquals_5) {
+        _builder.append("\\enclosure{");
+        Letter _letter_12 = this.app.getLetter();
+        EMap<Languages,Text> _enclosure_1 = _letter_12.getEnclosure();
+        Text _get_2 = _enclosure_1.get(languages);
+        _builder.append(_get_2, "");
+        _builder.append("}");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\makelettertitle");
+    _builder.newLine();
+    Letter _letter_13 = this.app.getLetter();
+    EMap<Languages,Text> _text = _letter_13.getText();
+    Text _get_3 = _text.get(languages);
+    _builder.append(_get_3, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("\\makeletterclosing");
+    _builder.newLine();
+    _builder.append("\\clearpage");
+    _builder.newLine();
     return _builder.toString();
   }
 }
