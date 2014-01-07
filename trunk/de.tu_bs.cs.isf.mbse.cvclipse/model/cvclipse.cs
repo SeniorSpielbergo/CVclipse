@@ -3,6 +3,7 @@ FOR <http://www.tu-braunschweig.de/isf/cvclipse/1.0><model/cvlipse.genmodel>
 START Application
 
 TOKENS {
+	DEFINE SL_COMMENT $'//'(~('\n'|'\r'|'\uffff'))* $ ;
 	DEFINE EMAIL $'"'$ + TEXT + $'@'$ + TEXT + $'.'$ + TEXT + $'"'$;
 	DEFINE TWITTER $'"'$ + $'@'$ + TEXT + $'"'$;
 	DEFINE TWO_DIGIT $('0'..'9')('0'..'9')$;
@@ -12,6 +13,7 @@ TOKENS {
 TOKENSTYLES {
 	"EMAIL" COLOR #0000FF;
 	"TWITTER" COLOR #0000FF;
+	"SL_COMMENT" COLOR #458B74;
 }
 
 RULES {
