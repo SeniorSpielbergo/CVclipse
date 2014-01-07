@@ -5976,6 +5976,10 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Item returns [de.tu_bs.cs.isf.mbse.cvcli
 	
 ;
 
+SL_COMMENT:
+	('//'(~('\n'|'\r'|'\uffff'))* )
+	{ _channel = 99; }
+;
 EMAIL:
 	('"'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'@'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'.'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'"')
 ;
