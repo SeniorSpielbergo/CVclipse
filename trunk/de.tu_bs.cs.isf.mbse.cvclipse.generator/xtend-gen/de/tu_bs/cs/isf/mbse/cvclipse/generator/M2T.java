@@ -25,6 +25,7 @@ import org.eclipse.emf.common.util.EMap;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function0;
+import org.eclipse.xtext.xbase.lib.IntegerRange;
 
 @SuppressWarnings("all")
 public class M2T {
@@ -647,45 +648,78 @@ public class M2T {
           if ((block instanceof ListBlock)) {
             {
               EList<Item> _items = ((ListBlock)block).getItems();
-              for(final Item item : _items) {
-                _builder.append("\\cvitem{\\textbf{");
-                EMap<Languages,Text> _leftContent = ((TextItem) item).getLeftContent();
-                Text _get_2 = _leftContent.get(languages);
-                _builder.append(_get_2, "");
-                _builder.append("}}{");
-                EMap<Languages,Text> _rightContent = item.getRightContent();
-                Text _get_3 = _rightContent.get(languages);
-                _builder.append(_get_3, "");
-                _builder.append("}");
-                _builder.newLineIfNotEmpty();
+              int _size = _items.size();
+              int _minus = (_size - 1);
+              IntegerRange _upTo = new IntegerRange(0, _minus);
+              for(final Integer i : _upTo) {
+                {
+                  if ((((i).intValue() % 2) == 0)) {
+                    _builder.append("\\cvdoubleitem{\\textbf{");
+                    EList<Item> _items_1 = ((ListBlock)block).getItems();
+                    Item _get_2 = _items_1.get((i).intValue());
+                    EMap<Languages,Text> _leftContent = ((TextItem) _get_2).getLeftContent();
+                    Text _get_3 = _leftContent.get(languages);
+                    _builder.append(_get_3, "");
+                    _builder.append("}}{");
+                    EList<Item> _items_2 = ((ListBlock)block).getItems();
+                    Item _get_4 = _items_2.get((i).intValue());
+                    EMap<Languages,Text> _rightContent = _get_4.getRightContent();
+                    Text _get_5 = _rightContent.get(languages);
+                    _builder.append(_get_5, "");
+                    _builder.append("}");
+                    {
+                      EList<Item> _items_3 = ((ListBlock)block).getItems();
+                      int _size_1 = _items_3.size();
+                      boolean _greaterThan = (_size_1 > ((i).intValue() + 1));
+                      if (_greaterThan) {
+                        _builder.append("{\\textbf{");
+                        EList<Item> _items_4 = ((ListBlock)block).getItems();
+                        Item _get_6 = _items_4.get(((i).intValue() + 1));
+                        EMap<Languages,Text> _leftContent_1 = ((TextItem) _get_6).getLeftContent();
+                        Text _get_7 = _leftContent_1.get(languages);
+                        _builder.append(_get_7, "");
+                        _builder.append("}}{");
+                        EList<Item> _items_5 = ((ListBlock)block).getItems();
+                        Item _get_8 = _items_5.get(((i).intValue() + 1));
+                        EMap<Languages,Text> _rightContent_1 = _get_8.getRightContent();
+                        Text _get_9 = _rightContent_1.get(languages);
+                        _builder.append(_get_9, "");
+                        _builder.append("}");
+                      } else {
+                        _builder.append("{}{}");
+                      }
+                    }
+                  }
+                }
               }
             }
+            _builder.newLineIfNotEmpty();
           } else {
             if ((block instanceof ItemBlock)) {
               {
-                EList<Item> _items_1 = block.getItems();
-                for(final Item item_1 : _items_1) {
+                EList<Item> _items_6 = block.getItems();
+                for(final Item item : _items_6) {
                   _builder.append("\\cvitem{");
                   {
-                    if ((item_1 instanceof TextItem)) {
+                    if ((item instanceof TextItem)) {
                       _builder.append("\\textbf{");
-                      EMap<Languages,Text> _leftContent_1 = ((TextItem) item_1).getLeftContent();
-                      Text _get_4 = _leftContent_1.get(languages);
-                      _builder.append(_get_4, "");
+                      EMap<Languages,Text> _leftContent_2 = ((TextItem) item).getLeftContent();
+                      Text _get_10 = _leftContent_2.get(languages);
+                      _builder.append(_get_10, "");
                       _builder.append("}");
                     }
                   }
                   {
-                    if ((item_1 instanceof DateItem)) {
+                    if ((item instanceof DateItem)) {
                       {
-                        Date _end = ((DateItem) item_1).getEnd();
+                        Date _end = ((DateItem) item).getEnd();
                         boolean _notEquals = (!Objects.equal(_end, null));
                         if (_notEquals) {
-                          Date _begin = ((DateItem) item_1).getBegin();
+                          Date _begin = ((DateItem) item).getBegin();
                           String _string = _begin.toString();
                           _builder.append(_string, "");
                           _builder.append(" -- ");
-                          Date _end_1 = ((DateItem) item_1).getEnd();
+                          Date _end_1 = ((DateItem) item).getEnd();
                           String _string_1 = _end_1.toString();
                           _builder.append(_string_1, "");
                         } else {
@@ -711,7 +745,7 @@ public class M2T {
                             }
                           }
                           _builder.append(" ");
-                          Date _begin_1 = ((DateItem) item_1).getBegin();
+                          Date _begin_1 = ((DateItem) item).getBegin();
                           String _string_2 = _begin_1.toString();
                           _builder.append(_string_2, "");
                         }
@@ -719,9 +753,9 @@ public class M2T {
                     }
                   }
                   _builder.append("}{");
-                  EMap<Languages,Text> _rightContent_1 = item_1.getRightContent();
-                  Text _get_5 = _rightContent_1.get(languages);
-                  _builder.append(_get_5, "");
+                  EMap<Languages,Text> _rightContent_2 = item.getRightContent();
+                  Text _get_11 = _rightContent_2.get(languages);
+                  _builder.append(_get_11, "");
                   _builder.append("}");
                   _builder.newLineIfNotEmpty();
                 }

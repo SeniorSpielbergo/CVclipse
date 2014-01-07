@@ -53,6 +53,7 @@ class M2T {
 	String ENGLISH_SINCE = "since";
 	String FRENCH_SINCE = "depuis";
 	String SPANISH_SINCE = "deste";
+
 		
 	ModelLoader m = new ModelLoader();
 	Application app;
@@ -145,9 +146,7 @@ class M2T {
 «FOR block : app.cv.blocks»
 \section{«block.title.get(languages)»}
 «IF block instanceof ListBlock»
-«FOR item: block.items»
-\cvitem{\textbf{«(item as TextItem).leftContent.get(languages)»}}{«item.rightContent.get(languages)»}
-«ENDFOR»
+«FOR i : 0..(block.items.size-1)»«IF i%2==0»\cvdoubleitem{\textbf{«(block.items.get(i) as TextItem).leftContent.get(languages)»}}{«block.items.get(i).rightContent.get(languages)»}«IF block.items.size>i+1»{\textbf{«(block.items.get(i+1) as TextItem).leftContent.get(languages)»}}{«block.items.get(i+1).rightContent.get(languages)»}«ELSE»{}{}«ENDIF»«ENDIF»«ENDFOR»
 «ELSEIF block instanceof ItemBlock»
 «FOR item: block.items»
 \cvitem{«IF item instanceof TextItem»\textbf{«(item as TextItem).leftContent.get(languages)»}«ENDIF»«IF item instanceof DateItem»«IF (item as DateItem).end != null»«(item as DateItem).begin.toString» -- «(item as DateItem).end.toString»«ELSE»«IF languages.equals(Languages.ENGLISH)»«ENGLISH_SINCE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_SINCE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_SINCE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_SINCE»«ENDIF» «(item as DateItem).begin.toString»«ENDIF»«ENDIF»}{«item.rightContent.get(languages)»}
