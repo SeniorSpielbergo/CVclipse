@@ -6,11 +6,16 @@ import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.CV;
 import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
+import de.tu_bs.cs.isf.mbse.cvclipse.DateItem;
+import de.tu_bs.cs.isf.mbse.cvclipse.Item;
+import de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.Languages;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
+import de.tu_bs.cs.isf.mbse.cvclipse.ListBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
 import de.tu_bs.cs.isf.mbse.cvclipse.Styles;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
+import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 import de.tu_bs.cs.isf.mbse.cvclipse.generator.ModelLoader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -79,6 +84,14 @@ public class M2T {
   
   private String FRENCH_BIRTHPLACE = "Lieu de Naissance";
   
+  private String GERMAN_SINCE = "seit";
+  
+  private String ENGLISH_SINCE = "since";
+  
+  private String FRENCH_SINCE = "depuis";
+  
+  private String SPANISH_SINCE = "deste";
+  
   private ModelLoader m = new Function0<ModelLoader>() {
     public ModelLoader apply() {
       ModelLoader _modelLoader = new ModelLoader();
@@ -135,6 +148,10 @@ public class M2T {
     String _generatePersonal = this.generatePersonal(language);
     _builder.append(_generatePersonal, "");
     _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("\\setlength{\\hintscolumnwidth}{4.5cm}");
+    _builder.newLine();
+    _builder.newLine();
     _builder.append("\\begin{document}");
     _builder.newLine();
     {
@@ -529,7 +546,7 @@ public class M2T {
       boolean _isEmpty = _nationality.isEmpty();
       boolean _not = (!_isEmpty);
       if (_not) {
-        _builder.append("\\cvitem{");
+        _builder.append("\\cvitem{\\textbf{");
         {
           boolean _equals_4 = languages.equals(Languages.ENGLISH);
           if (_equals_4) {
@@ -551,7 +568,7 @@ public class M2T {
             }
           }
         }
-        _builder.append("}{");
+        _builder.append("}}{");
         PersonalInformation _personalInformation_1 = this.app.getPersonalInformation();
         EMap<Languages,Text> _nationality_1 = _personalInformation_1.getNationality();
         Text _get = _nationality_1.get(languages);
@@ -560,7 +577,7 @@ public class M2T {
       }
     }
     _builder.newLineIfNotEmpty();
-    _builder.append("\\cvitem{");
+    _builder.append("\\cvitem{\\textbf{");
     {
       boolean _equals_8 = languages.equals(Languages.ENGLISH);
       if (_equals_8) {
@@ -582,13 +599,13 @@ public class M2T {
         }
       }
     }
-    _builder.append("}{");
+    _builder.append("}}{");
     PersonalInformation _personalInformation_2 = this.app.getPersonalInformation();
     Date _birthdate = _personalInformation_2.getBirthdate();
     _builder.append(_birthdate, "");
     _builder.append("}");
     _builder.newLineIfNotEmpty();
-    _builder.append("\\cvitem{");
+    _builder.append("\\cvitem{\\textbf{");
     {
       boolean _equals_12 = languages.equals(Languages.ENGLISH);
       if (_equals_12) {
@@ -610,22 +627,128 @@ public class M2T {
         }
       }
     }
-    _builder.append("}{");
+    _builder.append("}}{");
     PersonalInformation _personalInformation_3 = this.app.getPersonalInformation();
     String _birthplace = _personalInformation_3.getBirthplace();
     _builder.append(_birthplace, "");
     _builder.append("}");
     _builder.newLineIfNotEmpty();
-    CV _cv = this.app.getCv();
-    EList<Block> _blocks = _cv.getBlocks();
-    String _generateBlock = this.generateBlock(_blocks, languages);
-    _builder.append(_generateBlock, "");
+    {
+      CV _cv = this.app.getCv();
+      EList<Block> _blocks = _cv.getBlocks();
+      for(final Block block : _blocks) {
+        _builder.append("\\section{");
+        EMap<Languages,Text> _title = block.getTitle();
+        Text _get_1 = _title.get(languages);
+        _builder.append(_get_1, "");
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+        {
+          if ((block instanceof ListBlock)) {
+            {
+              EList<Item> _items = ((ListBlock)block).getItems();
+              for(final Item item : _items) {
+                _builder.append("\\cvitem{\\textbf{");
+                EMap<Languages,Text> _leftContent = ((TextItem) item).getLeftContent();
+                Text _get_2 = _leftContent.get(languages);
+                _builder.append(_get_2, "");
+                _builder.append("}}{");
+                EMap<Languages,Text> _rightContent = item.getRightContent();
+                Text _get_3 = _rightContent.get(languages);
+                _builder.append(_get_3, "");
+                _builder.append("}");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+          } else {
+            if ((block instanceof ItemBlock)) {
+              {
+                EList<Item> _items_1 = block.getItems();
+                for(final Item item_1 : _items_1) {
+                  _builder.append("\\cvitem{");
+                  {
+                    if ((item_1 instanceof TextItem)) {
+                      _builder.append("\\textbf{");
+                      EMap<Languages,Text> _leftContent_1 = ((TextItem) item_1).getLeftContent();
+                      Text _get_4 = _leftContent_1.get(languages);
+                      _builder.append(_get_4, "");
+                      _builder.append("}");
+                    }
+                  }
+                  {
+                    if ((item_1 instanceof DateItem)) {
+                      {
+                        Date _end = ((DateItem) item_1).getEnd();
+                        boolean _notEquals = (!Objects.equal(_end, null));
+                        if (_notEquals) {
+                          Date _begin = ((DateItem) item_1).getBegin();
+                          String _string = _begin.toString();
+                          _builder.append(_string, "");
+                          _builder.append(" -- ");
+                          Date _end_1 = ((DateItem) item_1).getEnd();
+                          String _string_1 = _end_1.toString();
+                          _builder.append(_string_1, "");
+                        } else {
+                          {
+                            boolean _equals_16 = languages.equals(Languages.ENGLISH);
+                            if (_equals_16) {
+                              _builder.append(this.ENGLISH_SINCE, "");
+                            } else {
+                              boolean _equals_17 = languages.equals(Languages.GERMAN);
+                              if (_equals_17) {
+                                _builder.append(this.GERMAN_SINCE, "");
+                              } else {
+                                boolean _equals_18 = languages.equals(Languages.SPANISH);
+                                if (_equals_18) {
+                                  _builder.append(this.SPANISH_SINCE, "");
+                                } else {
+                                  boolean _equals_19 = languages.equals(Languages.FRENCH);
+                                  if (_equals_19) {
+                                    _builder.append(this.FRENCH_SINCE, "");
+                                  }
+                                }
+                              }
+                            }
+                          }
+                          _builder.append(" ");
+                          Date _begin_1 = ((DateItem) item_1).getBegin();
+                          String _string_2 = _begin_1.toString();
+                          _builder.append(_string_2, "");
+                        }
+                      }
+                    }
+                  }
+                  _builder.append("}{");
+                  EMap<Languages,Text> _rightContent_1 = item_1.getRightContent();
+                  Text _get_5 = _rightContent_1.get(languages);
+                  _builder.append(_get_5, "");
+                  _builder.append("}");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder.newLine();
+    _builder.append("\\emptysection \\closesection \\vspace{4cm}");
+    _builder.newLine();
+    String _place = this.app.getPlace();
+    _builder.append(_place, "");
+    _builder.append(", ");
+    {
+      Date _date = this.app.getDate();
+      boolean _notEquals_1 = (!Objects.equal(_date, null));
+      if (_notEquals_1) {
+        Date _date_1 = this.app.getDate();
+        String _string_3 = _date_1.toString();
+        _builder.append(_string_3, "");
+      } else {
+        _builder.append("\\today");
+      }
+    }
     _builder.newLineIfNotEmpty();
     return _builder.toString();
-  }
-  
-  public String generateBlock(final EList<Block> blocks, final Languages languages) {
-    final String blockString = "";
-    return blockString;
   }
 }

@@ -2,11 +2,13 @@ package de.tu_bs.cs.isf.mbse.cvclipse.generator
 
 import de.tu_bs.cs.isf.mbse.cvclipse.Application
 import de.tu_bs.cs.isf.mbse.cvclipse.Languages
-import de.tu_bs.cs.isf.mbse.cvclipse.Block
+import de.tu_bs.cs.isf.mbse.cvclipse.ListBlock
+import de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock
+import de.tu_bs.cs.isf.mbse.cvclipse.TextItem
+import de.tu_bs.cs.isf.mbse.cvclipse.DateItem
 import java.io.File
 import java.io.FileOutputStream
 import java.util.List
-import org.eclipse.emf.common.util.EList
 
 class M2T {
 	def M2T() {
@@ -47,6 +49,11 @@ class M2T {
 	String SPANISH_BIRTHPLACE = "Lugar de Nacimiento";
 	String FRENCH_BIRTHPLACE = "Lieu de Naissance";
 	
+	String GERMAN_SINCE = "seit";
+	String ENGLISH_SINCE = "since";
+	String FRENCH_SINCE = "depuis";
+	String SPANISH_SINCE = "deste";
+		
 	ModelLoader m = new ModelLoader();
 	Application app;
 	List<Languages> languages;
@@ -73,6 +80,9 @@ class M2T {
 «generateHead(language)»
 
 «generatePersonal(language)»
+
+\setlength{\hintscolumnwidth}{4.5cm}
+
 \begin{document}
 «IF app.letter != null»«generateLetter(language)»«ENDIF»
 «generateCv(language)»
@@ -129,19 +139,24 @@ class M2T {
 		'''
 \makecvtitle
 \section{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_PERSONAL»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_PERSONAL»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_PERSONAL»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_PERSONAL»«ENDIF»}
-«IF !app.personalInformation.nationality.empty»\cvitem{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_NATIONALITY»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_NATIONALITY»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_NATIONALITY»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_NATIONALITY»«ENDIF»}{«app.personalInformation.nationality.get(languages)»}«ENDIF»
-\cvitem{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_BIRTHDATE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_BIRTHDATE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_BIRTHDATE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_BIRTHDATE»«ENDIF»}{«app.personalInformation.birthdate»}
-\cvitem{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_BIRTHPLACE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_BIRTHPLACE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_BIRTHPLACE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_BIRTHPLACE»«ENDIF»}{«app.personalInformation.birthplace»}
-«generateBlock(app.cv.blocks, languages)»
+«IF !app.personalInformation.nationality.empty»\cvitem{\textbf{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_NATIONALITY»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_NATIONALITY»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_NATIONALITY»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_NATIONALITY»«ENDIF»}}{«app.personalInformation.nationality.get(languages)»}«ENDIF»
+\cvitem{\textbf{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_BIRTHDATE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_BIRTHDATE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_BIRTHDATE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_BIRTHDATE»«ENDIF»}}{«app.personalInformation.birthdate»}
+\cvitem{\textbf{«IF languages.equals(Languages.ENGLISH)»«ENGLISH_BIRTHPLACE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_BIRTHPLACE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_BIRTHPLACE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_BIRTHPLACE»«ENDIF»}}{«app.personalInformation.birthplace»}
+«FOR block : app.cv.blocks»
+\section{«block.title.get(languages)»}
+«IF block instanceof ListBlock»
+«FOR item: block.items»
+\cvitem{\textbf{«(item as TextItem).leftContent.get(languages)»}}{«item.rightContent.get(languages)»}
+«ENDFOR»
+«ELSEIF block instanceof ItemBlock»
+«FOR item: block.items»
+\cvitem{«IF item instanceof TextItem»\textbf{«(item as TextItem).leftContent.get(languages)»}«ENDIF»«IF item instanceof DateItem»«IF (item as DateItem).end != null»«(item as DateItem).begin.toString» -- «(item as DateItem).end.toString»«ELSE»«IF languages.equals(Languages.ENGLISH)»«ENGLISH_SINCE»«ELSEIF languages.equals(Languages.GERMAN)»«GERMAN_SINCE»«ELSEIF languages.equals(Languages.SPANISH)»«SPANISH_SINCE»«ELSEIF languages.equals(Languages.FRENCH)»«FRENCH_SINCE»«ENDIF» «(item as DateItem).begin.toString»«ENDIF»«ENDIF»}{«item.rightContent.get(languages)»}
+«ENDFOR»
+«ENDIF»
+«ENDFOR»
+
+\emptysection \closesection \vspace{4cm}
+«app.place», «IF app.date != null»«app.date.toString»«ELSE»\today«ENDIF»
 		'''
-	}
-	
-	def String generateBlock(EList<Block> blocks, Languages languages) {
-		val String blockString = "";
-		
-		
-		return blockString;
-	}
-	
-	
+	}	
 }
