@@ -2,6 +2,7 @@ package de.tu_bs.cs.isf.mbse.cvclipse.generator;
 
 import com.google.common.base.Objects;
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
+import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.CV;
 import de.tu_bs.cs.isf.mbse.cvclipse.Colors;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
@@ -45,6 +46,38 @@ public class M2T {
   private String FRENCH_CLOSING = "Je vous adresse, Madame, Monsieur, mes salutations distinguées";
   
   private String SPANISH_CLOSING = "Le saluda atentamente";
+  
+  private String GERMAN_PERSONAL = "Angaben zur Person";
+  
+  private String ENGLISH_PERSONAL = "Personal Information";
+  
+  private String SPANISH_PERSONAL = "Información Personal";
+  
+  private String FRENCH_PERSONAL = "Information Personelle";
+  
+  private String GERMAN_NATIONALITY = "Staatsangehörigkeit";
+  
+  private String ENGLISH_NATIONALITY = "Nationality";
+  
+  private String FRENCH_NATIONALITY = "Nationalité";
+  
+  private String SPANISH_NATIONALITY = "Nacionalidad";
+  
+  private String GERMAN_BIRTHDATE = "Geburtsdatum";
+  
+  private String ENGLISH_BIRTHDATE = "Birthdate";
+  
+  private String SPANISH_BIRTHDATE = "Fecha de Nacimiento";
+  
+  private String FRENCH_BIRTHDATE = "Date de Naissance";
+  
+  private String GERMAN_BIRTHPLACE = "Geburtsort";
+  
+  private String ENGLISH_BIRTHPLACE = "Birthplace";
+  
+  private String SPANISH_BIRTHPLACE = "Lugar de Nacimiento";
+  
+  private String FRENCH_BIRTHPLACE = "Lieu de Naissance";
   
   private ModelLoader m = new Function0<ModelLoader>() {
     public ModelLoader apply() {
@@ -112,6 +145,9 @@ public class M2T {
         _builder.append(_generateLetter, "");
       }
     }
+    _builder.newLineIfNotEmpty();
+    String _generateCv = this.generateCv(language);
+    _builder.append(_generateCv, "");
     _builder.newLineIfNotEmpty();
     _builder.append("\\end{document}");
     _builder.newLine();
@@ -363,26 +399,27 @@ public class M2T {
     {
       Letter _letter_7 = this.app.getLetter();
       EMap<Languages,Text> _opening = _letter_7.getOpening();
-      boolean _notEquals_3 = (!Objects.equal(_opening, null));
-      if (_notEquals_3) {
+      boolean _isEmpty = _opening.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
         Letter _letter_8 = this.app.getLetter();
         EMap<Languages,Text> _opening_1 = _letter_8.getOpening();
         Text _get = _opening_1.get(languages);
         _builder.append(_get, "");
       } else {
-        boolean _equals = languages.equals(Integer.valueOf(Languages.ENGLISH_VALUE));
+        boolean _equals = languages.equals(Languages.ENGLISH);
         if (_equals) {
           _builder.append(this.ENGLISH_OPENING, "");
         } else {
-          boolean _equals_1 = languages.equals(Integer.valueOf(Languages.GERMAN_VALUE));
+          boolean _equals_1 = languages.equals(Languages.GERMAN);
           if (_equals_1) {
             _builder.append(this.GERMAN_OPENING, "");
           } else {
-            boolean _equals_2 = languages.equals(Integer.valueOf(Languages.SPANISH_VALUE));
+            boolean _equals_2 = languages.equals(Languages.SPANISH);
             if (_equals_2) {
               _builder.append(this.SPANISH_OPENING, "");
             } else {
-              boolean _equals_3 = languages.equals(Integer.valueOf(Languages.FRENCH_VALUE));
+              boolean _equals_3 = languages.equals(Languages.FRENCH);
               if (_equals_3) {
                 _builder.append(this.FRENCH_OPENING, "");
               }
@@ -397,26 +434,27 @@ public class M2T {
     {
       Letter _letter_9 = this.app.getLetter();
       EMap<Languages,Text> _closing = _letter_9.getClosing();
-      boolean _notEquals_4 = (!Objects.equal(_closing, null));
-      if (_notEquals_4) {
+      boolean _isEmpty_1 = _closing.isEmpty();
+      boolean _not_1 = (!_isEmpty_1);
+      if (_not_1) {
         Letter _letter_10 = this.app.getLetter();
         EMap<Languages,Text> _closing_1 = _letter_10.getClosing();
         Text _get_1 = _closing_1.get(languages);
         _builder.append(_get_1, "");
       } else {
-        boolean _equals_4 = languages.equals(Integer.valueOf(Languages.ENGLISH_VALUE));
+        boolean _equals_4 = languages.equals(Languages.ENGLISH);
         if (_equals_4) {
           _builder.append(this.ENGLISH_CLOSING, "");
         } else {
-          boolean _equals_5 = languages.equals(Integer.valueOf(Languages.GERMAN_VALUE));
+          boolean _equals_5 = languages.equals(Languages.GERMAN);
           if (_equals_5) {
             _builder.append(this.GERMAN_CLOSING, "");
           } else {
-            boolean _equals_6 = languages.equals(Integer.valueOf(Languages.SPANISH_VALUE));
+            boolean _equals_6 = languages.equals(Languages.SPANISH);
             if (_equals_6) {
               _builder.append(this.SPANISH_CLOSING, "");
             } else {
-              boolean _equals_7 = languages.equals(Integer.valueOf(Languages.FRENCH_VALUE));
+              boolean _equals_7 = languages.equals(Languages.FRENCH);
               if (_equals_7) {
                 _builder.append(this.FRENCH_CLOSING, "");
               }
@@ -430,8 +468,9 @@ public class M2T {
     {
       Letter _letter_11 = this.app.getLetter();
       EMap<Languages,Text> _enclosure = _letter_11.getEnclosure();
-      boolean _notEquals_5 = (!Objects.equal(_enclosure, null));
-      if (_notEquals_5) {
+      boolean _isEmpty_2 = _enclosure.isEmpty();
+      boolean _not_2 = (!_isEmpty_2);
+      if (_not_2) {
         _builder.append("\\enclosure{");
         Letter _letter_12 = this.app.getLetter();
         EMap<Languages,Text> _enclosure_1 = _letter_12.getEnclosure();
@@ -454,5 +493,139 @@ public class M2T {
     _builder.append("\\clearpage");
     _builder.newLine();
     return _builder.toString();
+  }
+  
+  public String generateCv(final Languages languages) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\makecvtitle");
+    _builder.newLine();
+    _builder.append("\\section{");
+    {
+      boolean _equals = languages.equals(Languages.ENGLISH);
+      if (_equals) {
+        _builder.append(this.ENGLISH_PERSONAL, "");
+      } else {
+        boolean _equals_1 = languages.equals(Languages.GERMAN);
+        if (_equals_1) {
+          _builder.append(this.GERMAN_PERSONAL, "");
+        } else {
+          boolean _equals_2 = languages.equals(Languages.SPANISH);
+          if (_equals_2) {
+            _builder.append(this.SPANISH_PERSONAL, "");
+          } else {
+            boolean _equals_3 = languages.equals(Languages.FRENCH);
+            if (_equals_3) {
+              _builder.append(this.FRENCH_PERSONAL, "");
+            }
+          }
+        }
+      }
+    }
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    {
+      PersonalInformation _personalInformation = this.app.getPersonalInformation();
+      EMap<Languages,Text> _nationality = _personalInformation.getNationality();
+      boolean _isEmpty = _nationality.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("\\cvitem{");
+        {
+          boolean _equals_4 = languages.equals(Languages.ENGLISH);
+          if (_equals_4) {
+            _builder.append(this.ENGLISH_NATIONALITY, "");
+          } else {
+            boolean _equals_5 = languages.equals(Languages.GERMAN);
+            if (_equals_5) {
+              _builder.append(this.GERMAN_NATIONALITY, "");
+            } else {
+              boolean _equals_6 = languages.equals(Languages.SPANISH);
+              if (_equals_6) {
+                _builder.append(this.SPANISH_NATIONALITY, "");
+              } else {
+                boolean _equals_7 = languages.equals(Languages.FRENCH);
+                if (_equals_7) {
+                  _builder.append(this.FRENCH_NATIONALITY, "");
+                }
+              }
+            }
+          }
+        }
+        _builder.append("}{");
+        PersonalInformation _personalInformation_1 = this.app.getPersonalInformation();
+        EMap<Languages,Text> _nationality_1 = _personalInformation_1.getNationality();
+        Text _get = _nationality_1.get(languages);
+        _builder.append(_get, "");
+        _builder.append("}");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\cvitem{");
+    {
+      boolean _equals_8 = languages.equals(Languages.ENGLISH);
+      if (_equals_8) {
+        _builder.append(this.ENGLISH_BIRTHDATE, "");
+      } else {
+        boolean _equals_9 = languages.equals(Languages.GERMAN);
+        if (_equals_9) {
+          _builder.append(this.GERMAN_BIRTHDATE, "");
+        } else {
+          boolean _equals_10 = languages.equals(Languages.SPANISH);
+          if (_equals_10) {
+            _builder.append(this.SPANISH_BIRTHDATE, "");
+          } else {
+            boolean _equals_11 = languages.equals(Languages.FRENCH);
+            if (_equals_11) {
+              _builder.append(this.FRENCH_BIRTHDATE, "");
+            }
+          }
+        }
+      }
+    }
+    _builder.append("}{");
+    PersonalInformation _personalInformation_2 = this.app.getPersonalInformation();
+    Date _birthdate = _personalInformation_2.getBirthdate();
+    _builder.append(_birthdate, "");
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\cvitem{");
+    {
+      boolean _equals_12 = languages.equals(Languages.ENGLISH);
+      if (_equals_12) {
+        _builder.append(this.ENGLISH_BIRTHPLACE, "");
+      } else {
+        boolean _equals_13 = languages.equals(Languages.GERMAN);
+        if (_equals_13) {
+          _builder.append(this.GERMAN_BIRTHPLACE, "");
+        } else {
+          boolean _equals_14 = languages.equals(Languages.SPANISH);
+          if (_equals_14) {
+            _builder.append(this.SPANISH_BIRTHPLACE, "");
+          } else {
+            boolean _equals_15 = languages.equals(Languages.FRENCH);
+            if (_equals_15) {
+              _builder.append(this.FRENCH_BIRTHPLACE, "");
+            }
+          }
+        }
+      }
+    }
+    _builder.append("}{");
+    PersonalInformation _personalInformation_3 = this.app.getPersonalInformation();
+    String _birthplace = _personalInformation_3.getBirthplace();
+    _builder.append(_birthplace, "");
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    CV _cv = this.app.getCv();
+    EList<Block> _blocks = _cv.getBlocks();
+    String _generateBlock = this.generateBlock(_blocks, languages);
+    _builder.append(_generateBlock, "");
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  public String generateBlock(final EList<Block> blocks, final Languages languages) {
+    final String blockString = "";
+    return blockString;
   }
 }
