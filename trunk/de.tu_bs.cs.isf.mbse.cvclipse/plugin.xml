@@ -131,7 +131,7 @@
 	        </constraint>
 	        
 	        <constraint
-	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.LetterExists"
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.LetterExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint9"
 	              lang="Java"
 	              mode="Batch"
@@ -157,7 +157,7 @@
 	        </constraint>
 	        
 	         <constraint
-	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.TextExists"
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.TextExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint11"
 	              lang="Java"
 	              mode="Batch"
@@ -170,7 +170,7 @@
 	        </constraint>
 	        
 	         <constraint
-	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.RecipientCompanyExists"
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.RecipientCompanyExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint12"
 	              lang="Java"
 	              mode="Batch"
@@ -183,7 +183,7 @@
 	        </constraint>
 	        
 	        <constraint
-	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.RecipientStreetExists"
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.RecipientStreetExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint13"
 	              lang="Java"
 	              mode="Batch"
@@ -196,7 +196,7 @@
 	        </constraint>
 	        
 	          <constraint
-	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.RecipientCityExists"
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.RecipientCityExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint14"
 	              lang="Java"
 	              mode="Batch"
