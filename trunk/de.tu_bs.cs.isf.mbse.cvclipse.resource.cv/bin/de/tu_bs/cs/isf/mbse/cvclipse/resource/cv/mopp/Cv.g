@@ -2643,7 +2643,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_PersonalInformation returns [de.tu_bs.cs
 				}
 				
 				(
-					a39 = EMAIL					
+					a39 = QUOTED_34_34					
 					{
 						if (terminateParsing) {
 							throw new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTerminateParsingException();
@@ -2653,7 +2653,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_PersonalInformation returns [de.tu_bs.cs
 							startIncompleteElement(element);
 						}
 						if (a39 != null) {
-							de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("EMAIL");
+							de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUOTED_34_34");
 							tokenResolver.setOptions(getOptions());
 							de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolveResult result = getFreshTokenResolveResult();
 							tokenResolver.resolve(a39.getText(), element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.PERSONAL_INFORMATION__EMAIL), result);
@@ -3413,7 +3413,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_PersonalInformation returns [de.tu_bs.cs
 				}
 				
 				(
-					a60 = TWITTER					
+					a60 = QUOTED_34_34					
 					{
 						if (terminateParsing) {
 							throw new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTerminateParsingException();
@@ -3423,7 +3423,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_PersonalInformation returns [de.tu_bs.cs
 							startIncompleteElement(element);
 						}
 						if (a60 != null) {
-							de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TWITTER");
+							de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("QUOTED_34_34");
 							tokenResolver.setOptions(getOptions());
 							de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolveResult result = getFreshTokenResolveResult();
 							tokenResolver.resolve(a60.getText(), element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.PERSONAL_INFORMATION__TWITTER), result);
@@ -5544,7 +5544,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Date returns [de.tu_bs.cs.isf.mbse.cvcli
 }
 :
 	(
-		a0 = FOUR_DIGIT		
+		a0 = TEXT		
 		{
 			if (terminateParsing) {
 				throw new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTerminateParsingException();
@@ -5554,7 +5554,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Date returns [de.tu_bs.cs.isf.mbse.cvcli
 				startIncompleteElement(element);
 			}
 			if (a0 != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("FOUR_DIGIT");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
 				tokenResolver.setOptions(getOptions());
 				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a0.getText(), element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__YEAR), result);
@@ -5594,7 +5594,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Date returns [de.tu_bs.cs.isf.mbse.cvcli
 	}
 	
 	(
-		a2 = TWO_DIGIT		
+		a2 = TEXT		
 		{
 			if (terminateParsing) {
 				throw new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTerminateParsingException();
@@ -5604,7 +5604,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Date returns [de.tu_bs.cs.isf.mbse.cvcli
 				startIncompleteElement(element);
 			}
 			if (a2 != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TWO_DIGIT");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
 				tokenResolver.setOptions(getOptions());
 				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolveResult result = getFreshTokenResolveResult();
 				tokenResolver.resolve(a2.getText(), element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__MONTH), result);
@@ -5667,7 +5667,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Date returns [de.tu_bs.cs.isf.mbse.cvcli
 			}
 			
 			(
-				a4 = TWO_DIGIT				
+				a4 = TEXT				
 				{
 					if (terminateParsing) {
 						throw new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvTerminateParsingException();
@@ -5677,7 +5677,7 @@ parse_de_tu_005fbs_cs_isf_mbse_cvclipse_Date returns [de.tu_bs.cs.isf.mbse.cvcli
 						startIncompleteElement(element);
 					}
 					if (a4 != null) {
-						de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TWO_DIGIT");
+						de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver tokenResolver = tokenResolverFactory.createTokenResolver("TEXT");
 						tokenResolver.setOptions(getOptions());
 						de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolveResult result = getFreshTokenResolveResult();
 						tokenResolver.resolve(a4.getText(), element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__DAY), result);
@@ -5980,21 +5980,8 @@ SL_COMMENT:
 	('//'(~('\n'|'\r'|'\uffff'))* )
 	{ _channel = 99; }
 ;
-EMAIL:
-	('"'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'@'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'.'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'"')
-;
-TWITTER:
-	('"''@'('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+'"')
-;
-TWO_DIGIT:
-	(('0'..'9')('0'..'9'))
-;
-FOUR_DIGIT:
-	(('0'..'9')('0'..'9')('0'..'9')('0'..'9'))
-;
 TEXT:
 	(('A'..'Z' | 'a'..'z' | '0'..'9' | '_' | '-' )+)
-	{ _channel = 99; }
 ;
 WHITESPACE:
 	((' ' | '\t' | '\f'))

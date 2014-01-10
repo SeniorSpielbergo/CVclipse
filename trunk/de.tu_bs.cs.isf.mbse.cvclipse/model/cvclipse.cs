@@ -4,15 +4,9 @@ START Application
 
 TOKENS {
 	DEFINE SL_COMMENT $'//'(~('\n'|'\r'|'\uffff'))* $ ;
-	DEFINE EMAIL $'"'$ + TEXT + $'@'$ + TEXT + $'.'$ + TEXT + $'"'$;
-	DEFINE TWITTER $'"'$ + $'@'$ + TEXT + $'"'$;
-	DEFINE TWO_DIGIT $('0'..'9')('0'..'9')$;
-	DEFINE FOUR_DIGIT $('0'..'9')('0'..'9')('0'..'9')('0'..'9')$;
 }
 
 TOKENSTYLES {
-	"EMAIL" COLOR #0000FF;
-	"TWITTER" COLOR #0000FF;
 	"SL_COMMENT" COLOR #458B74;
 }
 
@@ -37,14 +31,14 @@ RULES {
 							("street" ":" street['"','"'])				|
 							("city" ":" city['"','"'])					|
 							("country" ":" country ("," country)*) 	| // ?
-							("email" ":" email[EMAIL]) 				| // ?
+							("email" ":" email['"','"']) 				| // ?
 							("phone" ":" phone['"','"']) 				| // ?
 							("mobile" ":" mobile['"','"']) 			| // ?
 							("fax" ":" fax['"','"'])					| // ?
 							("website" ":" website['"','"'])			| // ?
 							("github" ":" github['"','"'])				| // ?
 							("linkedin" ":" linkedIn['"','"'])			| // ?
-							("twitter" ":" twitter[TWITTER]) 		  // ?
+							("twitter" ":" twitter['"','"']) 		  // ?
 							)*;
 							
 	Letter ::= "letter"
@@ -75,7 +69,7 @@ RULES {
 	TextItem ::= ((leftContent) ("," leftContent)*)? "|" rightContent ("," rightContent)*;
 	DateItem ::= begin ("-" end)? "|" rightContent ("," rightContent)*;
 			
-	Date ::= year[FOUR_DIGIT] "/" month[TWO_DIGIT] ("/" day[TWO_DIGIT])?;
+	Date ::= year[] "/" month[] ("/" day[])?;
 	
 	LanguageToTextMapEntry ::= key[GERMAN : "german", ENGLISH : "english", FRENCH : "french", SPANISH : "spanish"] value;
 	
