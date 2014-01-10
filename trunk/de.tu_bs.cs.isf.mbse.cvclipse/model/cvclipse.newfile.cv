@@ -1,0 +1,55 @@
+options 
+	languages: german, english
+//	style: casual	// styles: casual, classic, banking, oldstyle
+//	color: blue		// colors: blue, orange, green, red, purple, grey, black
+
+//	place: "Musterhausen"
+//	date: 2000/1/1
+
+personal 
+	firstname: "Max"
+	surname: "Mustermann"
+	birthdate: 1970/01/01
+	birthplace: "Musterstadt"
+	street: "Musterstrasse 1"
+	city: "12345 Musterstadt"
+//	phone: "12345/1234567" 
+//	fax: "12345/1234568"
+//	mobile: "0123/12345678"
+//	website: "www.maxmustermann.de"
+//	email: "max.mustermann@muster.de"
+//	twitter: "@maxmustermann"
+// 	linkedin: "MaxMustermann"
+//	github: "MaxMustermann"
+	nationality: german "Deutsch", english "German"
+
+letter
+	recipient
+		company: "Musterfrau GmbH"
+//		attention: "Erika Musterfrau"
+		street: "Musterstrasse 2"
+		city: "12345 Musterstadt"
+//		opening: german "Sehr geehrte Frau Musterfrau", english "Dear Ms. Musterfrau"
+//		closing: german "Mit freundlichem Gruss", english "Best regards"
+//		enclosure: german "Appendix", english "Appendix"
+		text: 
+			german 
+			"Bewerbungstext...", 
+			
+			english 
+			"Application text..."
+				
+cv
+	picture: "max.jpg"
+	
+	block
+		title: 
+			german "Bildung", english "Education"
+		1976/6/1 						| 	german "Grundschule Musterstadt", english "Elementary School Musterstadt"
+		german "...", english "..."		|	german "...", english "..."
+		
+	list
+		title:
+			german "Sprachkenntnisse", english "Languages"
+		german "Deutsch", english "German" 			| german "Muttersprache", english "Mother tongue"
+		german "Englisch", english "English"	 	| german "Verhandlungssicher", english "fluent"

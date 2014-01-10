@@ -19,13 +19,7 @@ public class CvNewFileContentProvider {
 	}
 	
 	protected String getExampleContent(org.eclipse.emf.ecore.EClass[] startClasses, org.eclipse.emf.ecore.EClass[] allClassesWithSyntax, String newFileName) {
-		String content = "";
-		for (org.eclipse.emf.ecore.EClass next : startClasses) {
-			content = getExampleContent(next, allClassesWithSyntax, newFileName);
-			if (content.trim().length() > 0) {
-				break;
-			}
-		}
+		String content = "options \n\tlanguages: german, english\n//\tstyle: casual\t// styles: casual, classic, banking, oldstyle\n//\tcolor: blue\t\t// colors: blue, orange, green, red, purple, grey, black\n\n//\tplace: \"Musterhausen\"\n//\tdate: 2000/1/1\n\npersonal \n\tfirstname: \"Max\"\n\tsurname: \"Mustermann\"\n\tbirthdate: 1970/01/01\n\tbirthplace: \"Musterstadt\"\n\tstreet: \"Musterstrasse 1\"\n\tcity: \"12345 Musterstadt\"\n//\tphone: \"12345/1234567\" \n//\tfax: \"12345/1234568\"\n//\tmobile: \"0123/12345678\"\n//\twebsite: \"www.maxmustermann.de\"\n//\temail: \"max.mustermann@muster.de\"\n//\ttwitter: \"@maxmustermann\"\n// \tlinkedin: \"MaxMustermann\"\n//\tgithub: \"MaxMustermann\"\n\tnationality: german \"Deutsch\", english \"German\"\n\nletter\n\trecipient\n\t\tcompany: \"Musterfrau GmbH\"\n//\t\tattention: \"Erika Musterfrau\"\n\t\tstreet: \"Musterstrasse 2\"\n\t\tcity: \"12345 Musterstadt\"\n//\t\topening: german \"Sehr geehrte Frau Musterfrau\", english \"Dear Ms. Musterfrau\"\n//\t\tclosing: german \"Mit freundlichem Gruss\", english \"Best regards\"\n//\t\tenclosure: german \"Appendix\", english \"Appendix\"\n\t\ttext: \n\t\t\tgerman \n\t\t\t\"Bewerbungstext...\", \n\t\t\t\n\t\t\tenglish \n\t\t\t\"Application text...\"\n\t\t\t\t\ncv\n\tpicture: \"max.jpg\"\n\t\n\tblock\n\t\ttitle: \n\t\t\tgerman \"Bildung\", english \"Education\"\n\t\t1976/6/1 \t\t\t\t\t\t| \tgerman \"Grundschule Musterstadt\", english \"Elementary School Musterstadt\"\n\t\tgerman \"...\", english \"...\"\t\t|\tgerman \"...\", english \"...\"\n\t\t\n\tlist\n\t\ttitle:\n\t\t\tgerman \"Sprachkenntnisse\", english \"Languages\"\n\t\tgerman \"Deutsch\", english \"German\" \t\t\t| german \"Muttersprache\", english \"Mother tongue\"\n\t\tgerman \"Englisch\", english \"English\"\t \t| german \"Verhandlungssicher\", english \"fluent\"".replace("\n", System.getProperty("line.separator"));
 		return content;
 	}
 	
