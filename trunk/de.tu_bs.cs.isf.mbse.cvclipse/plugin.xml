@@ -129,6 +129,84 @@
 	              message body text
 	           </message>
 	        </constraint>
+	        
+	        <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.LetterExists"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint9"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
+	        
+	        <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.CVExists"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint10"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
+	        
+	         <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.TextExists"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint11"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
+	        
+	         <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.RecipientCompanyExists"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint12"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
+	        
+	        <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.RecipientStreetExists"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint13"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
+	        
+	          <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.RecipientCityExists"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint14"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
 
          </constraints>
       </constraintProvider>
