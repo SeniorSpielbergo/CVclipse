@@ -26,59 +26,90 @@ public class LanguagesConsistent extends ModelConstraint {
 	public IStatus validate(IValidationContext context) {
 		EObject target = context.getTarget();
 		if (target instanceof Application) {
+			IStatus status;
 			Application app = (Application) target;
 			List<Language> languages = app.getLanguages();
-			Map<EMap<Language, Text>, EObject> maps = new HashMap<EMap<Language, Text>, EObject>();
 			if(app.getLetter()!=null) {
-				if(!app.getLetter().getClosing().isEmpty()) {	
-					maps.put(app.getLetter().getClosing(), app.getLetter());
+				if(!app.getLetter().getClosing().isEmpty()) {
+					status = checkMap(app.getLetter().getClosing(), languages, app.getLetter());
+					if(status!=Status.OK_STATUS) {
+						return status;
+					}
 				}
 				if(!app.getLetter().getEnclosure().isEmpty()) {	
-					maps.put(app.getLetter().getEnclosure(), app.getLetter());
+					status = checkMap(app.getLetter().getEnclosure(), languages, app.getLetter());
+					if(status!=Status.OK_STATUS) {
+						return status;
+					}
 				}
 				if(!app.getLetter().getOpening().isEmpty()) {	
-					maps.put(app.getLetter().getOpening(), app.getLetter());
+					status = checkMap(app.getLetter().getOpening(), languages, app.getLetter());
+					if(status!=Status.OK_STATUS) {
+						return status;
+					}
 				}
 				if(!app.getLetter().getText().isEmpty()) {	
-					maps.put(app.getLetter().getText(), app.getLetter());				
-				}
-			}
-			if(!app.getPersonalInformation().getCountry().isEmpty()) {
-				maps.put(app.getPersonalInformation().getCountry(), app.getPersonalInformation());
-			}
-
-			if(!app.getPersonalInformation().getNationality().isEmpty()) {
-				maps.put(app.getPersonalInformation().getNationality(), app.getPersonalInformation());				
-			}
-
-			if(!app.getPersonalInformation().getMaritalStatus().isEmpty()) {
-				maps.put(app.getPersonalInformation().getMaritalStatus(), app.getPersonalInformation());				
-			}
-			for(Block b : app.getCv().getBlocks()) {
-				maps.put(b.getTitle(), b);
-				for(Item i : b.getItems()) {
-					maps.put(i.getRightContent(), i);
-					if(i instanceof TextItem) {
-						TextItem t = (TextItem) i;
-						maps.put(t.getLeftContent(), t);
+					status = checkMap(app.getLetter().getText(), languages, app.getLetter());
+					if(status!=Status.OK_STATUS) {
+						return status;
 					}
 				}
 			}
-			
-			for(EMap<Language,Text> map : maps.keySet()) {
-				Language missingLanguage = languagesExistInMap(languages, map);
-				if(missingLanguage != null) {
-					return new ConstraintStatus(this, maps.get(map), "Language " + missingLanguage.getName() + " is missing.", Collections.singleton(maps.get(map)));
+			if(!app.getPersonalInformation().getCountry().isEmpty()) {
+				status = checkMap(app.getPersonalInformation().getCountry(), languages, app.getPersonalInformation());
+				if(status!=Status.OK_STATUS) {
+					return status;
 				}
-				Language languageTooMuch = languagesDefined(languages, map);
-				if(languageTooMuch != null) {
-					return new ConstraintStatus(this, maps.get(map), "Language " + languageTooMuch.getName() + " is missing in head.", Collections.singleton(maps.get(map)));
+			}
+
+			if(!app.getPersonalInformation().getNationality().isEmpty()) {
+				status = checkMap(app.getPersonalInformation().getNationality(), languages, app.getPersonalInformation());
+				if(status!=Status.OK_STATUS) {
+					return status;
+				}
+			}
+
+			if(!app.getPersonalInformation().getMaritalStatus().isEmpty()) {
+				status = checkMap(app.getPersonalInformation().getMaritalStatus(), languages, app.getPersonalInformation());
+				if(status!=Status.OK_STATUS) {
+					return status;
+				}
+			}
+			for(Block b : app.getCv().getBlocks()) {
+				status = checkMap(b.getTitle(), languages, b);
+				if(status!=Status.OK_STATUS) {
+					return status;
+				}
+				for(Item i : b.getItems()) {
+					status = checkMap(i.getRightContent(), languages, i);
+					if(status!=Status.OK_STATUS) {
+						return status;
+					}
+					if(i instanceof TextItem) {
+						TextItem t = (TextItem) i;
+						status = checkMap(t.getLeftContent(), languages, t);
+						if(status!=Status.OK_STATUS) {
+							return status;
+						}
+					}
 				}
 			}
 		}			
 		return Status.OK_STATUS;
 	}
 
+	private IStatus checkMap(EMap<Language, Text> map, List<Language> languages, EObject target) {
+		Language missingLanguage = languagesExistInMap(languages, map);
+		if(missingLanguage != null) {
+			return new ConstraintStatus(this, target, "Language " + missingLanguage.getName() + " is missing.", Collections.singleton(target));
+		}
+		Language languageTooMuch = languagesDefined(languages, map);
+		if(languageTooMuch != null) {
+			return new ConstraintStatus(this, target, "Language " + languageTooMuch.getName() + " is missing in head.", Collections.singleton(target));
+		}
+		return Status.OK_STATUS;
+	}
+	
 	private Language languagesExistInMap(List<Language> languages, EMap<Language, Text> map) {
 		for(Language language : languages) {
 			if(!map.keySet().contains(language)) {
