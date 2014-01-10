@@ -116,6 +116,19 @@
 	              message body text
 	           </message>
 	        </constraint>
+	        
+	        <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.DateConsistent"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint8"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
 
          </constraints>
       </constraintProvider>
