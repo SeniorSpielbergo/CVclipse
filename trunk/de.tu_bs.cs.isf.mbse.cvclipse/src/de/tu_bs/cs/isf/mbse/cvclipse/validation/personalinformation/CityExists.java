@@ -20,7 +20,7 @@ public class CityExists extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			if (pi.getCity() == null || pi.getCity().isEmpty()) {
-				return new ConstraintStatus(this, target, "No \"city\" defined!", Collections.singleton(pi));
+				return new ConstraintStatus(this, target, "No \"city\" defined!\nAdd \"city: <CITY>\"", Collections.singleton(pi));
 			}
 		}
 		

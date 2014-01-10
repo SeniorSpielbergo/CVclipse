@@ -20,7 +20,7 @@ public class BirthdateExists extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			if (pi.getBirthdate() == null) {
-				return new ConstraintStatus(this, target, "No \"birthdate\" defined!", Collections.singleton(pi));
+				return new ConstraintStatus(this, target, "No \"birthdate\" defined!\nAdd \"birthdate: YYYY/MM/DD\"", Collections.singleton(pi));
 			}
 		}
 		

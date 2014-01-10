@@ -20,7 +20,7 @@ public class BirthplaceExists extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			if (pi.getBirthplace() == null || pi.getBirthplace().isEmpty()) {
-				return new ConstraintStatus(this, target, "No \"birthplace\" defined!", Collections.singleton(pi));
+				return new ConstraintStatus(this, target, "No \"birthplace\" defined!\nAdd \"birthplace: <BIRTHPLACE>\"", Collections.singleton(pi));
 			}
 		}
 		

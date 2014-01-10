@@ -20,7 +20,7 @@ public class FirstnameExists extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			if (pi.getFirstname() == null || pi.getFirstname().isEmpty()) {
-				return new ConstraintStatus(this, target, "No \"firstname\" defined!", Collections.singleton(pi));
+				return new ConstraintStatus(this, target, "No \"firstname\" defined!\nAdd \"firstname: <FIRSTNAME>\"", Collections.singleton(pi));
 			}
 		}
 		

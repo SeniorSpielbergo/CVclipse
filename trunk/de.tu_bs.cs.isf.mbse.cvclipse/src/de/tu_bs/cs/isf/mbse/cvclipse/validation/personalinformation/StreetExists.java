@@ -20,7 +20,7 @@ public class StreetExists extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			if (pi.getStreet() == null || pi.getStreet().isEmpty()) {
-				return new ConstraintStatus(this, target, "No \"street\" defined!", Collections.singleton(pi));
+				return new ConstraintStatus(this, target, "No \"street\" defined!\nAdd \"street: <STREET>\"", Collections.singleton(pi));
 			}
 		}
 		

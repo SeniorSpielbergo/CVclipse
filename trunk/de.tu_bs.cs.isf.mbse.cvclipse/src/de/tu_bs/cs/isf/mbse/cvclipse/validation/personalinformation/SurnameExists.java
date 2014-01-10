@@ -20,7 +20,7 @@ public class SurnameExists extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			if (pi.getSurname() == null || pi.getSurname().isEmpty()) {
-				return new ConstraintStatus(this, target, "No \"surname\" defined!", Collections.singleton(pi));
+				return new ConstraintStatus(this, target, "No \"surname\" defined!\nAdd \"surname: <SURNAME>\"", Collections.singleton(pi));
 			}
 		}
 		
