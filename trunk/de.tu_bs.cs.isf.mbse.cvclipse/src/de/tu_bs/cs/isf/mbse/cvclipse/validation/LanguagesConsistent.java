@@ -1,6 +1,5 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.validation;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -30,13 +29,31 @@ public class LanguagesConsistent extends ModelConstraint {
 			Application app = (Application) target;
 			List<Language> languages = app.getLanguages();
 			Map<EMap<Language, Text>, EObject> maps = new HashMap<EMap<Language, Text>, EObject>();
-			maps.put(app.getLetter().getClosing(), app.getLetter());
-			maps.put(app.getLetter().getEnclosure(), app.getLetter());
-			maps.put(app.getLetter().getOpening(), app.getLetter());
-			maps.put(app.getLetter().getText(), app.getLetter());
-			maps.put(app.getPersonalInformation().getCountry(), app.getPersonalInformation());
-			maps.put(app.getPersonalInformation().getNationality(), app.getPersonalInformation());
-			maps.put(app.getPersonalInformation().getMaritalStatus(), app.getPersonalInformation());
+			if(app.getLetter()!=null) {
+				if(!app.getLetter().getClosing().isEmpty()) {	
+					maps.put(app.getLetter().getClosing(), app.getLetter());
+				}
+				if(!app.getLetter().getEnclosure().isEmpty()) {	
+					maps.put(app.getLetter().getEnclosure(), app.getLetter());
+				}
+				if(!app.getLetter().getOpening().isEmpty()) {	
+					maps.put(app.getLetter().getOpening(), app.getLetter());
+				}
+				if(!app.getLetter().getText().isEmpty()) {	
+					maps.put(app.getLetter().getText(), app.getLetter());				
+				}
+			}
+			if(!app.getPersonalInformation().getCountry().isEmpty()) {
+				maps.put(app.getPersonalInformation().getCountry(), app.getPersonalInformation());
+			}
+
+			if(!app.getPersonalInformation().getNationality().isEmpty()) {
+				maps.put(app.getPersonalInformation().getNationality(), app.getPersonalInformation());				
+			}
+
+			if(!app.getPersonalInformation().getMaritalStatus().isEmpty()) {
+				maps.put(app.getPersonalInformation().getMaritalStatus(), app.getPersonalInformation());				
+			}
 			for(Block b : app.getCv().getBlocks()) {
 				maps.put(b.getTitle(), b);
 				for(Item i : b.getItems()) {
@@ -51,11 +68,11 @@ public class LanguagesConsistent extends ModelConstraint {
 			for(EMap<Language,Text> map : maps.keySet()) {
 				Language missingLanguage = languagesExistInMap(languages, map);
 				if(missingLanguage != null) {
-					return new ConstraintStatus(this, target, "Language " + missingLanguage.getName() + " is missing.", Collections.singleton(maps.get(map)));
+					return new ConstraintStatus(this, maps.get(map), "Language " + missingLanguage.getName() + " is missing.", Collections.singleton(maps.get(map)));
 				}
 				Language languageTooMuch = languagesDefined(languages, map);
 				if(languageTooMuch != null) {
-					return new ConstraintStatus(this, target, "Language " + languageTooMuch.getName() + " is missing in head.", Collections.singleton(maps.get(map)));
+					return new ConstraintStatus(this, maps.get(map), "Language " + languageTooMuch.getName() + " is missing in head.", Collections.singleton(maps.get(map)));
 				}
 			}
 		}			
