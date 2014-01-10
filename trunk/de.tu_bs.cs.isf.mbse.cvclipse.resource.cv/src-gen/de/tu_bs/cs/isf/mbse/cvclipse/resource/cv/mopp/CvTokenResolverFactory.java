@@ -23,10 +23,7 @@ public class CvTokenResolverFactory implements de.tu_bs.cs.isf.mbse.cvclipse.res
 	public CvTokenResolverFactory() {
 		tokenName2TokenResolver = new java.util.LinkedHashMap<String, de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver>();
 		featureName2CollectInTokenResolver = new java.util.LinkedHashMap<String, de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver>();
-		registerTokenResolver("EMAIL", new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis.CvEMAILTokenResolver());
-		registerTokenResolver("TWITTER", new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis.CvTWITTERTokenResolver());
-		registerTokenResolver("TWO_DIGIT", new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis.CvTWO_DIGITTokenResolver());
-		registerTokenResolver("FOUR_DIGIT", new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis.CvFOUR_DIGITTokenResolver());
+		registerTokenResolver("TEXT", new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis.CvTEXTTokenResolver());
 		registerTokenResolver("QUOTED_34_34", new de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis.CvQUOTED_34_34TokenResolver());
 	}
 	

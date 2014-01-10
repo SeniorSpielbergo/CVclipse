@@ -1084,12 +1084,12 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 		// DEFINITION PART BEGINS (CsString)
 		out.print(":");
 		out.print(" ");
-		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
+		// DEFINITION PART BEGINS (PlaceholderInQuotes)
 		count = printCountingMap.get("email");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.PERSONAL_INFORMATION__EMAIL));
 			if (o != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("EMAIL");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUOTED_34_34");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.PERSONAL_INFORMATION__EMAIL), element));
 				out.print(" ");
@@ -1238,12 +1238,12 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 		// DEFINITION PART BEGINS (CsString)
 		out.print(":");
 		out.print(" ");
-		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
+		// DEFINITION PART BEGINS (PlaceholderInQuotes)
 		count = printCountingMap.get("twitter");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.PERSONAL_INFORMATION__TWITTER));
 			if (o != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("TWITTER");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("QUOTED_34_34");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.PERSONAL_INFORMATION__TWITTER), element));
 				out.print(" ");
@@ -2419,12 +2419,12 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 		java.io.StringWriter sWriter = null;
 		java.io.PrintWriter out1 = null;
 		java.util.Map<String, Integer> printCountingMap1 = null;
-		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
 		count = printCountingMap.get("year");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__YEAR));
 			if (o != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("FOUR_DIGIT");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("TEXT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__YEAR), element));
 				out.print(" ");
@@ -2434,12 +2434,12 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 		// DEFINITION PART BEGINS (CsString)
 		out.print("/");
 		out.print(" ");
-		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
 		count = printCountingMap.get("month");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__MONTH));
 			if (o != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("TWO_DIGIT");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("TEXT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__MONTH), element));
 				out.print(" ");
@@ -2466,12 +2466,12 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 		// DEFINITION PART BEGINS (CsString)
 		out.print("/");
 		out.print(" ");
-		// DEFINITION PART BEGINS (PlaceholderUsingSpecifiedToken)
+		// DEFINITION PART BEGINS (PlaceholderUsingDefaultToken)
 		count = printCountingMap.get("day");
 		if (count > 0) {
 			Object o = element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__DAY));
 			if (o != null) {
-				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("TWO_DIGIT");
+				de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvTokenResolver resolver = tokenResolverFactory.createTokenResolver("TEXT");
 				resolver.setOptions(getOptions());
 				out.print(resolver.deResolve((Object) o, element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.DATE__DAY), element));
 				out.print(" ");
