@@ -1,9 +1,7 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.validation;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
@@ -16,9 +14,8 @@ import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.Block;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
 import de.tu_bs.cs.isf.mbse.cvclipse.Language;
-import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
-import de.tu_bs.cs.isf.mbse.cvclipse.impl.LanguageToTextMapEntryImpl;
+import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 
 public class LanguagesConsistent extends ModelConstraint {
 

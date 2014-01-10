@@ -75,4 +75,14 @@ public abstract class ModelConstraint extends AbstractModelConstraint implements
 		};
 	}
 
+	protected int numberOfOccurences(char searchCharacter, String stringToCheck) {
+		int count = 0;
+		for (int i = 0; i < stringToCheck.length(); i++) {
+			if (stringToCheck.charAt(i) == searchCharacter) {
+				count++;
+			}
+		}
+		return count;
+	}
+
 }
