@@ -104,7 +104,7 @@ public interface Date extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(day!=0) {\r\n\treturn \"\"+year+\"/\"+month+\"/\"+day;\r\n} else {\r\n\treturn \"\"+year+\"/\"+month;\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='boolean dayBelowTen = false;\nboolean monthBelowTen = false;\nString dateString = \"\";\n\ndateString += year + \"/\";\n\nif (month < 10) {\n\tdateString += \"0\";\n}\n\ndateString += month;\n\nif (day != 0) {\n\tdateString += \"/\";\n\tif (day < 10) {\r\n\t\tdateString += \"0\";\n\t}\n\tdateString += day;\n}\r\n\nreturn dateString;'"
 	 * @generated
 	 */
 	String toString();

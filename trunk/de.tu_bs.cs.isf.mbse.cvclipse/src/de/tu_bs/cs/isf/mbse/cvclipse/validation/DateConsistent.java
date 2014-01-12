@@ -17,15 +17,15 @@ public class DateConsistent extends ModelConstraint {
 		EObject target = context.getTarget();
 		if (target instanceof Date) {
 			Date date = (Date) target;
-
+			
 			if (date.getYear() < 0) {
 				return new ConstraintStatus(this, target, "Illegal date!\nThe \"year\" must be >= 0!", Collections.singleton(date));
 			}
 			else if (date.getMonth() < 1) {
 				return new ConstraintStatus(this, target, "Illegal date!\nThe \"month\" must be >= 1!", Collections.singleton(date));
 			}
-			else if (date.getDay() < 1) {
-				return new ConstraintStatus(this, target, "Illegal date!\nThe \"day\" must be >= 1!", Collections.singleton(date));
+			else if (date.getDay() < 0) {
+				return new ConstraintStatus(this, target, "Illegal date!\nThe \"day\" must be >= 0!", Collections.singleton(date));
 			}
 			
 			if (date.getMonth() > 12) {

@@ -130,7 +130,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Date">
     <eOperations name="toString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="body" value="if(day!=0) {&#xD;&#xA;&#x9;return &quot;&quot;+year+&quot;/&quot;+month+&quot;/&quot;+day;&#xD;&#xA;} else {&#xD;&#xA;&#x9;return &quot;&quot;+year+&quot;/&quot;+month;&#xD;&#xA;}"/>
+        <details key="body" value="boolean dayBelowTen = false;&#xA;boolean monthBelowTen = false;&#xA;String dateString = &quot;&quot;;&#xA;&#xA;dateString += year + &quot;/&quot;;&#xA;&#xA;if (month &lt; 10) {&#xA;&#x9;dateString += &quot;0&quot;;&#xA;}&#xA;&#xA;dateString += month;&#xA;&#xA;if (day != 0) {&#xA;&#x9;dateString += &quot;/&quot;;&#xA;&#x9;if (day &lt; 10) {&#xD;&#xA;&#x9;&#x9;dateString += &quot;0&quot;;&#xA;&#x9;}&#xA;&#x9;dateString += day;&#xA;}&#xD;&#xA;&#xA;return dateString;"/>
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="day" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

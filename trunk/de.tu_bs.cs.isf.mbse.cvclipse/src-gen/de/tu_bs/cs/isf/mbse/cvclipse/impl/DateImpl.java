@@ -175,11 +175,27 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date {
 	 * @generated
 	 */
 	public String toString() {
-		if(day!=0) {
-			return ""+year+"/"+month+"/"+day;
-		} else {
-			return ""+year+"/"+month;
+		boolean dayBelowTen = false;
+		boolean monthBelowTen = false;
+		String dateString = "";
+		
+		dateString += year + "/";
+		
+		if (month < 10) {
+			dateString += "0";
 		}
+		
+		dateString += month;
+		
+		if (day != 0) {
+			dateString += "/";
+			if (day < 10) {
+				dateString += "0";
+			}
+			dateString += day;
+		}
+		
+		return dateString;
 	}
 
 	/**

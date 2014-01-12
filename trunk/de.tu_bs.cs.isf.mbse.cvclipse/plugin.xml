@@ -156,7 +156,7 @@
 	           </message>
 	        </constraint>
 	        
-	         <constraint
+	        <constraint
 	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.TextExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint11"
 	              lang="Java"
@@ -169,7 +169,7 @@
 	           </message>
 	        </constraint>
 	        
-	         <constraint
+	        <constraint
 	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.RecipientCompanyExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint12"
 	              lang="Java"
@@ -195,7 +195,7 @@
 	           </message>
 	        </constraint>
 	        
-	          <constraint
+	        <constraint
 	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.letter.RecipientCityExists"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint14"
 	              lang="Java"
@@ -208,7 +208,7 @@
 	           </message>
 	        </constraint>
 	        
-	          <constraint
+	        <constraint
 	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.personalinformation.EmailLegal"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint15"
 	              lang="Java"
@@ -221,9 +221,22 @@
 	           </message>
 	        </constraint>
 	        
-	          <constraint
+	        <constraint
 	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.personalinformation.TwitterLegal"
 	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint16"
+	              lang="Java"
+	              mode="Batch"
+	              name="name"
+	              severity="ERROR"
+	              statusCode="1">
+	           <message>
+	              message body text
+	           </message>
+	        </constraint>
+	        
+	        <constraint
+	              class="de.tu_bs.cs.isf.mbse.cvclipse.validation.StartEndDateConsistent"
+	              id="de.tu_bs.cs.isf.mbse.cvclipse.validation.constraint17"
 	              lang="Java"
 	              mode="Batch"
 	              name="name"
