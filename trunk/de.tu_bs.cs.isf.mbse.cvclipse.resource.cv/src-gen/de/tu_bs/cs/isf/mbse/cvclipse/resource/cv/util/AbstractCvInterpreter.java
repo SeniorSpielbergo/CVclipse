@@ -82,56 +82,8 @@ public class AbstractCvInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.EducationBlock) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_EducationBlock((de.tu_bs.cs.isf.mbse.cvclipse.EducationBlock) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_HobbyBlock((de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_LanguageBlock((de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.ListBlock) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ListBlock((de.tu_bs.cs.isf.mbse.cvclipse.ListBlock) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ProfessionalTrainingBlock((de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
 		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.Block) {
 			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_Block((de.tu_bs.cs.isf.mbse.cvclipse.Block) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.BoldText) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_BoldText((de.tu_bs.cs.isf.mbse.cvclipse.BoldText) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.ItalicText) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ItalicText((de.tu_bs.cs.isf.mbse.cvclipse.ItalicText) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_BoldItalicText((de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText) object, context);
 		}
 		if (result != null) {
 			return result;
@@ -142,20 +94,14 @@ public class AbstractCvInterpreter<ResultType, ContextType> {
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ProfessionalExperienceBlock((de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock) object, context);
-		}
-		if (result != null) {
-			return result;
-		}
 		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock) {
 			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ItemBlock((de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock) object, context);
 		}
 		if (result != null) {
 			return result;
 		}
-		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.LineBreak) {
-			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_LineBreak((de.tu_bs.cs.isf.mbse.cvclipse.LineBreak) object, context);
+		if (object instanceof de.tu_bs.cs.isf.mbse.cvclipse.ListBlock) {
+			result = interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ListBlock((de.tu_bs.cs.isf.mbse.cvclipse.ListBlock) object, context);
 		}
 		if (result != null) {
 			return result;
@@ -217,34 +163,6 @@ public class AbstractCvInterpreter<ResultType, ContextType> {
 		return null;
 	}
 	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_BoldText(de.tu_bs.cs.isf.mbse.cvclipse.BoldText boldText, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ItalicText(de.tu_bs.cs.isf.mbse.cvclipse.ItalicText italicText, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_BoldItalicText(de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText boldItalicText, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_EducationBlock(de.tu_bs.cs.isf.mbse.cvclipse.EducationBlock educationBlock, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_HobbyBlock(de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock hobbyBlock, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ProfessionalExperienceBlock(de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock professionalExperienceBlock, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_LanguageBlock(de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock languageBlock, ContextType context) {
-		return null;
-	}
-	
 	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ItemBlock(de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock itemBlock, ContextType context) {
 		return null;
 	}
@@ -253,15 +171,7 @@ public class AbstractCvInterpreter<ResultType, ContextType> {
 		return null;
 	}
 	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_LineBreak(de.tu_bs.cs.isf.mbse.cvclipse.LineBreak lineBreak, ContextType context) {
-		return null;
-	}
-	
 	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_Item(de.tu_bs.cs.isf.mbse.cvclipse.Item item, ContextType context) {
-		return null;
-	}
-	
-	public ResultType interprete_de_tu_005fbs_cs_isf_mbse_cvclipse_ProfessionalTrainingBlock(de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock professionalTrainingBlock, ContextType context) {
 		return null;
 	}
 	

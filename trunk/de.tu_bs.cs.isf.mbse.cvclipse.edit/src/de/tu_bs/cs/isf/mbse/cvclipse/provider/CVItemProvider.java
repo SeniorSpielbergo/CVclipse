@@ -186,32 +186,7 @@ public class CVItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(CvclipsePackage.Literals.CV__BLOCKS,
-				 CvclipseFactory.eINSTANCE.createEducationBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.CV__BLOCKS,
 				 CvclipseFactory.eINSTANCE.createListBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.CV__BLOCKS,
-				 CvclipseFactory.eINSTANCE.createHobbyBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.CV__BLOCKS,
-				 CvclipseFactory.eINSTANCE.createProfessionalExperienceBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.CV__BLOCKS,
-				 CvclipseFactory.eINSTANCE.createLanguageBlock()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.CV__BLOCKS,
-				 CvclipseFactory.eINSTANCE.createProfessionalTrainingBlock()));
 	}
 
 	/**

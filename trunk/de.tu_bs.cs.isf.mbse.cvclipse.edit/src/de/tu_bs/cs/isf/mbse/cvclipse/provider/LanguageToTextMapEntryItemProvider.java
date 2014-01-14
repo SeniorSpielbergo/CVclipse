@@ -180,26 +180,6 @@ public class LanguageToTextMapEntryItemProvider
 			(createChildParameter
 				(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE,
 				 CvclipseFactory.eINSTANCE.createText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE,
-				 CvclipseFactory.eINSTANCE.createBoldText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE,
-				 CvclipseFactory.eINSTANCE.createItalicText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE,
-				 CvclipseFactory.eINSTANCE.createBoldItalicText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CvclipsePackage.Literals.LANGUAGE_TO_TEXT_MAP_ENTRY__VALUE,
-				 CvclipseFactory.eINSTANCE.createLineBreak()));
 	}
 
 	/**

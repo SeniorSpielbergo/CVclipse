@@ -4,39 +4,27 @@ package de.tu_bs.cs.isf.mbse.cvclipse.impl;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.Application;
 import de.tu_bs.cs.isf.mbse.cvclipse.Block;
-import de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText;
-import de.tu_bs.cs.isf.mbse.cvclipse.BoldText;
 import de.tu_bs.cs.isf.mbse.cvclipse.Color;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipseFactory;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Date;
 import de.tu_bs.cs.isf.mbse.cvclipse.DateItem;
-import de.tu_bs.cs.isf.mbse.cvclipse.EducationBlock;
-import de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock;
-import de.tu_bs.cs.isf.mbse.cvclipse.ItalicText;
 import de.tu_bs.cs.isf.mbse.cvclipse.Item;
 import de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.Language;
-import de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.Letter;
-import de.tu_bs.cs.isf.mbse.cvclipse.LineBreak;
 import de.tu_bs.cs.isf.mbse.cvclipse.ListBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.PersonalInformation;
-import de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock;
-import de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock;
 import de.tu_bs.cs.isf.mbse.cvclipse.Style;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
-
 import java.util.Map;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -93,55 +81,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass boldTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass italicTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass boldItalicTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass educationBlockEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass hobbyBlockEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass professionalExperienceBlockEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass languageBlockEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass itemBlockEClass = null;
 
 	/**
@@ -156,21 +95,7 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass lineBreakEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass itemEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass professionalTrainingBlockEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -710,69 +635,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBoldText() {
-		return boldTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getItalicText() {
-		return italicTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBoldItalicText() {
-		return boldItalicTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEducationBlock() {
-		return educationBlockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getHobbyBlock() {
-		return hobbyBlockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getProfessionalExperienceBlock() {
-		return professionalExperienceBlockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLanguageBlock() {
-		return languageBlockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getItemBlock() {
 		return itemBlockEClass;
 	}
@@ -791,15 +653,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLineBreak() {
-		return lineBreakEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getItem() {
 		return itemEClass;
 	}
@@ -811,15 +664,6 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 	 */
 	public EReference getItem_RightContent() {
 		return (EReference)itemEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getProfessionalTrainingBlock() {
-		return professionalTrainingBlockEClass;
 	}
 
 	/**
@@ -1047,30 +891,12 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		createEAttribute(textEClass, TEXT__CONTENT);
 		createEOperation(textEClass, TEXT___TO_STRING);
 
-		boldTextEClass = createEClass(BOLD_TEXT);
-
-		italicTextEClass = createEClass(ITALIC_TEXT);
-
-		boldItalicTextEClass = createEClass(BOLD_ITALIC_TEXT);
-
-		educationBlockEClass = createEClass(EDUCATION_BLOCK);
-
-		hobbyBlockEClass = createEClass(HOBBY_BLOCK);
-
-		professionalExperienceBlockEClass = createEClass(PROFESSIONAL_EXPERIENCE_BLOCK);
-
-		languageBlockEClass = createEClass(LANGUAGE_BLOCK);
-
 		itemBlockEClass = createEClass(ITEM_BLOCK);
 
 		listBlockEClass = createEClass(LIST_BLOCK);
 
-		lineBreakEClass = createEClass(LINE_BREAK);
-
 		itemEClass = createEClass(ITEM);
 		createEReference(itemEClass, ITEM__RIGHT_CONTENT);
-
-		professionalTrainingBlockEClass = createEClass(PROFESSIONAL_TRAINING_BLOCK);
 
 		dateItemEClass = createEClass(DATE_ITEM);
 		createEReference(dateItemEClass, DATE_ITEM__BEGIN);
@@ -1123,17 +949,8 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		boldTextEClass.getESuperTypes().add(this.getText());
-		italicTextEClass.getESuperTypes().add(this.getText());
-		boldItalicTextEClass.getESuperTypes().add(this.getText());
-		educationBlockEClass.getESuperTypes().add(this.getItemBlock());
-		hobbyBlockEClass.getESuperTypes().add(this.getListBlock());
-		professionalExperienceBlockEClass.getESuperTypes().add(this.getItemBlock());
-		languageBlockEClass.getESuperTypes().add(this.getItemBlock());
 		itemBlockEClass.getESuperTypes().add(this.getBlock());
 		listBlockEClass.getESuperTypes().add(this.getBlock());
-		lineBreakEClass.getESuperTypes().add(this.getText());
-		professionalTrainingBlockEClass.getESuperTypes().add(this.getItemBlock());
 		dateItemEClass.getESuperTypes().add(this.getItem());
 		textItemEClass.getESuperTypes().add(this.getItem());
 
@@ -1192,30 +1009,12 @@ public class CvclipsePackageImpl extends EPackageImpl implements CvclipsePackage
 
 		initEOperation(getText__ToString(), ecorePackage.getEString(), "toString", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(boldTextEClass, BoldText.class, "BoldText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(italicTextEClass, ItalicText.class, "ItalicText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(boldItalicTextEClass, BoldItalicText.class, "BoldItalicText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(educationBlockEClass, EducationBlock.class, "EducationBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(hobbyBlockEClass, HobbyBlock.class, "HobbyBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(professionalExperienceBlockEClass, ProfessionalExperienceBlock.class, "ProfessionalExperienceBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(languageBlockEClass, LanguageBlock.class, "LanguageBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(itemBlockEClass, ItemBlock.class, "ItemBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(listBlockEClass, ListBlock.class, "ListBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(lineBreakEClass, LineBreak.class, "LineBreak", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(itemEClass, Item.class, "Item", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getItem_RightContent(), this.getLanguageToTextMapEntry(), null, "rightContent", null, 1, -1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(professionalTrainingBlockEClass, ProfessionalTrainingBlock.class, "ProfessionalTrainingBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dateItemEClass, DateItem.class, "DateItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDateItem_Begin(), this.getDate(), null, "begin", null, 1, 1, DateItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -67,69 +67,6 @@ public interface CvclipseFactory extends EFactory {
 	Text createText();
 
 	/**
-	 * Returns a new object of class '<em>Bold Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bold Text</em>'.
-	 * @generated
-	 */
-	BoldText createBoldText();
-
-	/**
-	 * Returns a new object of class '<em>Italic Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Italic Text</em>'.
-	 * @generated
-	 */
-	ItalicText createItalicText();
-
-	/**
-	 * Returns a new object of class '<em>Bold Italic Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bold Italic Text</em>'.
-	 * @generated
-	 */
-	BoldItalicText createBoldItalicText();
-
-	/**
-	 * Returns a new object of class '<em>Education Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Education Block</em>'.
-	 * @generated
-	 */
-	EducationBlock createEducationBlock();
-
-	/**
-	 * Returns a new object of class '<em>Hobby Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hobby Block</em>'.
-	 * @generated
-	 */
-	HobbyBlock createHobbyBlock();
-
-	/**
-	 * Returns a new object of class '<em>Professional Experience Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Professional Experience Block</em>'.
-	 * @generated
-	 */
-	ProfessionalExperienceBlock createProfessionalExperienceBlock();
-
-	/**
-	 * Returns a new object of class '<em>Language Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Language Block</em>'.
-	 * @generated
-	 */
-	LanguageBlock createLanguageBlock();
-
-	/**
 	 * Returns a new object of class '<em>Item Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,24 +83,6 @@ public interface CvclipseFactory extends EFactory {
 	 * @generated
 	 */
 	ListBlock createListBlock();
-
-	/**
-	 * Returns a new object of class '<em>Line Break</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Line Break</em>'.
-	 * @generated
-	 */
-	LineBreak createLineBreak();
-
-	/**
-	 * Returns a new object of class '<em>Professional Training Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Professional Training Block</em>'.
-	 * @generated
-	 */
-	ProfessionalTrainingBlock createProfessionalTrainingBlock();
 
 	/**
 	 * Returns a new object of class '<em>Date Item</em>'.

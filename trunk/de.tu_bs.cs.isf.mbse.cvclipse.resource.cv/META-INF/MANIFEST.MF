@@ -12,14 +12,17 @@ Require-Bundle: org.eclipse.core.runtime;resolution:=optional,
  org.eclipse.debug.core;resolution:=optional,
  org.emftext.commons.antlr3_4_0,
  de.tu_bs.cs.isf.mbse.cvclipse,
+ org.eclipse.xtend.lib,
+ com.google.guava,
  org.eclipse.xtext.xbase.lib
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: de.tu_bs.cs.isf.mbse.cvclipse.resource.cv,
-  de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis,
-  de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp,
-  de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.debug,
-  de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.launch,
-  de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.grammar,
-  de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.util
+ de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.analysis,
+ de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp,
+ de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.debug,
+ de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.launch,
+ de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.grammar,
+ de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.util
 Bundle-Activator: de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.mopp.CvPlugin
+

@@ -104,59 +104,6 @@ public class CvclipseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CvclipsePackage.BOLD_TEXT: {
-				BoldText boldText = (BoldText)theEObject;
-				T result = caseBoldText(boldText);
-				if (result == null) result = caseText(boldText);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.ITALIC_TEXT: {
-				ItalicText italicText = (ItalicText)theEObject;
-				T result = caseItalicText(italicText);
-				if (result == null) result = caseText(italicText);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.BOLD_ITALIC_TEXT: {
-				BoldItalicText boldItalicText = (BoldItalicText)theEObject;
-				T result = caseBoldItalicText(boldItalicText);
-				if (result == null) result = caseText(boldItalicText);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.EDUCATION_BLOCK: {
-				EducationBlock educationBlock = (EducationBlock)theEObject;
-				T result = caseEducationBlock(educationBlock);
-				if (result == null) result = caseItemBlock(educationBlock);
-				if (result == null) result = caseBlock(educationBlock);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.HOBBY_BLOCK: {
-				HobbyBlock hobbyBlock = (HobbyBlock)theEObject;
-				T result = caseHobbyBlock(hobbyBlock);
-				if (result == null) result = caseListBlock(hobbyBlock);
-				if (result == null) result = caseBlock(hobbyBlock);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.PROFESSIONAL_EXPERIENCE_BLOCK: {
-				ProfessionalExperienceBlock professionalExperienceBlock = (ProfessionalExperienceBlock)theEObject;
-				T result = caseProfessionalExperienceBlock(professionalExperienceBlock);
-				if (result == null) result = caseItemBlock(professionalExperienceBlock);
-				if (result == null) result = caseBlock(professionalExperienceBlock);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.LANGUAGE_BLOCK: {
-				LanguageBlock languageBlock = (LanguageBlock)theEObject;
-				T result = caseLanguageBlock(languageBlock);
-				if (result == null) result = caseItemBlock(languageBlock);
-				if (result == null) result = caseBlock(languageBlock);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CvclipsePackage.ITEM_BLOCK: {
 				ItemBlock itemBlock = (ItemBlock)theEObject;
 				T result = caseItemBlock(itemBlock);
@@ -171,24 +118,9 @@ public class CvclipseSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CvclipsePackage.LINE_BREAK: {
-				LineBreak lineBreak = (LineBreak)theEObject;
-				T result = caseLineBreak(lineBreak);
-				if (result == null) result = caseText(lineBreak);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CvclipsePackage.ITEM: {
 				Item item = (Item)theEObject;
 				T result = caseItem(item);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case CvclipsePackage.PROFESSIONAL_TRAINING_BLOCK: {
-				ProfessionalTrainingBlock professionalTrainingBlock = (ProfessionalTrainingBlock)theEObject;
-				T result = caseProfessionalTrainingBlock(professionalTrainingBlock);
-				if (result == null) result = caseItemBlock(professionalTrainingBlock);
-				if (result == null) result = caseBlock(professionalTrainingBlock);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -313,111 +245,6 @@ public class CvclipseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bold Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bold Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBoldText(BoldText object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Italic Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Italic Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseItalicText(ItalicText object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bold Italic Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bold Italic Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBoldItalicText(BoldItalicText object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Education Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Education Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEducationBlock(EducationBlock object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hobby Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hobby Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHobbyBlock(HobbyBlock object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Professional Experience Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Professional Experience Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProfessionalExperienceBlock(ProfessionalExperienceBlock object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Language Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Language Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLanguageBlock(LanguageBlock object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Item Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -448,21 +275,6 @@ public class CvclipseSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Line Break</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Line Break</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLineBreak(LineBreak object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Item</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -474,21 +286,6 @@ public class CvclipseSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseItem(Item object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Professional Training Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Professional Training Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProfessionalTrainingBlock(ProfessionalTrainingBlock object) {
 		return null;
 	}
 

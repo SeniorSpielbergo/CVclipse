@@ -64,17 +64,8 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 			case CvclipsePackage.APPLICATION: return createApplication();
 			case CvclipsePackage.PERSONAL_INFORMATION: return createPersonalInformation();
 			case CvclipsePackage.TEXT: return createText();
-			case CvclipsePackage.BOLD_TEXT: return createBoldText();
-			case CvclipsePackage.ITALIC_TEXT: return createItalicText();
-			case CvclipsePackage.BOLD_ITALIC_TEXT: return createBoldItalicText();
-			case CvclipsePackage.EDUCATION_BLOCK: return createEducationBlock();
-			case CvclipsePackage.HOBBY_BLOCK: return createHobbyBlock();
-			case CvclipsePackage.PROFESSIONAL_EXPERIENCE_BLOCK: return createProfessionalExperienceBlock();
-			case CvclipsePackage.LANGUAGE_BLOCK: return createLanguageBlock();
 			case CvclipsePackage.ITEM_BLOCK: return createItemBlock();
 			case CvclipsePackage.LIST_BLOCK: return createListBlock();
-			case CvclipsePackage.LINE_BREAK: return createLineBreak();
-			case CvclipsePackage.PROFESSIONAL_TRAINING_BLOCK: return createProfessionalTrainingBlock();
 			case CvclipsePackage.DATE_ITEM: return createDateItem();
 			case CvclipsePackage.TEXT_ITEM: return createTextItem();
 			case CvclipsePackage.DATE: return createDate();
@@ -177,76 +168,6 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BoldText createBoldText() {
-		BoldTextImpl boldText = new BoldTextImpl();
-		return boldText;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ItalicText createItalicText() {
-		ItalicTextImpl italicText = new ItalicTextImpl();
-		return italicText;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public BoldItalicText createBoldItalicText() {
-		BoldItalicTextImpl boldItalicText = new BoldItalicTextImpl();
-		return boldItalicText;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EducationBlock createEducationBlock() {
-		EducationBlockImpl educationBlock = new EducationBlockImpl();
-		return educationBlock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HobbyBlock createHobbyBlock() {
-		HobbyBlockImpl hobbyBlock = new HobbyBlockImpl();
-		return hobbyBlock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProfessionalExperienceBlock createProfessionalExperienceBlock() {
-		ProfessionalExperienceBlockImpl professionalExperienceBlock = new ProfessionalExperienceBlockImpl();
-		return professionalExperienceBlock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LanguageBlock createLanguageBlock() {
-		LanguageBlockImpl languageBlock = new LanguageBlockImpl();
-		return languageBlock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ItemBlock createItemBlock() {
 		ItemBlockImpl itemBlock = new ItemBlockImpl();
 		return itemBlock;
@@ -260,26 +181,6 @@ public class CvclipseFactoryImpl extends EFactoryImpl implements CvclipseFactory
 	public ListBlock createListBlock() {
 		ListBlockImpl listBlock = new ListBlockImpl();
 		return listBlock;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LineBreak createLineBreak() {
-		LineBreakImpl lineBreak = new LineBreakImpl();
-		return lineBreak;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProfessionalTrainingBlock createProfessionalTrainingBlock() {
-		ProfessionalTrainingBlockImpl professionalTrainingBlock = new ProfessionalTrainingBlockImpl();
-		return professionalTrainingBlock;
 	}
 
 	/**

@@ -103,21 +103,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BoldText" eSuperTypes="#//Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ItalicText" eSuperTypes="#//Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BoldItalicText" eSuperTypes="#//Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EducationBlock" eSuperTypes="#//ItemBlock"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HobbyBlock" eSuperTypes="#//ListBlock"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProfessionalExperienceBlock" eSuperTypes="#//ItemBlock"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguageBlock" eSuperTypes="#//ItemBlock"/>
   <eClassifiers xsi:type="ecore:EClass" name="ItemBlock" eSuperTypes="#//Block"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListBlock" eSuperTypes="#//Block"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LineBreak" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="Item" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="rightContent" lowerBound="1"
         upperBound="-1" eType="#//LanguageToTextMapEntry" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProfessionalTrainingBlock" eSuperTypes="#//ItemBlock"/>
   <eClassifiers xsi:type="ecore:EClass" name="DateItem" eSuperTypes="#//Item">
     <eStructuralFeatures xsi:type="ecore:EReference" name="begin" lowerBound="1" eType="#//Date"
         containment="true"/>

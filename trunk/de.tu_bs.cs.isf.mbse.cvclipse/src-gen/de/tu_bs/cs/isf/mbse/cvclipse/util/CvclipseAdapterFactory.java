@@ -94,34 +94,6 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 				return createTextAdapter();
 			}
 			@Override
-			public Adapter caseBoldText(BoldText object) {
-				return createBoldTextAdapter();
-			}
-			@Override
-			public Adapter caseItalicText(ItalicText object) {
-				return createItalicTextAdapter();
-			}
-			@Override
-			public Adapter caseBoldItalicText(BoldItalicText object) {
-				return createBoldItalicTextAdapter();
-			}
-			@Override
-			public Adapter caseEducationBlock(EducationBlock object) {
-				return createEducationBlockAdapter();
-			}
-			@Override
-			public Adapter caseHobbyBlock(HobbyBlock object) {
-				return createHobbyBlockAdapter();
-			}
-			@Override
-			public Adapter caseProfessionalExperienceBlock(ProfessionalExperienceBlock object) {
-				return createProfessionalExperienceBlockAdapter();
-			}
-			@Override
-			public Adapter caseLanguageBlock(LanguageBlock object) {
-				return createLanguageBlockAdapter();
-			}
-			@Override
 			public Adapter caseItemBlock(ItemBlock object) {
 				return createItemBlockAdapter();
 			}
@@ -130,16 +102,8 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 				return createListBlockAdapter();
 			}
 			@Override
-			public Adapter caseLineBreak(LineBreak object) {
-				return createLineBreakAdapter();
-			}
-			@Override
 			public Adapter caseItem(Item object) {
 				return createItemAdapter();
-			}
-			@Override
-			public Adapter caseProfessionalTrainingBlock(ProfessionalTrainingBlock object) {
-				return createProfessionalTrainingBlockAdapter();
 			}
 			@Override
 			public Adapter caseDateItem(DateItem object) {
@@ -262,104 +226,6 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.BoldText <em>Bold Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.BoldText
-	 * @generated
-	 */
-	public Adapter createBoldTextAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.ItalicText <em>Italic Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.ItalicText
-	 * @generated
-	 */
-	public Adapter createItalicTextAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText <em>Bold Italic Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.BoldItalicText
-	 * @generated
-	 */
-	public Adapter createBoldItalicTextAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.EducationBlock <em>Education Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.EducationBlock
-	 * @generated
-	 */
-	public Adapter createEducationBlockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock <em>Hobby Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.HobbyBlock
-	 * @generated
-	 */
-	public Adapter createHobbyBlockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock <em>Professional Experience Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalExperienceBlock
-	 * @generated
-	 */
-	public Adapter createProfessionalExperienceBlockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock <em>Language Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.LanguageBlock
-	 * @generated
-	 */
-	public Adapter createLanguageBlockAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock <em>Item Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -388,20 +254,6 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.LineBreak <em>Line Break</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.LineBreak
-	 * @generated
-	 */
-	public Adapter createLineBreakAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.Item <em>Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -412,20 +264,6 @@ public class CvclipseAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createItemAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock <em>Professional Training Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.tu_bs.cs.isf.mbse.cvclipse.ProfessionalTrainingBlock
-	 * @generated
-	 */
-	public Adapter createProfessionalTrainingBlockAdapter() {
 		return null;
 	}
 
