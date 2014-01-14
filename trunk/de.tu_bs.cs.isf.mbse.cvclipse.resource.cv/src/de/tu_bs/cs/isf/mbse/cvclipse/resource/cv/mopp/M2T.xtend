@@ -124,7 +124,7 @@ class M2T {
 	
 	def String generateLetter(Language languages) {
 		'''
-\recipient{«IF app.letter.recipientAttention != null»«app.letter.recipientAttention»«ENDIF»}{«app.letter.recipientCompany»\\«app.letter.recipientStreet»\\«app.letter.recipientCity»«IF app.letter.recipientCountry != null»\\«app.letter.recipientCountry»«ENDIF»}
+\recipient{«IF app.letter.recipientAttention != null»«app.letter.recipientAttention»«ELSE»\ «ENDIF»}{«app.letter.recipientCompany»\\«app.letter.recipientStreet»\\«app.letter.recipientCity»«IF app.letter.recipientCountry != null»\\«app.letter.recipientCountry»«ENDIF»}
 \date{«IF app.date != null»«app.date»«ELSE»\today«ENDIF»}
 \opening{«IF !app.letter.opening.empty»«app.letter.opening.get(languages)»«ELSEIF languages.equals(Language.ENGLISH)»«ENGLISH_OPENING»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_OPENING»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_OPENING»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_OPENING»«ENDIF»,}
 \closing{«IF !app.letter.closing.empty»«app.letter.closing.get(languages)»«ELSEIF languages.equals(Language.ENGLISH)»«ENGLISH_CLOSING»«ELSEIF languages.equals(Language.GERMAN)»«GERMAN_CLOSING»«ELSEIF languages.equals(Language.SPANISH)»«SPANISH_CLOSING»«ELSEIF languages.equals(Language.FRENCH)»«FRENCH_CLOSING»«ENDIF»,}
