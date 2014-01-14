@@ -22,17 +22,25 @@ public class StartEndDateConsistent extends ModelConstraint {
 			Date startDate = di.getBegin();
 			Date endDate = di.getEnd();
 
+			boolean sameYear = false;
+			boolean sameMonth = false;
 			if (endDate != null) {
 				if (startDate.getYear() <= endDate.getYear()) {
-					if (startDate.getMonth() <= endDate.getMonth()) {
-						if (startDate.getDay() != 0 && endDate.getDay() != 0) {
+					if (startDate.getYear() == endDate.getYear()) {
+						sameYear = true;
+					}
+					if (sameYear && startDate.getMonth() > endDate.getMonth()) {
+						return new ConstraintStatus(this, target, "Illegal time interval!\nThe start month is after the end month!", Collections.singleton(startDate));
+					}
+					else {
+						if (startDate.getMonth() == endDate.getMonth()) {
+							sameMonth = true;
+						}
+						if (sameYear && sameMonth && startDate.getDay() != 0 && endDate.getDay() != 0) {
 							if (startDate.getDay() > endDate.getDay()) {
 								return new ConstraintStatus(this, target, "Illegal time interval!\nThe start day is after the end day!", Collections.singleton(startDate));
 							}
 						}
-					}
-					else {
-						return new ConstraintStatus(this, target, "Illegal time interval!\nThe start month is after the end month!", Collections.singleton(startDate));
 					}
 				}
 				else {
