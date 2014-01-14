@@ -5,16 +5,20 @@ package de.tu_bs.cs.isf.mbse.cvclipse.provider;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import de.tu_bs.cs.isf.mbse.cvclipse.Block;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 
 /**
  * This is the item provider adapter for a {@link de.tu_bs.cs.isf.mbse.cvclipse.ItemBlock} object.
@@ -70,11 +74,23 @@ public class ItemBlockItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ItemBlock_type");
+		StringBuilder label = new StringBuilder("Item Block: ");
+		Block block = (Block) object;
+		boolean first = true;
+		for(Entry<Language, Text> entry: block.getTitle()) {
+			if(!first) {
+				label.append(", ");
+			}
+			else {
+				first = false;
+			}
+			label.append(entry.getValue());				
+		}
+		return label.toString();
 	}
 
 	/**

@@ -5,6 +5,7 @@ package de.tu_bs.cs.isf.mbse.cvclipse.provider;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipseFactory;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 
 import java.util.Collection;
 import java.util.List;
@@ -12,11 +13,8 @@ import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -27,6 +25,8 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 
 /**
  * This is the item provider adapter for a {@link java.util.Map.Entry} object.
@@ -135,12 +135,16 @@ public class LanguageToTextMapEntryItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		Map.Entry<?, ?> languageToTextMapEntry = (Map.Entry<?, ?>)object;
-		return "" + languageToTextMapEntry.getKey() + " -> " + languageToTextMapEntry.getValue();
+		Map.Entry<Language, Text> languageToTextMapEntry = (Map.Entry<Language, Text>)object;
+		StringBuilder label = new StringBuilder();
+		label.append(languageToTextMapEntry.getKey().getName());
+		label.append(": ");
+		label.append(languageToTextMapEntry.getValue());
+		return label.toString();
 	}
 
 	/**

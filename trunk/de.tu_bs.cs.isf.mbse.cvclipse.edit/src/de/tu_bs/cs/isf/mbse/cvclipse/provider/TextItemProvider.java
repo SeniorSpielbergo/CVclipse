@@ -5,15 +5,14 @@ package de.tu_bs.cs.isf.mbse.cvclipse.provider;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
 import de.tu_bs.cs.isf.mbse.cvclipse.Text;
+import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -102,14 +101,11 @@ public class TextItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Text)object).getContent();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Text_type") :
-			getString("_UI_Text_type") + " " + label;
+		return "Text";
 	}
 
 	/**

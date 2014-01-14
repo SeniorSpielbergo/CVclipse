@@ -148,12 +148,15 @@ public class DateItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
 		Date date = (Date)object;
-		return getString("_UI_Date_type") + " " + date.getDay();
+		StringBuilder label = new StringBuilder( getString("_UI_Date_type"));
+		label.append(" ");
+		label.append(date.toString());
+		return label.toString();
 	}
 
 	/**

@@ -100,11 +100,17 @@ public class BlockItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Block_type");
+		StringBuilder label = new StringBuilder(getString("_UI_Block_type"));
+		Block block = (Block) object;
+		if(block.getTitle().size()>0) {
+			label.append(" ");
+			label.append(block.getTitle().get(0));			
+		}
+		return label.toString();
 	}
 
 	/**

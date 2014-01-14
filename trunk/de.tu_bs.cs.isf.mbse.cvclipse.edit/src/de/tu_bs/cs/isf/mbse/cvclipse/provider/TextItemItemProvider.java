@@ -5,16 +5,16 @@ package de.tu_bs.cs.isf.mbse.cvclipse.provider;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipseFactory;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
+import de.tu_bs.cs.isf.mbse.cvclipse.Language;
 import de.tu_bs.cs.isf.mbse.cvclipse.TextItem;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -22,6 +22,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import de.tu_bs.cs.isf.mbse.cvclipse.Text;
 
 /**
  * This is the item provider adapter for a {@link de.tu_bs.cs.isf.mbse.cvclipse.TextItem} object.
@@ -107,11 +109,28 @@ public class TextItemItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_TextItem_type");
+		StringBuilder label = new StringBuilder();
+		TextItem textItem = (TextItem) object;
+		
+		label.append("Text Item: ");
+		boolean first = true;
+		for(Map.Entry<Language, Text> entry: textItem.getLeftContent()) {
+			if(!first) {
+				label.append(", ");
+			}
+			else {
+				first = false;
+			}
+
+			label.append(entry.getValue());
+		}
+		
+		return label.toString();
+		
 	}
 
 	/**
