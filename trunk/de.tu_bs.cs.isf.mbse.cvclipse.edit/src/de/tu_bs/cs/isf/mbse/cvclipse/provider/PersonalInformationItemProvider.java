@@ -437,14 +437,22 @@ public class PersonalInformationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PersonalInformation)object).getFirstname();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PersonalInformation_type") :
-			getString("_UI_PersonalInformation_type") + " " + label;
+		PersonalInformation personalInformation = (PersonalInformation) object;
+		StringBuilder label = new StringBuilder();
+		label.append("Personal Information: ");
+		if(personalInformation.getFirstname()!=null) {
+			label.append(personalInformation.getFirstname());
+			label.append(" ");
+		}
+		if(personalInformation.getSurname()!=null) {
+			label.append(personalInformation.getSurname());
+		}
+		
+		return label.toString();
 	}
 
 	/**

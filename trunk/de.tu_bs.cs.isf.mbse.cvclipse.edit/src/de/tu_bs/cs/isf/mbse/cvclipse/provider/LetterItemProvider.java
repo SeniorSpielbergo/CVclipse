@@ -234,10 +234,7 @@ public class LetterItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Letter)object).getRecipientCompany();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Letter_type") :
-			getString("_UI_Letter_type") + " " + label;
+		return "Letter";
 	}
 
 	/**
