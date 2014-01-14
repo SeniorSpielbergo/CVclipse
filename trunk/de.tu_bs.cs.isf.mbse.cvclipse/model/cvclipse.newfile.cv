@@ -40,7 +40,7 @@ letter
 			"Application text..."
 				
 cv
-	picture: "max.jpg"
+//	picture: "max.jpg"
 	
 	block
 		title: 
