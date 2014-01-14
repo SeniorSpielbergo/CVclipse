@@ -208,15 +208,14 @@ public class ApplicationItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public String getText(Object object) {
-		Style labelValue = ((Application)object).getStyle();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Application_type") :
-			getString("_UI_Application_type") + " " + label;
+		String label = "Application: ";
+		label += ((Application)object).getDate().toString();
+		
+		return label;
 	}
 
 	/**
