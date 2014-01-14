@@ -59,7 +59,7 @@ RULES {
 				)*;
 				
 	CV ::= "cv"
-			"picture" ":" picture['"','"']?
+			("picture" ":" picture['"','"'])?
 			blocks+;
 	
 	ItemBlock ::= "block"

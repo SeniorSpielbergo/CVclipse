@@ -20,7 +20,7 @@ public class EmailLegal extends ModelConstraint {
 			PersonalInformation pi = (PersonalInformation) target;
 			
 			String emailreg = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
-			if (!pi.getEmail().matches(emailreg)) {
+			if (pi.getEmail()!=null && !pi.getEmail().matches(emailreg)) {
 				return new ConstraintStatus(this, target, "Not a legal \"email\" address!", Collections.singleton(pi));
 			}
 		}

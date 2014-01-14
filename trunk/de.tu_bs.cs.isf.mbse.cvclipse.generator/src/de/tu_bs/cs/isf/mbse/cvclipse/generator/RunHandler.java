@@ -47,12 +47,7 @@ public class RunHandler extends AbstractHandler {
 			return null;
 		}
 
-		try {
 			LaTeX.runLaTeX(inputs);
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
 		
 		return null;
 	}

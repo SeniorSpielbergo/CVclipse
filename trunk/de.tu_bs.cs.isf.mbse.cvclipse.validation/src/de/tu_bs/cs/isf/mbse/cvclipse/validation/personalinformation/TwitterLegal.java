@@ -18,14 +18,17 @@ public class TwitterLegal extends ModelConstraint {
 		EObject target = context.getTarget();
 		if (target instanceof PersonalInformation) {
 			PersonalInformation pi = (PersonalInformation) target;
-			if (pi.getTwitter().isEmpty() || pi.getTwitter().length() < 2) {
-				return new ConstraintStatus(this, target, "Not a legal Twitter address!", Collections.singleton(pi));
-			}
-			else if (!pi.getTwitter().startsWith("@")) {
-				return new ConstraintStatus(this, target, "Not a legal Twitter address!\nIt has to start with an \"@\"!", Collections.singleton(pi));
-			}
-			else if (numberOfOccurences('@', pi.getTwitter()) != 1) {
-				return new ConstraintStatus(this, target, "Not a legal Twitter address!\nOnly one \"@\" is allowed in a Twitter address!", Collections.singleton(pi));
+			
+			if(pi.getTwitter()!=null) {
+				if (pi.getTwitter().isEmpty() || pi.getTwitter().length() < 2) {
+					return new ConstraintStatus(this, target, "Not a legal Twitter address!", Collections.singleton(pi));
+				}
+				else if (!pi.getTwitter().startsWith("@")) {
+					return new ConstraintStatus(this, target, "Not a legal Twitter address!\nIt has to start with an \"@\"!", Collections.singleton(pi));
+				}
+				else if (numberOfOccurences('@', pi.getTwitter()) != 1) {
+					return new ConstraintStatus(this, target, "Not a legal Twitter address!\nOnly one \"@\" is allowed in a Twitter address!", Collections.singleton(pi));
+				}
 			}
 		}
 		
