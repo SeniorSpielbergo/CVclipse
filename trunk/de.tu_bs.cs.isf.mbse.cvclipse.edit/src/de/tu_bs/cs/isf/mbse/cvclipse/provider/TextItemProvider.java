@@ -151,7 +151,7 @@ public class TextItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return cvclipseEditPlugin.INSTANCE;
+		return CvclipseEditPlugin.INSTANCE;
 	}
 
 }

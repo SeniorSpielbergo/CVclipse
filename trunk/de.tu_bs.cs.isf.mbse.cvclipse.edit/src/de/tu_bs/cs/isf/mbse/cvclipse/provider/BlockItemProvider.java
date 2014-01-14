@@ -162,7 +162,7 @@ public class BlockItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return cvclipseEditPlugin.INSTANCE;
+		return CvclipseEditPlugin.INSTANCE;
 	}
 
 }

@@ -197,7 +197,7 @@ public class DateItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return cvclipseEditPlugin.INSTANCE;
+		return CvclipseEditPlugin.INSTANCE;
 	}
 
 }

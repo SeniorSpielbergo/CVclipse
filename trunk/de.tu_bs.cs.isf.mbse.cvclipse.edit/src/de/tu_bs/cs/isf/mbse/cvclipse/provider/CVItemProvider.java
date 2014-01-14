@@ -222,7 +222,7 @@ public class CVItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return cvclipseEditPlugin.INSTANCE;
+		return CvclipseEditPlugin.INSTANCE;
 	}
 
 }

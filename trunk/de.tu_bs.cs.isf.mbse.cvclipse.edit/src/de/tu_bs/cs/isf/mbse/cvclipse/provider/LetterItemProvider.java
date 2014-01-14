@@ -334,7 +334,7 @@ public class LetterItemProvider
 	 */
 	@Override
 	public ResourceLocator getResourceLocator() {
-		return cvclipseEditPlugin.INSTANCE;
+		return CvclipseEditPlugin.INSTANCE;
 	}
 
 }

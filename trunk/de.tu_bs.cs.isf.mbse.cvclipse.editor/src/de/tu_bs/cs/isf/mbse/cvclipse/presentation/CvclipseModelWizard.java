@@ -14,71 +14,50 @@ import java.util.MissingResourceException;
 import java.util.StringTokenizer;
 
 import org.eclipse.emf.common.CommonPlugin;
-
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xmi.XMLResource;
-
 import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
-
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
-
 import org.eclipse.core.runtime.IProgressMonitor;
-
 import org.eclipse.jface.dialogs.MessageDialog;
-
 import org.eclipse.jface.viewers.IStructuredSelection;
-
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
-
 import org.eclipse.swt.SWT;
-
 import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.ModifyEvent;
-
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
-
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
-
 import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
-
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipseFactory;
 import de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage;
-import de.tu_bs.cs.isf.mbse.cvclipse.provider.cvclipseEditPlugin;
+import de.tu_bs.cs.isf.mbse.cvclipse.provider.CvclipseEditPlugin;
+
 
 
 import org.eclipse.core.runtime.Path;
-
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
-
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -99,7 +78,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final List<String> FILE_EXTENSIONS =
-		Collections.unmodifiableList(Arrays.asList(cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameExtensions").split("\\s*,\\s*")));
+		Collections.unmodifiableList(Arrays.asList(CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameExtensions").split("\\s*,\\s*")));
 
 	/**
 	 * A formatted list of supported file extensions, suitable for display.
@@ -108,7 +87,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public static final String FORMATTED_FILE_EXTENSIONS =
-		cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+		CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
 	/**
 	 * This caches an instance of the model package.
@@ -175,8 +154,8 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
 		this.workbench = workbench;
 		this.selection = selection;
-		setWindowTitle(cvclipseEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(cvclipseEditorPlugin.INSTANCE.getImage("full/wizban/NewCvclipse")));
+		setWindowTitle(CvclipseEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
+		setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(CvclipseEditorPlugin.INSTANCE.getImage("full/wizban/NewCvclipse")));
 	}
 
 	/**
@@ -259,7 +238,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 							resource.save(options);
 						}
 						catch (Exception exception) {
-							cvclipseEditorPlugin.INSTANCE.log(exception);
+							CvclipseEditorPlugin.INSTANCE.log(exception);
 						}
 						finally {
 							progressMonitor.done();
@@ -292,14 +271,14 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 					 workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString()).getId());					 	 
 			}
 			catch (PartInitException exception) {
-				MessageDialog.openError(workbenchWindow.getShell(), cvclipseEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
+				MessageDialog.openError(workbenchWindow.getShell(), CvclipseEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"), exception.getMessage());
 				return false;
 			}
 
 			return true;
 		}
 		catch (Exception exception) {
-			cvclipseEditorPlugin.INSTANCE.log(exception);
+			CvclipseEditorPlugin.INSTANCE.log(exception);
 			return false;
 		}
 	}
@@ -333,7 +312,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 				String extension = new Path(getFileName()).getFileExtension();
 				if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
 					String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions" : "_WARN_FilenameExtension";
-					setErrorMessage(cvclipseEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
+					setErrorMessage(CvclipseEditorPlugin.INSTANCE.getString(key, new Object [] { FORMATTED_FILE_EXTENSIONS }));
 					return false;
 				}
 				return true;
@@ -395,8 +374,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 		 * @generated
 		 */
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
@@ -411,7 +389,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 
 			Label containerLabel = new Label(composite, SWT.LEFT);
 			{
-				containerLabel.setText(cvclipseEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
+				containerLabel.setText(CvclipseEditorPlugin.INSTANCE.getString("_UI_ModelObject"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -437,7 +415,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 
 			Label encodingLabel = new Label(composite, SWT.LEFT);
 			{
-				encodingLabel.setText(cvclipseEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
+				encodingLabel.setText(CvclipseEditorPlugin.INSTANCE.getString("_UI_XMLEncoding"));
 
 				GridData data = new GridData();
 				data.horizontalAlignment = GridData.FILL;
@@ -536,10 +514,10 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 		 */
 		protected String getLabel(String typeName) {
 			try {
-				return cvclipseEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
+				return CvclipseEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
 			}
 			catch(MissingResourceException mre) {
-				cvclipseEditorPlugin.INSTANCE.log(mre);
+				CvclipseEditorPlugin.INSTANCE.log(mre);
 			}
 			return typeName;
 		}
@@ -552,7 +530,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 		protected Collection<String> getEncodings() {
 			if (encodings == null) {
 				encodings = new ArrayList<String>();
-				for (StringTokenizer stringTokenizer = new StringTokenizer(cvclipseEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
+				for (StringTokenizer stringTokenizer = new StringTokenizer(CvclipseEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer.hasMoreTokens(); ) {
 					encodings.add(stringTokenizer.nextToken());
 				}
 			}
@@ -571,9 +549,9 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 		// Create a page, set the title, and the initial model file name.
 		//
 		newFileCreationPage = new CvclipseModelWizardNewFileCreationPage("Whatever", selection);
-		newFileCreationPage.setTitle(cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseModelWizard_label"));
-		newFileCreationPage.setDescription(cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseModelWizard_description"));
-		newFileCreationPage.setFileName(cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
+		newFileCreationPage.setTitle(CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseModelWizard_label"));
+		newFileCreationPage.setDescription(CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseModelWizard_description"));
+		newFileCreationPage.setFileName(CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
 		addPage(newFileCreationPage);
 
 		// Try and get the resource selection to determine a current directory for the file dialog.
@@ -599,7 +577,7 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 
 					// Make up a unique new name here.
 					//
-					String defaultModelBaseFilename = cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameDefaultBase");
+					String defaultModelBaseFilename = CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseEditorFilenameDefaultBase");
 					String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
 					String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
 					for (int i = 1; ((IContainer)selectedResource).findMember(modelFilename) != null; ++i) {
@@ -610,8 +588,8 @@ public class CvclipseModelWizard extends Wizard implements INewWizard {
 			}
 		}
 		initialObjectCreationPage = new CvclipseModelWizardInitialObjectCreationPage("Whatever2");
-		initialObjectCreationPage.setTitle(cvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseModelWizard_label"));
-		initialObjectCreationPage.setDescription(cvclipseEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+		initialObjectCreationPage.setTitle(CvclipseEditorPlugin.INSTANCE.getString("_UI_CvclipseModelWizard_label"));
+		initialObjectCreationPage.setDescription(CvclipseEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
 		addPage(initialObjectCreationPage);
 	}
 

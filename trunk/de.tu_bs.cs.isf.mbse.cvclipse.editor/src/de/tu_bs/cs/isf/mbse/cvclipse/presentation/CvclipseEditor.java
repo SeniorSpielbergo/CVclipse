@@ -530,7 +530,7 @@ public class CvclipseEditor
 					}
 				}
 				catch (CoreException exception) {
-					cvclipseEditorPlugin.INSTANCE.log(exception);
+					CvclipseEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 		};
@@ -646,7 +646,7 @@ public class CvclipseEditor
 					showTabs();
 				}
 				catch (PartInitException exception) {
-					cvclipseEditorPlugin.INSTANCE.log(exception);
+					CvclipseEditorPlugin.INSTANCE.log(exception);
 				}
 			}
 
@@ -657,7 +657,7 @@ public class CvclipseEditor
 						markerHelper.createMarkers(diagnostic);
 					}
 					catch (CoreException exception) {
-						cvclipseEditorPlugin.INSTANCE.log(exception);
+						CvclipseEditorPlugin.INSTANCE.log(exception);
 					}
 				}
 			}
@@ -1522,7 +1522,7 @@ public class CvclipseEditor
 		catch (Exception exception) {
 			// Something went wrong that shouldn't.
 			//
-			cvclipseEditorPlugin.INSTANCE.log(exception);
+			CvclipseEditorPlugin.INSTANCE.log(exception);
 		}
 		updateProblemIndication = true;
 		updateProblemIndication();
@@ -1726,7 +1726,7 @@ public class CvclipseEditor
 	 * @generated
 	 */
 	private static String getString(String key) {
-		return cvclipseEditorPlugin.INSTANCE.getString(key);
+		return CvclipseEditorPlugin.INSTANCE.getString(key);
 	}
 
 	/**
@@ -1736,7 +1736,7 @@ public class CvclipseEditor
 	 * @generated
 	 */
 	private static String getString(String key, Object s1) {
-		return cvclipseEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
+		return CvclipseEditorPlugin.INSTANCE.getString(key, new Object [] { s1 });
 	}
 
 	/**
