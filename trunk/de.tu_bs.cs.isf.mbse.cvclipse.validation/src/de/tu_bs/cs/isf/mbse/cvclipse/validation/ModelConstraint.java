@@ -9,8 +9,6 @@ import org.eclipse.emf.validation.model.IModelConstraint;
 import org.eclipse.emf.validation.service.AbstractConstraintDescriptor;
 import org.eclipse.emf.validation.service.IConstraintDescriptor;
 
-import de.tu_bs.cs.isf.mbse.cvclipse.validation.personalinformation.FirstnameExists;
-
 public abstract class ModelConstraint extends AbstractModelConstraint implements IModelConstraint {
 
 	@Override
@@ -49,7 +47,7 @@ public abstract class ModelConstraint extends AbstractModelConstraint implements
 
 			@Override
 			public String getPluginId() {
-				return FirstnameExists.class.getPackage().getName();
+				return ModelConstraint.class.getPackage().getName();
 			}
 
 			@Override
