@@ -1,6 +1,6 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.generator;
 
-import java.io.File;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,21 +36,22 @@ public class RunHandler extends AbstractHandler {
 			if(o instanceof IFile){
 				IFile f = (IFile) o;
 				
-				if (f.getLocation().toFile().getName().endsWith(".cv")) {
+				if (f.getLocation().toFile().getName().endsWith(".tex")) {
 					inputs.add(f.getLocation().toPortableString());
 				}
 			}
 		}
 		
 		if (inputs.size() == 0) {
-			showErrorDialog(event, "No *.cv file selected in package explorer.");
+			showErrorDialog(event, "No *.tex file selected in package explorer.");
 			return null;
 		}
-		
-		M2T m2t = new M2T();
-		for(String fileName : inputs) {
-			File file = new File(fileName);
-			m2t.generate(file.getParent(), file.getName().replace(".cv", ""));
+
+		try {
+			LaTeX.runLaTeX(inputs);
+		}
+		catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		return null;
