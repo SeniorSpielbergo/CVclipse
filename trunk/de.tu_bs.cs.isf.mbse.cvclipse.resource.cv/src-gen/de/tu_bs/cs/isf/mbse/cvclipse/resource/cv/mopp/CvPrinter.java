@@ -1816,9 +1816,44 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 		printCountingMap.put("blocks", temp == null ? 0 : ((java.util.Collection<?>) temp).size());
 		// print collected hidden tokens
 		int count;
+		java.io.StringWriter sWriter = null;
+		java.io.PrintWriter out1 = null;
+		java.util.Map<String, Integer> printCountingMap1 = null;
 		// DEFINITION PART BEGINS (CsString)
 		out.print("cv");
 		out.print(" ");
+		// DEFINITION PART BEGINS (CompoundDefinition)
+		sWriter = new java.io.StringWriter();
+		out1 = new java.io.PrintWriter(sWriter);
+		printCountingMap1 = new java.util.LinkedHashMap<String, Integer>(printCountingMap);
+		print_de_tu_005fbs_cs_isf_mbse_cvclipse_CV_0(element, localtab, out1, printCountingMap1);
+		if (printCountingMap.equals(printCountingMap1)) {
+			out1.close();
+		} else {
+			out1.flush();
+			out1.close();
+			out.print(sWriter.toString());
+			printCountingMap.putAll(printCountingMap1);
+		}
+		// DEFINITION PART BEGINS (Containment)
+		count = printCountingMap.get("blocks");
+		if (count > 0) {
+			java.util.List<?> list = (java.util.List<?>)element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.CV__BLOCKS));
+			int index  = list.size() - count;
+			if (index < 0) {
+				index = 0;
+			}
+			java.util.ListIterator<?> it  = list.listIterator(index);
+			while (it.hasNext()) {
+				Object o = it.next();
+				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
+			}
+			printCountingMap.put("blocks", 0);
+		}
+	}
+	
+	public void print_de_tu_005fbs_cs_isf_mbse_cvclipse_CV_0(de.tu_bs.cs.isf.mbse.cvclipse.CV element, String outertab, java.io.PrintWriter out, java.util.Map<String, Integer> printCountingMap) {
+		int count;
 		// DEFINITION PART BEGINS (CsString)
 		out.print("picture");
 		out.print(" ");
@@ -1836,21 +1871,6 @@ public class CvPrinter implements de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.ICvT
 				out.print(" ");
 			}
 			printCountingMap.put("picture", count - 1);
-		}
-		// DEFINITION PART BEGINS (Containment)
-		count = printCountingMap.get("blocks");
-		if (count > 0) {
-			java.util.List<?> list = (java.util.List<?>)element.eGet(element.eClass().getEStructuralFeature(de.tu_bs.cs.isf.mbse.cvclipse.CvclipsePackage.CV__BLOCKS));
-			int index  = list.size() - count;
-			if (index < 0) {
-				index = 0;
-			}
-			java.util.ListIterator<?> it  = list.listIterator(index);
-			while (it.hasNext()) {
-				Object o = it.next();
-				doPrint((org.eclipse.emf.ecore.EObject) o, out, localtab);
-			}
-			printCountingMap.put("blocks", 0);
 		}
 	}
 	
