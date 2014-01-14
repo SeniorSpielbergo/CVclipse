@@ -18,7 +18,7 @@ public class LaTeX {
 				@Override
 				public void run() {
 					List<String> command = new ArrayList<String>();
-					command.add("C:\\Program Files\\MiKTeX 2.9\\miktex\\bin\\x64\\pdflatex.exe");
+					command.add("/usr/local/texlive/2013/bin/x86_64-linux/pdflatex");
 					command.add("--halt-on-error");
 					command.add(path);
 
