@@ -1,6 +1,5 @@
 package de.tu_bs.cs.isf.mbse.cvclipse.generator;
 
-import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
