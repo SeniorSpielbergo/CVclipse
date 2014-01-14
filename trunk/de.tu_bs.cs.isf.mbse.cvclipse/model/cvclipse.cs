@@ -2,6 +2,10 @@ SYNTAXDEF cv
 FOR <http://www.tu-braunschweig.de/isf/cvclipse/1.0><model/cvlipse.genmodel>
 START Application
 
+OPTIONS {
+	overrideBuilder = "false";
+}
+
 TOKENS {
 	DEFINE SL_COMMENT $'//'(~('\n'|'\r'|'\uffff'))* $ ;
 }
