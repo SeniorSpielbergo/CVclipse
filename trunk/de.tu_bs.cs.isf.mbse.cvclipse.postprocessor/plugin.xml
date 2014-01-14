@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="de.tu_bs.cs.isf.mbse.cvclipse.resource.cv.default_load_options">
+      <provider
+            class="de.tu_bs.cs.isf.mbse.cvclipse.postprocessor.PostProcessor"
+            id="de.tu_bs.cs.isf.mbse.cvclipse.postprocessor.provider2">
+      </provider>
+   </extension>
+
+</plugin>
