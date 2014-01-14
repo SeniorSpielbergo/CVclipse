@@ -373,6 +373,8 @@ public class M2T {
         Letter _letter_1 = this.app.getLetter();
         String _recipientAttention_1 = _letter_1.getRecipientAttention();
         _builder.append(_recipientAttention_1, "");
+      } else {
+        _builder.append("\\ ");
       }
     }
     _builder.append("}{");
